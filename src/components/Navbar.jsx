@@ -59,7 +59,7 @@ const CircularNav = () => {
   }, [isOpen]);
 
   return (
-    <div className="fixed top-[55%] right-3">
+    <div className="fixed top-[40%] right-3">
       <motion.button
         ref={buttonRef}
         initial={false}
@@ -97,7 +97,7 @@ const CircularNav = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[50vh] flex justify-between  flex-col bg-background-light bottom-16 right-0 absolute p-1 rounded-md shadow-lg"
+            className="mt-1 z-[-1] space-y-1 h-[50vh] flex justify-between  flex-col bg-background-light top-16 right-0 absolute p-1 rounded-md shadow-lg"
           >
             <ShopItem label="Home" icon={FaHome} iconColor="text-red-500" />
             <ShopItem
@@ -151,7 +151,7 @@ const CircularNav = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[35vh] flex justify-between  flex-col bg-background-light top-16 right-0 absolute p-1 rounded-md shadow-lg"
+            className="mt-1 z-[-1] space-y-1 h-[35vh] flex justify-between  flex-col bg-background-light bottom-16 right-0 absolute p-1 rounded-md shadow-lg"
           >
             <UserItem
               label="Shopping Cart"
