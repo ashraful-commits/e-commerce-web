@@ -60,16 +60,16 @@ const CircularNav = () => {
   }, [isOpen]);
 
   return (
-    <div className="fixed top-[40%] right-2">
+    <div className="fixed top-[40%] bg-white rounded-full shadow-lg right-2">
       <motion.button
         ref={buttonRef}
         initial={false}
         animate={{
           rotate: isOpen ? 45 : 0,
         }}
-        className={`bg-accent ${
+        className={`bg-blue-600 ${
           isOpen ? "" : "animated_boxShadow"
-        } group hover:bg-secondary text-white font-semibold rounded-full w-10 h-10 flex items-center justify-center transition-transform ${
+        } group hover:bg-blue-900 text-white font-semibold rounded-full w-12 mx-[2px] h-12 flex items-center justify-center  transition-transform ${
           isOpen ? "rotate-45" : ""
         }`}
         onClick={toggleMenu}
@@ -93,8 +93,8 @@ const CircularNav = () => {
             isOpen ? "block" : "hidden"
           } left-0 w-[50px]  h-[50px] flex justify-between items-center  z-[-1]`}
         >
-          <FaUser className="absolute w-5 h-5 group-hover:bg-secondary  p-[5px] bg-accent text-black -rotate-45  text-xs -top-[5px] -left-[5px]" />
-          <FaShoppingCart className="absolute w-5 h-5 group-hover:bg-secondary  p-[5px]  bg-accent text-black bottom-[5px] -rotate-45 text-xs  right-[5px]" />
+          <FaUser className="absolute w-5 h-5 bg-blue-600 group-hover:bg-blue-900  p-[5px] text-white -rotate-45  text-xs -top-[5px] -left-[5px]" />
+          <FaShoppingCart className="absolute w-5 h-5 bg-blue-600 group-hover:bg-blue-900   p-[5px]  text-white -bottom-[5px] -rotate-45 text-xs  -right-[4px]" />
         </span>
       </motion.button>
 
@@ -105,49 +105,49 @@ const CircularNav = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[50vh] flex justify-between  flex-col bg-background-light top-[45px] -right-1 absolute p-1 rounded-md shadow-lg"
+            className="mt-1 z-[-1] space-y-1 h-[50vh] flex justify-between  flex-col bg-background-light top-[55px] right-1 absolute p-1 rounded-md shadow-lg"
           >
-            <ShopItem label="Home" icon={FaHome} iconColor="text-red-500" />
+            <ShopItem label="Home" icon={FaHome} iconColor="text-blue-600" />
             <ShopItem
               label="Shop"
               icon={FaShoppingCart}
-              iconColor="text-yellow-500"
+              iconColor="text-blue-600"
             />
             <ShopItem
               label="Product Listings"
               icon={FaTags}
-              iconColor="text-green-500"
+              iconColor="text-blue-600"
             />
             <ShopItem
               label="Product Detail"
               icon={FaThumbsUp}
-              iconColor="text-blue-500"
+              iconColor="text-blue-600"
             />
 
             <ShopItem
               label="Search Results"
               icon={FaSearch}
-              iconColor="text-cyan-500"
+              iconColor="text-blue-600"
             />
             <ShopItem
               label="Contact Us"
               icon={FaEnvelope}
-              iconColor="text-gray-500"
+              iconColor="text-blue-600"
             />
             <ShopItem
               label="About Us"
               icon={FaInfoCircle}
-              iconColor="text-red-600"
+              iconColor="text-blue-600"
             />
             <ShopItem
               label="Blog"
               icon={FaNewspaper}
-              iconColor="text-yellow-600"
+              iconColor="text-blue-600"
             />
             <ShopItem
               label="FAQs"
               icon={FaQuestionCircle}
-              iconColor="text-green-600"
+              iconColor="text-blue-600"
             />
           </motion.div>
         )}
@@ -159,32 +159,32 @@ const CircularNav = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[35vh] flex justify-between  flex-col bg-background-light bottom-[49px] -right-1 absolute p-1 rounded-md shadow-lg"
+            className="mt-1 z-[-1] space-y-1 h-[35vh] flex justify-between  flex-col bg-background-light bottom-[55px] right-1 absolute p-1 rounded-md shadow-lg"
           >
             <UserItem
               label="Shopping Cart"
               icon={FaShoppingCart}
-              iconColor="text-purple-500"
+              iconColor="text-blue-600"
             />
             <UserItem
               label="Checkout"
               icon={FaCreditCard}
-              iconColor="text-pink-500"
+              iconColor="text-blue-600"
             />
             <UserItem
               label="Order Confirmation"
               icon={FaThumbsUp}
-              iconColor="text-indigo-500"
+              iconColor="text-blue-600"
             />
             <UserItem
               label="User Account"
               icon={FaUserCircle}
-              iconColor="text-teal-500"
+              iconColor="text-blue-600"
             />
             <UserItem
               label="Wishlist"
               icon={FaHeart}
-              iconColor="text-orange-500"
+              iconColor="text-blue-600"
             />
           </motion.div>
         )}
@@ -200,15 +200,15 @@ const ShopItem = ({ label, icon, iconColor }) => {
     <div className="relative group transition-transform transform translate-y-0">
       <a
         href="#"
-        className={`group relative shadow-sm px-2 py-2 rounded-rounded-bl-none rounded-tl-none hover:bg-white hover:${iconColor} border-l-2 border-white group-hover:border-l-orange-600 transition-transform flex items-center space-x-1 ${iconColor}`}
+        className={`group relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none hover:bg-white hover:${iconColor} border-l-2 border-white group-hover:border-l-orange-600 transition-transform flex items-center space-x-1 ${iconColor}`}
       >
         <motion.i
-          className={`text-2xl  transition-transform transform scale-100`}
+          className={`text-xl lg:2xl  transition-transform transform scale-100`}
         >
           <Icon />
         </motion.i>
         <span
-          className={`text-sm group-hover:animate-bounce group-hover:border-r-2 border-r-orange-600 absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-10 text text-center transition-opacity bg-white ${iconColor} rounded-lg rounded-br-none rounded-tr-none py-[.63rem] px-2`}
+          className={`text-sm group-hover:animate-bounce group-hover:border-r-2 border-r-orange-600 absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-9 text text-center transition-opacity bg-white ${iconColor} rounded-lg rounded-br-none rounded-tr-none py-[.3rem] px-2`}
         >
           {label}
         </span>
@@ -223,15 +223,15 @@ const UserItem = ({ label, icon, iconColor }) => {
     <div className="relative group transition-transform transform translate-y-0">
       <a
         href="#"
-        className={`group relative shadow-sm px-2 py-2 rounded-rounded-bl-none rounded-tl-none hover:bg-white hover:${iconColor} border-l-2 border-white group-hover:border-l-orange-600 transition-transform flex items-center space-x-1 ${iconColor}`}
+        className={`group relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none hover:bg-white hover:${iconColor} border-l-2 border-white group-hover:border-l-orange-600 transition-transform flex items-center space-x-1 ${iconColor}`}
       >
         <motion.i
-          className={`text-2xl  transition-transform transform scale-100`}
+          className={`text-xl lg:xl  transition-transform transform scale-100`}
         >
           <Icon />
         </motion.i>
         <span
-          className={`text-sm group-hover:animate-bounce group-hover:border-r-2 border-r-orange-600 absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-10 text text-center transition-opacity bg-white ${iconColor} rounded-lg rounded-br-none rounded-tr-none py-[.63rem] px-2`}
+          className={`text-sm group-hover:animate-bounce group-hover:border-r-2 border-r-orange-600 absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-9 text text-center transition-opacity bg-white ${iconColor} rounded-lg rounded-br-none rounded-tr-none py-[.3rem] px-2`}
         >
           {label}
         </span>
