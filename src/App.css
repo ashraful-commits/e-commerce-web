@@ -1,0 +1,196 @@
+.main_container {
+  margin: 0 auto; /* Center the main_container horizontally */
+  /* Add a background color for visibility */
+  padding: 20px; /* Add some padding for content */
+  height: 100vh;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Paragraph and text styles */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* List styles */
+ul,
+ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+li {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Link styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Button style */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+/* //=======================button */
+.button {
+  width: 100%;
+  max-width: 300px; /* Adjust to your design */
+  min-width: 150px; /* Adjust to your design */
+  padding: 10px 20px; /* Adjust to your design */
+  font-size: 1em;
+  text-align: center;
+  background-color: #007bff; /* Your button's background color */
+  color: #fff; /* Your button's text color */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Optional hover effect */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Adjust to your design */
+}
+
+/* Media query for responsiveness */
+
+/* Extra Small (Mobile) */
+@media (max-width: 575px) {
+  h1 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+/* Small (Portrait Tablet) */
+@media (min-width: 576px) and (max-width: 767px) {
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+/* Medium (Landscape Tablet) */
+@media (min-width: 768px) and (max-width: 991px) {
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+/* Large (Desktop) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+/* Extra Large (Widescreen Desktop) */
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 30px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+/* Set a fixed width for the main_container at different breakpoints */
+@media (max-width: 767px) {
+  .main_container {
+    width: 90%; /* Adjust this value for small screens (up to 767px) */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .main_container {
+    width: 80%; /* Adjust this value for medium screens (768px to 991px) */
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .main_container {
+    width: 70%; /* Adjust this value for larger screens (992px to 1199px) */
+  }
+}
+
+@media (min-width: 1200px) {
+  .main_container {
+    width: 60%; /* Adjust this value for extra-large screens (1200px and above) */
+  }
+}
