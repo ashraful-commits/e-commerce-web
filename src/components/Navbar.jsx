@@ -223,7 +223,7 @@ const UserItem = ({ label, icon, iconColor }) => {
     <div className="relative group transition-transform transform translate-y-0">
       <a
         href="#"
-        className={`group  relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none hover:bg-white hover:${iconColor} border-l-2 hover:text-white  delay-100 duration-200 hover:bg-orange-600 w-full h-full border-white group-hover:border-l-orange-600 transition-transform flex items-center space-x-1 ${iconColor}`}
+        className={`group  relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none hover:bg-white hover:${iconColor} border-l-2 hover:text-white  delay-100 duration-200 hover:bg-orange-600 w-full h-full border-white group-hover:border-l-orange-600  transition-transform flex items-center space-x-1 ${iconColor}`}
       >
         <motion.i
           className={`text-xl lg:xl  transition-transform transform scale-100`}
