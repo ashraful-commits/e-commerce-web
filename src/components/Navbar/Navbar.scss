@@ -61,3 +61,22 @@
 .menu-items.open .menu-item {
   transform: translateY(0);
 }
+
+.animated_boxShadow {
+  animation: pulsating-light-animation 1s infinite ease-in-out;
+}
+
+@keyframes pulsating-light-animation {
+  10% {
+    box-shadow: 0px 0px 20px blue;
+    box-shadow: 0px 0px 40px blue;
+  }
+  50% {
+    box-shadow: 0px 0px 60px blue;
+    box-shadow: 0px 0px 80px blue;
+  }
+  100% {
+    box-shadow: 0px 0px 100px blue;
+    box-shadow: 0px 0px 120px blue;
+  }
+}

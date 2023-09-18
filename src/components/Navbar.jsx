@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import "./Navbar/Navbar.scss";
 import {
   FaShoppingCart,
   FaUser,
@@ -63,8 +64,12 @@ const CircularNav = () => {
       <motion.button
         ref={buttonRef}
         initial={false}
-        animate={{ rotate: isOpen ? 45 : 0 }}
-        className={`bg-accent group hover:bg-secondary text-white font-semibold rounded-full w-12 h-12 flex items-center justify-center transition-transform ${
+        animate={{
+          rotate: isOpen ? 45 : 0,
+        }}
+        className={`bg-accent ${
+          isOpen ? "" : "animated_boxShadow"
+        } group hover:bg-secondary text-white font-semibold rounded-full w-12 h-12 flex items-center justify-center transition-transform ${
           isOpen ? "rotate-45" : ""
         }`}
         onClick={toggleMenu}
@@ -86,8 +91,11 @@ const CircularNav = () => {
         <span
           className={`absolute top-0 ${
             isOpen ? "block" : "hidden"
-          } left-0 w-full h-full shadow-md z-[-1] bg-accent group-hover:bg-secondary rounded-none`}
-        ></span>
+          } left-0 w-full h-full flex justify-between items-center shadow-md z-[-1] bg-accent group-hover:bg-secondary rounded-none`}
+        >
+          <FaUser className="absolute -rotate-45 p-[2px] text-xs top-0 left-0" />
+          <FaShoppingCart className="absolute bottom-0 -rotate-45 text-xs p-[2px] right-0" />
+        </span>
       </motion.button>
 
       <AnimatePresence initial={false}>
@@ -97,7 +105,7 @@ const CircularNav = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[50vh] flex justify-between  flex-col bg-background-light top-16 right-0 absolute p-1 rounded-md shadow-lg"
+            className="mt-1 z-[-1] space-y-1 h-[50vh] flex justify-between  flex-col bg-background-light top-[50px] right-0 absolute p-1 rounded-md shadow-lg"
           >
             <ShopItem label="Home" icon={FaHome} iconColor="text-red-500" />
             <ShopItem
@@ -151,7 +159,7 @@ const CircularNav = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[35vh] flex justify-between  flex-col bg-background-light bottom-16 right-0 absolute p-1 rounded-md shadow-lg"
+            className="mt-1 z-[-1] space-y-1 h-[35vh] flex justify-between  flex-col bg-background-light bottom-14 right-0 absolute p-1 rounded-md shadow-lg"
           >
             <UserItem
               label="Shopping Cart"
