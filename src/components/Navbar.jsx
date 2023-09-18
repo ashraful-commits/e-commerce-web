@@ -105,7 +105,7 @@ const CircularNav = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[40vh] py-3 flex justify-between  flex-col bg-background-light top-[55px] right-1 absolute p-1 rounded-md shadow-lg"
+            className="mt-1 z-[-1] space-y-1 h-[40vh] py-3 flex justify-between  flex-col bg-background-light top-[50px] right-1 absolute p-1 rounded-md shadow-lg"
           >
             <ShopItem label="Home" icon={FaHome} iconColor="text-blue-600" />
             <ShopItem
