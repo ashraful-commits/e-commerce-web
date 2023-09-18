@@ -60,10 +60,10 @@ const CircularNav = () => {
   }, [isOpen]);
 
   return (
-    <div className="fixed bottom-5 right-5">
+    <div className="fixed bottom-0 right-0">
       <button
         ref={buttonRef}
-        className={`bg-primary hover:bg-secondary text-white font-semibold rounded-full w-10 h-10 flex items-center justify-center transition-transform transform ${
+        className={`bg-primary  hover:bg-secondary text-white font-semibold rounded-full w-14 h-14 flex items-center justify-center transition-transform transform ${
           isOpen ? "rotate-45" : ""
         }`}
         onClick={toggleMenu}
@@ -87,7 +87,7 @@ const CircularNav = () => {
       {isOpen && (
         <div
           ref={menuContainerRef}
-          className="mt-1 space-y-1 h-[90vh] flex justify-between flex-col bg-background-light bottom-14 right-0 absolute p-1 rounded-md shadow-lg"
+          className="mt-1 z-[-1] space-y-1 h-[90vh] flex justify-between flex-col bg-background-light bottom-12 right-0 absolute p-1 rounded-md shadow-lg"
         >
           <NavItem label="Home" icon={FaHome} color="#FF5733" />
           <NavItem label="Shop" icon={FaShoppingCart} color="#FFC300" />
