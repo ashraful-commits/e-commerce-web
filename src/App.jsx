@@ -1,5 +1,5 @@
 import "./App.css";
-import CircularNav from "./components/Navbar";
+import CircularNav from "./components/Navbar/Navbar";
 
 function App() {
   return (
