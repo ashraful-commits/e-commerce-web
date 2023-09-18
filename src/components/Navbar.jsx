@@ -60,7 +60,7 @@ const CircularNav = () => {
   }, [isOpen]);
 
   return (
-    <div className="fixed bottom-0 right-0">
+    <div className="fixed bottom-2 right-2">
       <button
         ref={buttonRef}
         className={`bg-primary  hover:bg-secondary text-white font-semibold rounded-full w-14 h-14 flex items-center justify-center transition-transform transform ${
@@ -70,7 +70,7 @@ const CircularNav = () => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4 text-accent"
+          className="h-4 w-4 text-white"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -78,16 +78,21 @@ const CircularNav = () => {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth="2"
+            strokeWidth="8"
             d="M12 4v16m8-8H4"
           ></path>
         </svg>
+        <span
+          className={`absolute top-0 ${
+            isOpen ? "bolck" : "hidden"
+          } left-0 w-10 h-10 z-[-1] bg-secondary rounded-full rounded-tl-none`}
+        ></span>
       </button>
 
       {isOpen && (
         <div
           ref={menuContainerRef}
-          className="mt-1 z-[-1] space-y-1 h-[90vh] flex justify-between flex-col bg-background-light bottom-12 right-0 absolute p-1 rounded-md shadow-lg"
+          className="mt-1 z-[-1] space-y-1 h-[85vh] flex justify-between flex-col bg-background-light bottom-16 right-1 absolute p-1 rounded-md shadow-lg"
         >
           <NavItem label="Home" icon={FaHome} color="#FF5733" />
           <NavItem label="Shop" icon={FaShoppingCart} color="#FFC300" />
