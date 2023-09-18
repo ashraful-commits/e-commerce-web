@@ -84,8 +84,8 @@ const CircularNav = () => {
         </svg>
         <span
           className={`absolute top-0 ${
-            isOpen ? "bolck" : "hidden"
-          } left-0 w-10 h-10 z-[-1] bg-secondary rounded-full rounded-tl-none`}
+            isOpen ? "block" : "hidden"
+          } left-0 w-10 h-10 z-[-1] hover:bg-secondary bg-primary rounded-full rounded-tl-none`}
         ></span>
       </button>
 
