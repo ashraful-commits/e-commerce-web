@@ -105,7 +105,7 @@ const CircularNav = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[50vh] flex justify-between  flex-col bg-background-light top-[55px] right-1 absolute p-1 rounded-md shadow-lg"
+            className="mt-1 z-[-1] space-y-1 h-[40vh] py-3 flex justify-between  flex-col bg-background-light top-[55px] right-1 absolute p-1 rounded-md shadow-lg"
           >
             <ShopItem label="Home" icon={FaHome} iconColor="text-blue-600" />
             <ShopItem
@@ -159,7 +159,7 @@ const CircularNav = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[35vh] flex justify-between  flex-col bg-background-light bottom-[55px] right-1 absolute p-1 rounded-md shadow-lg"
+            className="mt-1 z-[-1] space-y-1 h-[22vh] flex justify-between py-3  flex-col bg-background-light bottom-[55px] right-1 absolute p-1 rounded-md shadow-lg"
           >
             <UserItem
               label="Shopping Cart"
@@ -197,10 +197,10 @@ const ShopItem = ({ label, icon, iconColor }) => {
   const Icon = icon;
 
   return (
-    <div className="relative group transition-transform transform translate-y-0">
+    <div className="relative group transition-transform transform translate-y-0 my-4">
       <a
         href="#"
-        className={`group relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none hover:bg-white hover:${iconColor} border-l-2 border-white group-hover:border-l-orange-600 transition-transform flex items-center space-x-1 ${iconColor}`}
+        className={`group relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none hover:bg-white hover:${iconColor} border-l-2 hover:text-white border-white hover:bg-orange-600 group-hover:border-l-orange-600 transition-transform flex items-center space-x-1 ${iconColor}`}
       >
         <motion.i
           className={`text-xl lg:2xl  transition-transform transform scale-100`}
@@ -208,7 +208,7 @@ const ShopItem = ({ label, icon, iconColor }) => {
           <Icon />
         </motion.i>
         <span
-          className={`text-sm group-hover:animate-bounce group-hover:border-r-2 border-r-orange-600 absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-9 text text-center transition-opacity bg-white ${iconColor} rounded-lg rounded-br-none rounded-tr-none py-[.3rem] px-2`}
+          className={`text-sm group-hover:animate-bounce group-hover:border-r-2 border-r-orange-600 absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-9 text text-center transition-opacity bg-white ${iconColor} rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-2`}
         >
           {label}
         </span>
@@ -223,7 +223,7 @@ const UserItem = ({ label, icon, iconColor }) => {
     <div className="relative group transition-transform transform translate-y-0">
       <a
         href="#"
-        className={`group relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none hover:bg-white hover:${iconColor} border-l-2 border-white group-hover:border-l-orange-600 transition-transform flex items-center space-x-1 ${iconColor}`}
+        className={`group  relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none hover:bg-white hover:${iconColor} border-l-2 hover:text-white  delay-100 duration-200 hover:bg-orange-600 w-full h-full border-white group-hover:border-l-orange-600 transition-transform flex items-center space-x-1 ${iconColor}`}
       >
         <motion.i
           className={`text-xl lg:xl  transition-transform transform scale-100`}
@@ -231,7 +231,7 @@ const UserItem = ({ label, icon, iconColor }) => {
           <Icon />
         </motion.i>
         <span
-          className={`text-sm group-hover:animate-bounce group-hover:border-r-2 border-r-orange-600 absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-9 text text-center transition-opacity bg-white ${iconColor} rounded-lg rounded-br-none rounded-tr-none py-[.3rem] px-2`}
+          className={`text-sm group-hover:animate-bounce group-hover:border-r-2 border-r-orange-600 absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-9 text text-center transition-opacity bg-white ${iconColor} rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-2`}
         >
           {label}
         </span>
