@@ -60,7 +60,7 @@ const CircularNav = () => {
   }, [isOpen]);
 
   return (
-    <div className="fixed top-[40%] right-3">
+    <div className="fixed top-[40%] right-2">
       <motion.button
         ref={buttonRef}
         initial={false}
@@ -69,7 +69,7 @@ const CircularNav = () => {
         }}
         className={`bg-accent ${
           isOpen ? "" : "animated_boxShadow"
-        } group hover:bg-secondary text-white font-semibold rounded-full w-12 h-12 flex items-center justify-center transition-transform ${
+        } group hover:bg-secondary text-white font-semibold rounded-full w-10 h-10 flex items-center justify-center transition-transform ${
           isOpen ? "rotate-45" : ""
         }`}
         onClick={toggleMenu}
@@ -91,10 +91,10 @@ const CircularNav = () => {
         <span
           className={`absolute top-0 ${
             isOpen ? "block" : "hidden"
-          } left-0 w-full h-full flex justify-between items-center shadow-md z-[-1] bg-accent group-hover:bg-secondary rounded-none`}
+          } left-0 w-[50px]  h-[50px] flex justify-between items-center  z-[-1]`}
         >
-          <FaUser className="absolute -rotate-45 p-[2px] text-xs top-0 left-0" />
-          <FaShoppingCart className="absolute bottom-0 -rotate-45 text-xs p-[2px] right-0" />
+          <FaUser className="absolute w-5 h-5 group-hover:bg-secondary  p-[5px] bg-accent text-black -rotate-45  text-xs -top-[5px] -left-[5px]" />
+          <FaShoppingCart className="absolute w-5 h-5 group-hover:bg-secondary  p-[5px]  bg-accent text-black bottom-[5px] -rotate-45 text-xs  right-[5px]" />
         </span>
       </motion.button>
 
@@ -105,7 +105,7 @@ const CircularNav = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[50vh] flex justify-between  flex-col bg-background-light top-[50px] right-0 absolute p-1 rounded-md shadow-lg"
+            className="mt-1 z-[-1] space-y-1 h-[50vh] flex justify-between  flex-col bg-background-light top-[45px] -right-1 absolute p-1 rounded-md shadow-lg"
           >
             <ShopItem label="Home" icon={FaHome} iconColor="text-red-500" />
             <ShopItem
@@ -159,7 +159,7 @@ const CircularNav = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[35vh] flex justify-between  flex-col bg-background-light bottom-14 right-0 absolute p-1 rounded-md shadow-lg"
+            className="mt-1 z-[-1] space-y-1 h-[35vh] flex justify-between  flex-col bg-background-light bottom-[49px] -right-1 absolute p-1 rounded-md shadow-lg"
           >
             <UserItem
               label="Shopping Cart"
