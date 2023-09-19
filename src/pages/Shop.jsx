@@ -196,7 +196,7 @@ const Shop = () => {
             </div>
             {hoveredProduct === index && (
               <motion.div
-                className="product-details group-hover:transition-all group-hover:delay-100 group-hover:duration-500 absolute w-full h-full top-0 left-0 bg-purple-900 text-white p-4 flex flex-col justify-center items-center"
+                className="product-details group-hover:transition-all group-hover:delay-100 group-hover:duration-500 absolute w-full h-full top-0 left-0 bg-purple-900 bg-opacity-50 text-white p-4 flex flex-col justify-center items-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
