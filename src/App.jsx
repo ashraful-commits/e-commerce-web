@@ -1,10 +1,11 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import CircularNav from "./components/Navbar/Navbar";
+import router from "./routes/PageRoute";
 
 function App() {
   return (
     <>
-      <CircularNav />
+      <RouterProvider router={router} />
     </>
   );
 }

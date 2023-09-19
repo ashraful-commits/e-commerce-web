@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Navbar.scss";
 import {
   FaShoppingCart,
-  FaUser,
+  // FaUser,
   FaEnvelope,
   FaHome,
   FaHeart,
@@ -13,17 +13,19 @@ import {
   FaInfoCircle,
   FaNewspaper,
   FaQuestionCircle,
-  FaSyncAlt,
-  FaLock,
-  FaTruck,
+  // FaSyncAlt,
+  // FaLock,
+  // FaTruck,
   FaThumbsUp,
-  FaCog,
-  FaChartBar,
+  // FaCog,
+  // FaChartBar,
   FaTags,
-  FaHeadset,
+  FaCodepen,
+  // FaHeadset,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const CircularNav = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -110,26 +112,35 @@ const CircularNav = () => {
             exit={{ opacity: 0, y: -10 }}
             className="mt-1 z-[-1] space-y-1 h-[40vh] py-3 flex justify-between  flex-col bg-background-light top-[40px] right-0 absolute p-1  shadow-lg"
           >
-            <ShopItem label="Home" icon={FaHome} iconColor="text-blue-600" />
+            <ShopItem
+              label="Home"
+              url="/"
+              icon={FaHome}
+              iconColor="text-blue-600"
+            />
             <ShopItem
               label="Shop"
+              url="shop"
               icon={FaShoppingCart}
               iconColor="text-blue-600"
             />
             <ShopItem
               label="Product Listings"
               icon={FaTags}
+              url="product"
               iconColor="text-blue-600"
             />
             <ShopItem
               label="Product Detail"
               icon={FaThumbsUp}
+              url="/:slug"
               iconColor="text-blue-600"
             />
 
             <ShopItem
               label="Search Results"
               icon={FaSearch}
+              url="search"
               iconColor="text-blue-600"
             />
             <ShopItem
@@ -140,15 +151,18 @@ const CircularNav = () => {
             <ShopItem
               label="About Us"
               icon={FaInfoCircle}
+              url="about"
               iconColor="text-blue-600"
             />
             <ShopItem
               label="Blog"
               icon={FaNewspaper}
+              url="blog"
               iconColor="text-blue-600"
             />
             <ShopItem
               label="FAQs"
+              url="faq"
               icon={FaQuestionCircle}
               iconColor="text-blue-600"
             />
@@ -168,25 +182,30 @@ const CircularNav = () => {
               label="Shopping Cart"
               icon={FaShoppingCart}
               iconColor="text-blue-600"
+              url="cart"
             />
             <UserItem
               label="Checkout"
               icon={FaCreditCard}
+              url="checkout"
               iconColor="text-blue-600"
             />
             <UserItem
               label="Order Confirmation"
               icon={FaThumbsUp}
+              url="order"
               iconColor="text-blue-600"
             />
             <UserItem
               label="User Account"
               icon={FaUserCircle}
+              url="user"
               iconColor="text-blue-600"
             />
             <UserItem
               label="Wishlist"
               icon={FaHeart}
+              url="wishlist"
               iconColor="text-blue-600"
             />
           </motion.div>
@@ -196,13 +215,13 @@ const CircularNav = () => {
   );
 };
 
-const ShopItem = ({ label, icon, iconColor }) => {
+const ShopItem = ({ label, icon, iconColor, url }) => {
   const Icon = icon;
 
   return (
     <div className="relative group transition-transform transform translate-y-0 my-4">
-      <a
-        href="#"
+      <Link
+        to={url}
         className={`group relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none   border-l-2 border-white group-hover:bg-yellow-500 group-hover:border-l-yellow-600 transition-transform flex items-center space-x-1 ${iconColor}`}
       >
         <motion.i
@@ -215,17 +234,17 @@ const ShopItem = ({ label, icon, iconColor }) => {
         >
           {label}
         </span>
-      </a>
+      </Link>
     </div>
   );
 };
-const UserItem = ({ label, icon, iconColor }) => {
+const UserItem = ({ label, icon, iconColor, url }) => {
   const Icon = icon;
 
   return (
     <div className="relative group transition-transform transform translate-y-0">
-      <a
-        href="#"
+      <Link
+        to={url}
         className={`group  relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none  hover:${iconColor} border-l-2   delay-100 duration-200 hover:bg-yellow-500 w-full h-full border-white group-hover:border-l-yellow-500  transition-transform flex items-center space-x-1 ${iconColor}`}
       >
         <motion.i
@@ -238,9 +257,9 @@ const UserItem = ({ label, icon, iconColor }) => {
         >
           {label}
         </span>
-      </a>
+      </Link>
     </div>
   );
 };
 
-export default CircularNav;
+export default Navbar;
