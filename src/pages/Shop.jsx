@@ -16,6 +16,21 @@ const Shop = () => {
   }, []);
 
   const [hoveredProduct, setHoveredProduct] = useState(null);
+  const getRandomBorderColor = () => {
+    const colors = [
+      " bg-gradient-to-b shadow border-b-gray-500 via-white from-red-100 to-white",
+      " bg-gradient-to-b shadow border-b-gray-500 via-white from-purple-100 to-white",
+      " bg-gradient-to-b shadow border-b-gray-500 via-white from-blue-100 to-white",
+      " bg-gradient-to-b shadow border-b-gray-500 via-white from-green-100 to-white",
+      " bg-gradient-to-b shadow border-b-gray-500 via-white from-yellow-100 to-white",
+      " bg-gradient-to-b shadow border-b-gray-500 via-white from-pink-100 to-white",
+      " bg-gradient-to-b shadow border-b-gray-500 via-white from-sky-100 to-white",
+      " bg-gradient-to-b shadow border-b-gray-500 via-white from-skyblue-100 to-white",
+      " bg-gradient-to-b shadow border-b-gray-500 via-white from-orange-100 to-white",
+    ];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
+  };
 
   return (
     <div className="container w-full h-full flex flex-col items-center ">
@@ -177,7 +192,7 @@ const Shop = () => {
         {products.map((product, index) => (
           <motion.div
             key={index}
-            className="col w-full h-full transition-all p-4 delay-100 duration-500 group bg-white relative group overflow-hidden"
+            className={`col w-full h-full transition-all  rounded-2xl ${getRandomBorderColor()} p-4 delay-100 duration-500 group bg-white relative group overflow-hidden `}
             onMouseEnter={() => setHoveredProduct(index)}
             onMouseLeave={() => setHoveredProduct(null)}
             initial={{ opacity: 0, scale: 0.95 }}

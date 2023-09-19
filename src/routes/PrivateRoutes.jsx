@@ -1,4 +1,4 @@
-import Layout from "../components/Navbar/Layout";
+import Layout from "../components/Layout";
 import About from "../pages/About";
 import Blog from "../pages/Blog";
 import Cart from "../pages/Cart";
@@ -61,6 +61,10 @@ const PrivateRoutes = [
       {
         path: "/:slug",
         element: <SingleProduct />,
+      },
+      {
+        path: "/:slug",
+        element: <Search />,
       },
       {
         path: "/blog",
