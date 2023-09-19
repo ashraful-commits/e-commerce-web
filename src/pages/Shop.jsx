@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AiFillEye, AiFillFilter } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Modal from "../components/Modal/Modal";
-import { json } from "react-router-dom";
 
 const Shop = () => {
   const [filter, setFilter] = useState(false);
   const [show, setShow] = useState(false);
   const [products, setProducts] = useState([]);
-  console.log(products);
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -188,7 +187,7 @@ const Shop = () => {
         </motion.div>
       </div>
 
-      <div className="row w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 content-center ">
+      <div className="row w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 content-center ">
         {products.map((product, index) => (
           <motion.div
             key={index}
@@ -211,7 +210,7 @@ const Shop = () => {
             </div>
             {hoveredProduct === index && (
               <motion.div
-                className={`product-details group-hover:transition-all group-hover:delay-100 group-hover:duration-500 absolute w-full h-full top-0 left-0 bg-purple-400 bg-opacity-100 text-white p-4 flex flex-col justify-center items-center`}
+                className={`product-details group-hover:transition-all group-hover:delay-100 group-hover:duration-500 absolute w-full h-full top-0 left-0 ${getRandomBorderColor()} text-white p-4 flex flex-col justify-center items-center`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -225,7 +224,7 @@ const Shop = () => {
                 {show && (
                   <Modal onClose={() => setShow(false)}>
                     <div
-                      className={` w-full lg:px-20 lg:py-20 p-5 ${getRandomBorderColor()} h-full overflow-y-auto `}
+                      className={` w-full lg:px-20 lg:py-20 p-5 ${getRandomBorderColor()}  h-full overflow-y-auto `}
                     >
                       <div className="flex justify-center items-center">
                         <img src={product.image} alt="" />
