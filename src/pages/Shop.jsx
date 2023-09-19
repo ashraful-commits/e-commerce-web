@@ -1,44 +1,87 @@
 import { useState } from "react";
 import { AiFillFilter } from "react-icons/ai";
+import { motion } from "framer-motion"; // Import motion
+
 const Shop = () => {
   const [filter, setFilter] = useState(false);
   return (
     <div className="container h-full">
-      <div className="row bg-purple-500 relative flex justify-between items-center">
-        <h1 className="text-white text-xl inline-block uppercase font-bold p-2">
+      <div className="row bg-purple-100 relative flex justify-between items-center">
+        <h1 className="text-purple-500 text-xl inline-block uppercase font-bold p-2">
           | Shop
         </h1>
-        <div className="filter_menu fixed z-[9999] bg-white rounded-full shadow-lg right-5 top-5">
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.8, opacity: 0 }}
+          className="filter_menu fixed z-[9999] bg-purple-600 text-white hover:bg-yellow-500 rounded-full shadow-lg right-[14px] top-[2%]"
+        >
           <button
             onClick={() => setFilter(!filter)}
-            className="w-12 h-12 flex justify-center items-center"
+            className="w-12 h-12 border-2 border-white rounded-full flex justify-center items-center"
           >
             <AiFillFilter />
           </button>
           {filter && (
-            <div className="absolute shadow-lg rounded-lg w-[260px] p-4 right-12 overflow-hidden bg-white top-0">
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={filter ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
+              exit={{ opacity: 0, y: -50 }}
+              className="absolute shadow-lg rounded-lg w-[250px] p-4 right-12 overflow-hidden bg-purple-600 top-0"
+            >
               <div className="mb-4">
                 <label
                   htmlFor="category"
-                  className="block font-semibold text-gray-700 mb-2 flex items-center"
+                  className=" font-semibold text-white mb-2 flex items-center"
+                >
+                  <AiFillFilter className="mr-2" />
+                  Search:
+                </label>
+                <input
+                  type="search"
+                  className="w-full border px-2 text-gray-600  rounded-lg py-1 focus:outline-none"
+                  placeholder="Search product "
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="category"
+                  className=" font-semibold text-white mb-2 flex items-center"
                 >
                   <AiFillFilter className="mr-2" />
                   Category:
                 </label>
                 <select
                   id="category"
-                  className="w-full border rounded-md py-2 px-3 focus:outline-none"
+                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
                 >
-                  <option value="all">All</option>
-                  <option value="electronics">Electronics</option>
-                  <option value="clothing">Clothing</option>
-                  <option value="appliances">Appliances</option>
+                  <option className="text-gray-500 font-semibold" value="all">
+                    All
+                  </option>
+                  <option
+                    className="text-gray-500 font-semibold"
+                    value="electronics"
+                  >
+                    Electronics
+                  </option>
+                  <option
+                    className="text-gray-500 font-semibold"
+                    value="clothing"
+                  >
+                    Clothing
+                  </option>
+                  <option
+                    className="text-gray-500 font-semibold"
+                    value="appliances"
+                  >
+                    Appliances
+                  </option>
                 </select>
               </div>
               <div className="mb-4">
                 <label
                   htmlFor="minPrice"
-                  className="block font-semibold text-gray-700 mb-2 flex items-center"
+                  className=" font-semibold text-white mb-2 flex items-center"
                 >
                   <AiFillFilter className="mr-2" />
                   Min Price:
@@ -46,14 +89,14 @@ const Shop = () => {
                 <input
                   type="number"
                   id="minPrice"
-                  className="w-full border rounded-md py-2 px-3 focus:outline-none"
+                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
                   placeholder="Min Price"
                 />
               </div>
               <div className="mb-4">
                 <label
                   htmlFor="maxPrice"
-                  className="block font-semibold text-gray-700 mb-2 flex items-center"
+                  className=" font-semibold text-white mb-2 flex items-center"
                 >
                   <AiFillFilter className="mr-2" />
                   Max Price:
@@ -61,34 +104,63 @@ const Shop = () => {
                 <input
                   type="number"
                   id="maxPrice"
-                  className="w-full border rounded-md py-2 px-3 focus:outline-none"
+                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
                   placeholder="Max Price"
                 />
               </div>
               <div>
                 <label
                   htmlFor="brand"
-                  className="block font-semibold text-gray-700 mb-2 flex items-center"
+                  className=" font-semibold text-white mb-2 flex items-center"
                 >
                   <AiFillFilter className="mr-2" />
                   Brand:
                 </label>
                 <select
                   id="brand"
-                  className="w-full border rounded-md py-2 px-3 focus:outline-none"
+                  className="w-full border text-gray-600 rounded-md py-2 px-3 focus:outline-none"
                 >
-                  <option value="all">All</option>
-                  <option value="apple">Apple</option>
-                  <option value="samsung">Samsung</option>
-                  <option value="nike">Nike</option>
+                  <option className="text-gray-500 font-semibold" value="all">
+                    All
+                  </option>
+                  <option className="text-gray-500 font-semibold" value="apple">
+                    Apple
+                  </option>
+                  <option
+                    className="text-gray-500 font-semibold"
+                    value="samsung"
+                  >
+                    Samsung
+                  </option>
+                  <option className="text-gray-500 font-semibold" value="nike">
+                    Nike
+                  </option>
                 </select>
               </div>
-            </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="brand"
+                  className=" font-semibold text-white mb-2 flex items-center"
+                >
+                  <AiFillFilter className="mr-2" />
+                  Tags:
+                </label>
+                <div>
+                  <ul className="flex gap-2 flex-wrap">
+                    <li className="border px-1 text-white rounded-md ">food</li>
+                    <li className="border px-1 text-white rounded-md ">food</li>
+                    <li className="border px-1 text-white rounded-md ">food</li>
+                    <li className="border px-1 text-white rounded-md ">food</li>
+                    <li className="border px-1 text-white rounded-md ">food</li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
           )}
-        </div>
+        </motion.div>
       </div>
 
-      <div className="row grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-white">
+      <div className="row grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  ">
         {/* <!-- Grid layout with responsive columns --> */}
         <div className="col p-4">
           {/* <!-- Individual column with padding --> */}
