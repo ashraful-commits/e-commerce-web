@@ -221,9 +221,13 @@ const Shop = () => {
                           {product.description}
                         </p>
                         <hr />
-                        <h4 className="text-purple-600 font-bold">
-                          $ {product.price}
+                        <h4 className="text-purple-400 text-sm font-bold">
+                          Stock: {product.rating.count}
                         </h4>
+                        <h4 className="text-purple-600 font-bold">
+                          Price: $ {product.price}
+                        </h4>
+
                         <div className="flex items-center">
                           <button className="bg-purple-600 px-4 py-2 hover:bg-purple-900 rounded-md">
                             Add to cart
