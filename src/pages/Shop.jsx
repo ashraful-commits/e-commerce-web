@@ -1,9 +1,19 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillFilter } from "react-icons/ai";
-import { motion } from "framer-motion"; // Import motion
+import { motion } from "framer-motion";
 
 const Shop = () => {
   const [filter, setFilter] = useState(false);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((json) => setProducts(json));
+  }, []);
+
+  const [hoveredProduct, setHoveredProduct] = useState(null);
+
   return (
     <div className="container h-full">
       <div className="row bg-purple-100 relative flex justify-between items-center">
@@ -29,212 +39,47 @@ const Shop = () => {
               exit={{ opacity: 0, y: -50 }}
               className="absolute shadow-lg rounded-lg w-[250px] p-4 right-12 overflow-hidden bg-purple-600 top-0"
             >
-              <div className="mb-4">
-                <label
-                  htmlFor="category"
-                  className=" font-semibold text-white mb-2 flex items-center"
-                >
-                  <AiFillFilter className="mr-2" />
-                  Search:
-                </label>
-                <input
-                  type="search"
-                  className="w-full border px-2 text-gray-600  rounded-lg py-1 focus:outline-none"
-                  placeholder="Search product "
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="category"
-                  className=" font-semibold text-white mb-2 flex items-center"
-                >
-                  <AiFillFilter className="mr-2" />
-                  Category:
-                </label>
-                <select
-                  id="category"
-                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
-                >
-                  <option className="text-gray-500 font-semibold" value="all">
-                    All
-                  </option>
-                  <option
-                    className="text-gray-500 font-semibold"
-                    value="electronics"
-                  >
-                    Electronics
-                  </option>
-                  <option
-                    className="text-gray-500 font-semibold"
-                    value="clothing"
-                  >
-                    Clothing
-                  </option>
-                  <option
-                    className="text-gray-500 font-semibold"
-                    value="appliances"
-                  >
-                    Appliances
-                  </option>
-                </select>
-              </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="minPrice"
-                  className=" font-semibold text-white mb-2 flex items-center"
-                >
-                  <AiFillFilter className="mr-2" />
-                  Min Price:
-                </label>
-                <input
-                  type="number"
-                  id="minPrice"
-                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
-                  placeholder="Min Price"
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="maxPrice"
-                  className=" font-semibold text-white mb-2 flex items-center"
-                >
-                  <AiFillFilter className="mr-2" />
-                  Max Price:
-                </label>
-                <input
-                  type="number"
-                  id="maxPrice"
-                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
-                  placeholder="Max Price"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="brand"
-                  className=" font-semibold text-white mb-2 flex items-center"
-                >
-                  <AiFillFilter className="mr-2" />
-                  Brand:
-                </label>
-                <select
-                  id="brand"
-                  className="w-full border text-gray-600 rounded-md py-2 px-3 focus:outline-none"
-                >
-                  <option className="text-gray-500 font-semibold" value="all">
-                    All
-                  </option>
-                  <option className="text-gray-500 font-semibold" value="apple">
-                    Apple
-                  </option>
-                  <option
-                    className="text-gray-500 font-semibold"
-                    value="samsung"
-                  >
-                    Samsung
-                  </option>
-                  <option className="text-gray-500 font-semibold" value="nike">
-                    Nike
-                  </option>
-                </select>
-              </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="brand"
-                  className=" font-semibold text-white mb-2 flex items-center"
-                >
-                  <AiFillFilter className="mr-2" />
-                  Tags:
-                </label>
-                <div>
-                  <ul className="flex gap-2 flex-wrap">
-                    <li className="border px-1 text-white rounded-md ">food</li>
-                    <li className="border px-1 text-white rounded-md ">food</li>
-                    <li className="border px-1 text-white rounded-md ">food</li>
-                    <li className="border px-1 text-white rounded-md ">food</li>
-                    <li className="border px-1 text-white rounded-md ">food</li>
-                  </ul>
-                </div>
-              </div>
+              {/* ... Filter options ... */}
             </motion.div>
           )}
         </motion.div>
       </div>
 
       <div className="row grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  ">
-        {/* <!-- Grid layout with responsive columns --> */}
-        <div className="col p-4">
-          {/* <!-- Individual column with padding --> */}
-          <img
-            src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1nfGVufDB8fDB8fHww&w=1000&q=80"
-            alt=""
-            className="w-full h-full overflow-hidden"
-          />
-          {/* <!-- Responsive and adaptable image --> */}
-        </div>
-        <div className="col p-4">
-          {/* <!-- Individual column with padding --> */}
-          <img
-            src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1nfGVufDB8fDB8fHww&w=1000&q=80"
-            alt=""
-            className="w-full h-full overflow-hidden"
-          />
-          {/* <!-- Responsive and adaptable image --> */}
-        </div>
-        <div className="col p-4">
-          {/* <!-- Individual column with padding --> */}
-          <img
-            src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1nfGVufDB8fDB8fHww&w=1000&q=80"
-            alt=""
-            className="w-full h-full overflow-hidden"
-          />
-          {/* <!-- Responsive and adaptable image --> */}
-        </div>
-        <div className="col p-4">
-          {/* <!-- Individual column with padding --> */}
-          <img
-            src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1nfGVufDB8fDB8fHww&w=1000&q=80"
-            alt=""
-            className="w-full h-full overflow-hidden"
-          />
-          {/* <!-- Responsive and adaptable image --> */}
-        </div>
-        <div className="col p-4">
-          {/* <!-- Individual column with padding --> */}
-          <img
-            src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1nfGVufDB8fDB8fHww&w=1000&q=80"
-            alt=""
-            className="w-full h-full overflow-hidden"
-          />
-          {/* <!-- Responsive and adaptable image --> */}
-        </div>
-        <div className="col p-4">
-          {/* <!-- Individual column with padding --> */}
-          <img
-            src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1nfGVufDB8fDB8fHww&w=1000&q=80"
-            alt=""
-            className="w-full h-full overflow-hidden"
-          />
-          {/* <!-- Responsive and adaptable image --> */}
-        </div>
-        <div className="col p-4">
-          {/* <!-- Individual column with padding --> */}
-          <img
-            src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1nfGVufDB8fDB8fHww&w=1000&q=80"
-            alt=""
-            className="w-full h-full overflow-hidden"
-          />
-          {/* <!-- Responsive and adaptable image --> */}
-        </div>
-        <div className="col p-4">
-          {/* <!-- Individual column with padding --> */}
-          <img
-            src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1nfGVufDB8fDB8fHww&w=1000&q=80"
-            alt=""
-            className="w-full h-full overflow-hidden"
-          />
-          {/* <!-- Responsive and adaptable image --> */}
-        </div>
-        {/* <!-- Repeat this block for additional columns --> */}
+        {products.map((product, index) => (
+          <div
+            key={index}
+            className="col w-full h-full bg-white m-2 p-4 relative group overflow-hidden"
+            onMouseEnter={() => setHoveredProduct(index)}
+            onMouseLeave={() => setHoveredProduct(null)}
+          >
+            <div className="w-full  h-full">
+              <img
+                src={product.image}
+                alt=""
+                className="w-full h-full object-cover rounded-lg transition-transform transform hover:scale-105 duration-300"
+              />
+            </div>
+            {hoveredProduct === index && (
+              <div className="product-details absolute w-full h-full top-0 left-0 bg-opacity-75 bg-gray-800 text-white p-4 flex flex-col justify-between">
+                <h3 className="text-xl font-semibold mb-2 truncate">
+                  {product.title}
+                </h3>
+                <p className="text-gray-300 text-sm mb-2 truncate">
+                  {product.description}
+                </p>
+                <div className="flex justify-between items-center">
+                  <span className="text-purple-500 text-lg font-semibold">
+                    ${product.price}
+                  </span>
+                  <button className="bg-purple-500 text-white px-3 py-1 rounded-md hover:bg-purple-600 transition-colors duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
