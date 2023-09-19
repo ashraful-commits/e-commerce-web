@@ -17,7 +17,17 @@ const Shop = () => {
 
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const getRandomBorderColor = () => {
-    const colors = ["bg-purple-500"];
+    const colors = [
+      " bg-gradient-to-t shadow border-b-gray-500 via-white from-red-300 to-white",
+      " bg-gradient-to-t shadow border-b-gray-500 via-white from-purple-300 to-white",
+      " bg-gradient-to-t shadow border-b-gray-500 via-white from-blue-300 to-white",
+      " bg-gradient-to-t shadow border-b-gray-500 via-white from-green-300 to-white",
+      " bg-gradient-to-t shadow border-b-gray-500 via-white from-yellow-300 to-white",
+      " bg-gradient-to-t shadow border-b-gray-500 via-white from-pink-300 to-white",
+      " bg-gradient-to-t shadow border-b-gray-500 via-white from-sky-300 to-white",
+      " bg-gradient-to-t shadow border-b-gray-500 via-white from-skyblue-300 to-white",
+      " bg-gradient-to-t shadow border-b-gray-500 via-white from-orange-300 to-white",
+    ];
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
   };
@@ -182,7 +192,7 @@ const Shop = () => {
         {products.map((product, index) => (
           <motion.div
             key={index}
-            className={`col w-full h-full transition-all  rounded-2xl  p-4 delay-100 duration-500 group bg-white relative group overflow-hidden `}
+            className={`col w-full h-full transition-all  rounded-2xl ${getRandomBorderColor()} p-1 delay-100 duration-500 group bg-white relative group overflow-hidden `}
             onMouseEnter={() => setHoveredProduct(index)}
             onMouseLeave={() => setHoveredProduct(null)}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -190,7 +200,7 @@ const Shop = () => {
             exit={{ opacity: 0, scale: 0.95 }}
             whileHover={{ scale: 1 }}
           >
-            <div className="w-full h-64 flex justify-center items-center">
+            <div className="w-full h-64 rounded-xl p-3 bg-white flex justify-center items-center">
               <motion.img
                 src={product.image}
                 alt=""
@@ -201,7 +211,7 @@ const Shop = () => {
             </div>
             {hoveredProduct === index && (
               <motion.div
-                className={`product-details ${getRandomBorderColor()} group-hover:transition-all group-hover:delay-100 group-hover:duration-500 absolute w-full h-full top-0 left-0  bg-opacity-50 text-white p-4 flex flex-col justify-center items-center`}
+                className={`product-details group-hover:transition-all group-hover:delay-100 group-hover:duration-500 absolute w-full h-full top-0 left-0 bg-purple-400 bg-opacity-100 text-white p-4 flex flex-col justify-center items-center`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -214,7 +224,9 @@ const Shop = () => {
                 </button>
                 {show && (
                   <Modal onClose={() => setShow(false)}>
-                    <div className={` w-full lg:px-20 h-full overflow-y-auto `}>
+                    <div
+                      className={` w-full lg:px-20 lg:py-20 p-5 ${getRandomBorderColor()} h-full overflow-y-auto `}
+                    >
                       <div className="flex justify-center items-center">
                         <img src={product.image} alt="" />
                       </div>
@@ -222,7 +234,7 @@ const Shop = () => {
                         <h1 className="text-gray-700 mt-5 font-bold text-xl">
                           {product.title}
                         </h1>
-                        <p className="text-sm text-bold text-gray-400">
+                        <p className="text-sm text-bold text-gray-500">
                           {product.description}
                         </p>
                         <hr />
