@@ -210,7 +210,7 @@ const Shop = () => {
                 {show && (
                   <Modal onClose={() => setShow(false)}>
                     <div className=" w-full h-full overflow-y-auto">
-                      <div>
+                      <div className="flex justify-center items-center">
                         <img src={product.image} alt="" />
                       </div>
                       <div className="flex flex-col gap-4">
