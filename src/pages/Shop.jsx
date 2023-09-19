@@ -220,13 +220,10 @@ const Shop = () => {
                         </p>
                         <hr />
                         <h4 className="text-purple-600 font-bold">
-                          Price:$ {product.price}
+                          $ {product.price}
                         </h4>
-                        <div className="flex justify-between items-center">
-                          <button className="bg-purple-600 px-2 py-1 hover:bg-purple-900 rounded-md">
-                            Add to cart
-                          </button>
-                          <button className="bg-purple-600 px-2 py-1 hover:bg-purple-900 rounded-md">
+                        <div className="flex items-center">
+                          <button className="bg-purple-600 px-4 py-2 hover:bg-purple-900 rounded-md">
                             Add to cart
                           </button>
                         </div>
