@@ -9,7 +9,7 @@ const Modal = ({ isOpen, onClose, children }) => {
       <div className="w-full fixed z-0 bg-blend-overlay bg-purple-900 bg-opacity-90 h-full"></div>
       <div className="modal bg-white bg-opacity-50 z-10  w-full h-full  rounded-lg shadow-lg">
         <button
-          className="modal-close absolute bottom-[60%] bg-white rounded-full p-2 right-10 text-purple-600 hover:text-purple-900"
+          className="modal-close absolute bottom-[20%] bg-white rounded-full p-2 right-10 text-purple-600 hover:text-purple-900"
           onClick={onClose}
         >
           <AiOutlineClose className="text-xl" />
