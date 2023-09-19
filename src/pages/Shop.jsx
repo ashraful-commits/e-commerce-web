@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { AiFillFilter } from "react-icons/ai";
+import { AiFillEye, AiFillFilter } from "react-icons/ai";
 import { motion } from "framer-motion";
+import Modal from "../components/Modal/Modal";
 
 const Shop = () => {
   const [filter, setFilter] = useState(false);
+  const [show, setShow] = useState(false);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -15,8 +17,9 @@ const Shop = () => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
 
   return (
-    <div className="container h-full">
-      <div className="row bg-purple-100 relative flex justify-between items-center">
+    <div className="container w-full h-full flex flex-col items-center ">
+      {show && <Modal onClose={() => setShow(false)}>0</Modal>}
+      <div className="row w-full bg-purple-100 relative flex justify-between items-center">
         <h1 className="text-purple-500 text-xl inline-block uppercase font-bold p-2">
           | Shop
         </h1>
@@ -39,46 +42,174 @@ const Shop = () => {
               exit={{ opacity: 0, y: -50 }}
               className="absolute shadow-lg rounded-lg w-[250px] p-4 right-12 overflow-hidden bg-purple-600 top-0"
             >
-              {/* ... Filter options ... */}
+              <div className="mb-4">
+                <label
+                  htmlFor="category"
+                  className=" font-semibold text-white mb-2 flex items-center"
+                >
+                  <AiFillFilter className="mr-2" />
+                  Search:
+                </label>
+                <input
+                  type="search"
+                  className="w-full border px-2 text-gray-600  rounded-lg py-1 focus:outline-none"
+                  placeholder="Search product "
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="category"
+                  className=" font-semibold text-white mb-2 flex items-center"
+                >
+                  <AiFillFilter className="mr-2" />
+                  Category:
+                </label>
+                <select
+                  id="category"
+                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
+                >
+                  <option className="text-gray-500 font-semibold" value="all">
+                    All
+                  </option>
+                  <option
+                    className="text-gray-500 font-semibold"
+                    value="electronics"
+                  >
+                    Electronics
+                  </option>
+                  <option
+                    className="text-gray-500 font-semibold"
+                    value="clothing"
+                  >
+                    Clothing
+                  </option>
+                  <option
+                    className="text-gray-500 font-semibold"
+                    value="appliances"
+                  >
+                    Appliances
+                  </option>
+                </select>
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="minPrice"
+                  className=" font-semibold text-white mb-2 flex items-center"
+                >
+                  <AiFillFilter className="mr-2" />
+                  Min Price:
+                </label>
+                <input
+                  type="number"
+                  id="minPrice"
+                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
+                  placeholder="Min Price"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="maxPrice"
+                  className=" font-semibold text-white mb-2 flex items-center"
+                >
+                  <AiFillFilter className="mr-2" />
+                  Max Price:
+                </label>
+                <input
+                  type="number"
+                  id="maxPrice"
+                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
+                  placeholder="Max Price"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="brand"
+                  className=" font-semibold text-white mb-2 flex items-center"
+                >
+                  <AiFillFilter className="mr-2" />
+                  Brand:
+                </label>
+                <select
+                  id="brand"
+                  className="w-full border text-gray-600 rounded-md py-2 px-3 focus:outline-none"
+                >
+                  <option className="text-gray-500 font-semibold" value="all">
+                    All
+                  </option>
+                  <option className="text-gray-500 font-semibold" value="apple">
+                    Apple
+                  </option>
+                  <option
+                    className="text-gray-500 font-semibold"
+                    value="samsung"
+                  >
+                    Samsung
+                  </option>
+                  <option className="text-gray-500 font-semibold" value="nike">
+                    Nike
+                  </option>
+                </select>
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="brand"
+                  className=" font-semibold text-white mb-2 flex items-center"
+                >
+                  <AiFillFilter className="mr-2" />
+                  Tags:
+                </label>
+                <div>
+                  <ul className="flex gap-2 flex-wrap">
+                    <li className="border px-1 text-white rounded-md ">food</li>
+                    <li className="border px-1 text-white rounded-md ">food</li>
+                    <li className="border px-1 text-white rounded-md ">food</li>
+                    <li className="border px-1 text-white rounded-md ">food</li>
+                    <li className="border px-1 text-white rounded-md ">food</li>
+                  </ul>
+                </div>
+              </div>
             </motion.div>
           )}
         </motion.div>
       </div>
 
-      <div className="row grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  ">
+      <div className="row w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 content-center ">
         {products.map((product, index) => (
-          <div
+          <motion.div
             key={index}
-            className="col w-full h-full bg-white m-2 p-4 relative group overflow-hidden"
+            className="col w-full h-full transition-all p-4 delay-100 duration-500 group bg-white relative group overflow-hidden"
             onMouseEnter={() => setHoveredProduct(index)}
             onMouseLeave={() => setHoveredProduct(null)}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            whileHover={{ scale: 1.05 }}
           >
-            <div className="w-full  h-full">
-              <img
+            <div className="w-full h-64 flex justify-center items-center">
+              <motion.img
                 src={product.image}
                 alt=""
-                className="w-full h-full object-cover rounded-lg transition-transform transform hover:scale-105 duration-300"
+                className="object-contain rounded-lg transition-transform transform hover:scale-105 duration-300 w-full h-full"
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.05 }}
               />
             </div>
             {hoveredProduct === index && (
-              <div className="product-details absolute w-full h-full top-0 left-0 bg-opacity-75 bg-gray-800 text-white p-4 flex flex-col justify-between">
-                <h3 className="text-xl font-semibold mb-2 truncate">
-                  {product.title}
-                </h3>
-                <p className="text-gray-300 text-sm mb-2 truncate">
-                  {product.description}
-                </p>
-                <div className="flex justify-between items-center">
-                  <span className="text-purple-500 text-lg font-semibold">
-                    ${product.price}
-                  </span>
-                  <button className="bg-purple-500 text-white px-3 py-1 rounded-md hover:bg-purple-600 transition-colors duration-300">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
+              <motion.div
+                className="product-details group-hover:transition-all group-hover:delay-100 group-hover:duration-500 absolute w-full h-full top-0 left-0 bg-purple-900 text-white p-4 flex flex-col justify-center items-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <button
+                  onClick={() => setShow(!show)}
+                  className="bg-white rounded-full w-10 h-10 flex justify-center items-center"
+                >
+                  <AiFillEye className="text-purple-600 text-2xl" />
+                </button>
+              </motion.div>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

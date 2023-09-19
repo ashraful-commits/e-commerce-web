@@ -3,7 +3,7 @@ import Navbar from "./Navbar/Navbar";
 
 const Layout = () => {
   return (
-    <div className="main_container">
+    <div className="main_container relative">
       <Navbar />
       <Outlet />
     </div>
