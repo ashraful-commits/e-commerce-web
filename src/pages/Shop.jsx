@@ -183,15 +183,15 @@ const Shop = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1 }}
           >
             <div className="w-full h-64 flex justify-center items-center">
               <motion.img
                 src={product.image}
                 alt=""
-                className="object-contain rounded-lg transition-transform transform hover:scale-105 duration-300 w-full h-full"
+                className="object-contain rounded-lg transition-transform transform hover:scale-100 duration-300 w-full h-full"
                 initial={{ scale: 1 }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1 }}
               />
             </div>
             {hoveredProduct === index && (
