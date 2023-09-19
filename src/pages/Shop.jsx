@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { AiFillEye, AiFillFilter } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Modal from "../components/Modal/Modal";
+import { json } from "react-router-dom";
 
 const Shop = () => {
   const [filter, setFilter] = useState(false);
   const [show, setShow] = useState(false);
   const [products, setProducts] = useState([]);
-
+  console.log(products);
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -18,10 +19,9 @@ const Shop = () => {
 
   return (
     <div className="container w-full h-full flex flex-col items-center ">
-      {show && <Modal onClose={() => setShow(false)}>0</Modal>}
-      <div className="row w-full bg-purple-100 relative flex justify-between items-center">
-        <h1 className="text-purple-500 text-xl inline-block uppercase font-bold p-2">
-          | Shop
+      <div className="row mb-5 w-full bg-purple-900 relative flex justify-between items-center">
+        <h1 className="text-white text-xl inline-block uppercase font-bold p-2">
+          |Shop|
         </h1>
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
@@ -196,17 +196,37 @@ const Shop = () => {
             </div>
             {hoveredProduct === index && (
               <motion.div
+                onClick={() => setShow(!show)}
                 className="product-details group-hover:transition-all group-hover:delay-100 group-hover:duration-500 absolute w-full h-full top-0 left-0 bg-purple-900 text-white p-4 flex flex-col justify-center items-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                <button
-                  onClick={() => setShow(!show)}
-                  className="bg-white rounded-full w-10 h-10 flex justify-center items-center"
-                >
+                <button className="bg-white rounded-full w-10 h-10 flex justify-center items-center">
                   <AiFillEye className="text-purple-600 text-2xl" />
                 </button>
+                {show && (
+                  <Modal onClose={() => setShow(false)}>
+                    <div className=" w-full h-full overflow-y-auto">
+                      <div>
+                        <img src={product.image} alt="" />
+                      </div>
+                      <div className="flex flex-col gap-4">
+                        <h1 className="text-gray-700 mt-5 font-bold text-xl">
+                          {product.title}
+                        </h1>
+                        <p className="text-sm text-bold text-gray-400">
+                          {product.description}
+                        </p>
+                        <div>
+                          <button className="bg-purple-600 px-2 py-1 hover:bg-purple-900 rounded-md">
+                            Add to cart
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </Modal>
+                )}
               </motion.div>
             )}
           </motion.div>
