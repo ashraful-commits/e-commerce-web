@@ -32,7 +32,12 @@ const Shop = () => {
   };
 
   return (
-    <div className="container w-full h-full flex flex-col items-center ">
+    <div className="container w-full py-10 flex flex-col items-center ">
+      <div className="absolute -top-10 -left-20 w-60 h-60 rounded-full rotate-[20deg] bg-gradient-to-r from-purple-700 bg-white bg-opacity-10"></div>
+      <div className="absolute -bottom-10 -left-20 w-60 h-60 rounded-full bg-gradient-to-l from-blue-700 bg-white bg-opacity-10"></div>
+      <div className="absolute top-[40%] -left-40 w-96 h-96  bg-gradient-to-r from-purple-700 bg-white bg-opacity-10"></div>
+      <div className="absolute -top-10 -right-20 w-60 h-60 rounded-lg bg-gradient-to-r from-purple-700 bg-white bg-opacity-10"></div>
+      <div className="absolute -bottom-10 -right-20 w-60 h-60  bg-gradient-to-b from-blue-700 bg-white bg-opacity-10"></div>
       <div className="row mb-5 w-full bg-purple-900 relative flex justify-between items-center">
         {/* <h1 className="text-white text-xl  inline-block uppercase font-bold p-2">
           |Shop
@@ -199,7 +204,7 @@ const Shop = () => {
             exit={{ opacity: 0, scale: 0.95 }}
             whileHover={{ scale: 1 }}
           >
-            <div className="w-full h-64 rounded-xl p-3 bg-white flex justify-center items-center">
+            <div className="w-full h-64 rounded-xl p-10 bg-white flex justify-center items-center">
               <motion.img
                 src={product.image}
                 alt=""
