@@ -112,15 +112,15 @@ const Shop = () => {
 
   const getRandomBorderColor = () => {
     const colors = [
-      "  shadow  bg-purple-100 ",
-      "  shadow  bg-pink-100 ",
-      "  shadow  bg-yellow-100 ",
-      "  shadow  bg-sky-100 ",
-      "  shadow  bg-skyblue-100 ",
-      "  shadow  bg-orange-100 ",
-      "  shadow  bg-red-100 ",
-      "  shadow  bg-lime-100 ",
-      "  shadow  bg-amber-100 ",
+      "  shadow  bg-purple-200 ",
+      "  shadow  bg-pink-200 ",
+      "  shadow  bg-yellow-200 ",
+      "  shadow  bg-sky-200 ",
+      "  shadow  bg-skyblue-200 ",
+      "  shadow  bg-orange-200 ",
+      "  shadow  bg-red-200 ",
+      "  shadow  bg-lime-200 ",
+      "  shadow  bg-amber-200 ",
     ];
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
@@ -152,16 +152,17 @@ const Shop = () => {
     };
   }, [filter]);
   return (
-    <div className="container bg w-full min-h-screen  pb-[200px] flex flex-col items-center ">
-      <div className="row mb-5 w-full bg-purple-900 relative flex justify-between items-center">
+    <div className="container bg w-full min-h-screen  pb-[100px] flex flex-col items-center ">
+      <div className="row   mb-5 w-full bg-purple-900 relative flex justify-between items-center">
         {/* <h1 className="text-white text-xl  inline-block uppercase font-bold p-2">
           |Shop
         </h1> */}
+
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
-          className="filter_menu fixed z-[9999] bg-purple-600 text-white hover:bg-yellow-500 rounded-full shadow-lg right-[10px] bottom-[9%]"
+          className="filter_menu fixed z-[9999999] bg-purple-600 text-white hover:bg-yellow-500 rounded-full shadow-lg right-[10px] bottom-[9%]"
         >
           <button
             ref={buttonRef}
@@ -319,83 +320,85 @@ const Shop = () => {
 
       <div className="row w-full grid grid-cols-1 sm:grid-cols-2 gap-[1px] md:grid-cols-3 lg:grid-cols-4  ">
         {filteredProducts.map((product, index) => (
-          <motion.div
-            key={index}
-            className={`col w-full h-full transition-all  border p-1 delay-100 duration-500 group bg-white relative group overflow-hidden `}
-            onMouseEnter={() => setHoveredProduct(index)}
-            onMouseLeave={() => setHoveredProduct(null)}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            whileHover={{ scale: 1 }}
-          >
-            <div className="w-full h-64  p-10 bg-white flex justify-center items-center">
-              <motion.img
-                src={product.image}
-                alt=""
-                className="object-contain  transition-transform transform hover:scale-100 duration-300 w-full h-full"
-                initial={{ scale: 1 }}
-                whileHover={{ scale: 1 }}
-              />
-            </div>
-            {hoveredProduct === index && (
-              <motion.div
-                className={`product-details group-hover:transition-all group-hover:delay-100 group-hover:duration-500 absolute w-full h-full top-0 left-0 ${getRandomBorderColor()} text-white p-4 flex flex-col justify-center items-center`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <button
-                  onClick={() => setShow(!show)}
-                  className="bg-white rounded-full w-10 h-10 flex justify-center items-center"
+          <>
+            <motion.div
+              key={index}
+              className={`col w-full h-full transition-all   border p-1 delay-100 duration-500 group bg-white relative group overflow-hidden `}
+              onMouseEnter={() => setHoveredProduct(index)}
+              onMouseLeave={() => setHoveredProduct(null)}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              whileHover={{ scale: 1 }}
+            >
+              <div className="w-full h-64  p-10 bg-white flex justify-center items-center">
+                <motion.img
+                  src={product.image}
+                  alt=""
+                  className="object-contain  transition-transform transform hover:scale-100 duration-300 w-full h-full"
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1 }}
+                />
+              </div>
+              {hoveredProduct === index && (
+                <motion.div
+                  className={`product-details group-hover:transition-all group-hover:delay-100 group-hover:duration-500 absolute w-full h-full top-0 left-0 ${getRandomBorderColor()} text-white p-4 flex flex-col justify-center items-center`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                 >
-                  <AiFillEye className="text-purple-600 text-2xl" />
-                </button>
-                {show && (
-                  <Modal onClose={() => setShow(false)}>
-                    <div
-                      className={` w-full  ${getRandomBorderColor()}  h-full overflow-y-auto `}
-                    >
-                      <div className="flex justify-center items-center">
-                        <img
-                          className="w-full h-full object-cover"
-                          src={product.image}
-                          alt=""
-                        />
-                      </div>
-                      <div className="flex flex-col gap-4 py-10 px-5">
-                        <h1 className="text-gray-700 mt-5  font-bold text-xl">
-                          {product.title}
-                        </h1>
-                        <p className="text-sm text-bold text-gray-500">
-                          {product.description}
-                        </p>
-                        <hr />
-                        <h4 className="text-purple-400 text-sm font-bold">
-                          Category: {product.category}
-                        </h4>
-                        <h4 className="text-purple-400 text-sm font-bold">
-                          Rating: {product.rating.rate}
-                        </h4>
-                        <h4 className="text-purple-400 text-sm font-bold">
-                          Stock: {product.rating.count}
-                        </h4>
-                        <h4 className="text-purple-600 font-bold">
-                          Price: $ {product.price}
-                        </h4>
+                  <button
+                    onClick={() => setShow(!show)}
+                    className="bg-white rounded-full w-10 h-10 flex justify-center items-center"
+                  >
+                    <AiFillEye className="text-purple-600 text-2xl" />
+                  </button>
+                  {show && (
+                    <Modal onClose={() => setShow(false)}>
+                      <div
+                        className={` w-full  ${getRandomBorderColor()}  h-full overflow-y-auto `}
+                      >
+                        <div className="flex justify-center items-center">
+                          <img
+                            className="w-full h-full object-cover"
+                            src={product.image}
+                            alt=""
+                          />
+                        </div>
+                        <div className="flex flex-col gap-4 py-10 px-5">
+                          <h1 className="text-gray-700 mt-5  font-bold text-xl">
+                            {product.title}
+                          </h1>
+                          <p className="text-sm text-bold text-gray-500">
+                            {product.description}
+                          </p>
+                          <hr className="bg-white h-[2px]" />
+                          <h4 className="text-purple-400 text-sm font-bold">
+                            Category: {product.category}
+                          </h4>
+                          <h4 className="text-purple-400 text-sm font-bold">
+                            Rating: {product.rating.rate}
+                          </h4>
+                          <h4 className="text-purple-400 text-sm font-bold">
+                            Stock: {product.rating.count}
+                          </h4>
+                          <h4 className="text-purple-600 font-bold">
+                            Price: $ {product.price}
+                          </h4>
 
-                        <div className="flex items-center">
-                          <button className="bg-purple-600 px-4 py-2 hover:bg-purple-900 rounded-md">
-                            Add to cart
-                          </button>
+                          <div className="flex items-center">
+                            <button className="bg-purple-600 px-4 py-2 hover:bg-purple-900 rounded-md">
+                              Add to cart
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Modal>
-                )}
-              </motion.div>
-            )}
-          </motion.div>
+                    </Modal>
+                  )}
+                </motion.div>
+              )}
+            </motion.div>
+          </>
         ))}
       </div>
     </div>
