@@ -358,11 +358,11 @@ const Shop = () => {
                     <Modal onClose={() => setShow(false)}>
                       <div className="flex relative overflow-y-auto flex-col w-full  h-full">
                         <div
-                          className={` w-full flex flex-col lg:flex-row overflow-y-auto ${getRandomBorderColor()} lg:h-[70%]  `}
+                          className={` border-b-4 border-b-purple-600 w-full flex flex-col lg:flex-row overflow-y-auto ${getRandomBorderColor()} lg:h-[70%]  `}
                         >
                           <div className="flex  bg-white w-full justify-center items-center">
                             <img
-                              className="w-full  h-full object-contain"
+                              className="w-full p-10 h-full object-contain"
                               src={product.image}
                               alt=""
                             />
@@ -396,14 +396,14 @@ const Shop = () => {
                           </div>
                         </div>
                         <div
-                          className={`w-full overflow-x-auto whitespace-nowrap   flex h-[500px] justify-center items-center bg-purple-500 py-5 gap-1 px-5 ${getRandomBorderColor()} text-center `}
+                          className={`w-full overflow-x-auto whitespace-nowrap   flex h-[500px] justify-start items-center bg-white py-5 gap-1 px-5 text-center `}
                         >
                           {products
                             .filter((cat) => cat.category === product.category)
                             .map((item, index) => {
                               return (
                                 <div
-                                  className=" shrink-0 w-[250px] bg-white border-2 h-[250px]"
+                                  className=" shrink-0 w-[200px] bg-white rounded-xl border-2 h-[200px]"
                                   key={index}
                                 >
                                   <img
