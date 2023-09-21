@@ -326,7 +326,7 @@ const Shop = () => {
           <>
             <motion.div
               key={index}
-              className={`col w-full h-full transition-all  pb-2 delay-100 duration-500 group layout bg-purple-500 relative group overflow-hidden `}
+              className={`col w-full h-full transition-all  p-[1px] delay-100 duration-500 group layout bg-purple-500 relative group overflow-hidden `}
               onMouseEnter={() => setHoveredProduct(index)}
               onMouseLeave={() => setHoveredProduct(null)}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -360,7 +360,7 @@ const Shop = () => {
                     <Modal onClose={() => setShow(false)}>
                       <div className="flex relative lg:p-14 overflow-y-auto flex-col w-full  h-full">
                         <div
-                          className={` border-b-4 border-b-purple-600 w-full flex flex-col lg:flex-row  ${getRandomBorderColor()} lg:h-[70%]  `}
+                          className={` w-full flex flex-col lg:flex-row lg:h-[70%]  `}
                         >
                           <div className="flex relative   bg-white w-full justify-center h-full items-center">
                             <img
@@ -406,18 +406,18 @@ const Shop = () => {
                               />
                             </div>
                           </div>
-                          <div className="flex w-full pb-10 overflow-y-auto flex-col gap-4 pt-2 px-5 lg:px-10">
-                            <h1 className="text-gray-700 mt-5  font-bold text-xl">
+                          <div className="flex w-full pb-10 overflow-y-auto flex-col  gap-4 pt-2 px-5 lg:px-10">
+                            <h1 className="text-gray-800 mt-5  font-bold text-xl">
                               {product.title}
                             </h1>
-                            <h4 className="text-purple-400 text-sm font-bold">
+                            <h4 className="text-purple-600 text-sm font-bold">
                               {product.category}
                             </h4>
 
-                            <h4 className="text-purple-400 text-sm font-bold">
+                            <h4 className="text-purple-600 text-sm font-bold">
                               Rating: {product.rating.rate}
                             </h4>
-                            <h4 className="text-purple-400 text-sm font-bold">
+                            <h4 className="text-purple-600 text-sm font-bold">
                               Stock: {product.rating.count}
                             </h4>
                             <Link href="" className="text-purple-600 font-bold">
@@ -428,7 +428,7 @@ const Shop = () => {
                               <span className="w-5 h-5 bg-green-500 rounded-full"></span>
                               <span className="w-5 h-5 bg-red-500 rounded-full"></span>
                             </div>
-                            <p className="text-sm text-justify text-bold text-gray-500">
+                            <p className="text-sm text-justify text-bold text-gray-700">
                               {product.description}
                             </p>
                             <hr className="bg-purple-500 h-[2px]" />
@@ -444,9 +444,9 @@ const Shop = () => {
                           </div>
                         </div>
                         <div
-                          className={`w-full  h-[500px]  bg-purple-100  py-5 gap-1 text-center  flex-col`}
+                          className={`w-full  h-[500px]  bg-purple-500  py-5 gap-1 text-center  flex-col`}
                         >
-                          <h1 className="text-purple-600 text-xl border-b font-bold border-b-purple-500 my-4">
+                          <h1 className="text-purple-100 text-xl border-b font-bold border-b-purple-500 my-4">
                             Related Product
                           </h1>
                           <div className=" overflow-x-auto whitespace-nowrap overflow-y-hidden  flex gap-3 justify-start py-10 px-5 items-center">
