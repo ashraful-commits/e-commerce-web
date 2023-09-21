@@ -8,6 +8,7 @@ const Shop = () => {
   const [show, setShow] = useState(false);
   const [products, setProducts] = useState([]);
 
+  console.log(products);
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -32,7 +33,7 @@ const Shop = () => {
   };
 
   return (
-    <div className="container w-full py-10 flex flex-col items-center ">
+    <div className="container w-full min-h-screen pb-[200px] py-10 flex flex-col items-center ">
       <div className="absolute -top-10 -left-20 w-60 h-60 rounded-full rotate-[20deg] bg-gradient-to-r from-purple-700 bg-white bg-opacity-10"></div>
       <div className="absolute -bottom-10 -left-20 w-60 h-60 rounded-full bg-gradient-to-l from-blue-700 bg-white bg-opacity-10"></div>
       <div className="absolute top-[40%] -left-40 w-96 h-96  bg-gradient-to-r from-purple-700 bg-white bg-opacity-10"></div>
@@ -242,6 +243,12 @@ const Shop = () => {
                           {product.description}
                         </p>
                         <hr />
+                        <h4 className="text-purple-400 text-sm font-bold">
+                          Category: {product.category}
+                        </h4>
+                        <h4 className="text-purple-400 text-sm font-bold">
+                          Rating: {product.rating.rate}
+                        </h4>
                         <h4 className="text-purple-400 text-sm font-bold">
                           Stock: {product.rating.count}
                         </h4>
