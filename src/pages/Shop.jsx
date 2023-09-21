@@ -114,15 +114,15 @@ const Shop = () => {
 
   const getRandomBorderColor = () => {
     const colors = [
-      "  shadow  bg-purple-200 ",
-      "  shadow  bg-pink-200 ",
-      "  shadow  bg-yellow-200 ",
-      "  shadow  bg-sky-200 ",
-      "  shadow  bg-skyblue-200 ",
-      "  shadow  bg-orange-200 ",
-      "  shadow  bg-red-200 ",
-      "  shadow  bg-lime-200 ",
-      "  shadow  bg-amber-200 ",
+      "  shadow  bg-purple-600 backdrop-blur-sm backdrop-brightness-sm bg-opacity-50",
+      "  shadow  bg-pink-600 backdrop-blur-sm backdrop-brightness-sm bg-opacity-50",
+      "  shadow  bg-yellow-600 backdrop-blur-sm backdrop-brightness-sm bg-opacity-50",
+      "  shadow  bg-sky-600 backdrop-blur-sm backdrop-brightness-sm bg-opacity-50",
+
+      "  shadow  bg-orange-600 backdrop-blur-sm backdrop-brightness-sm bg-opacity-50",
+      "  shadow  bg-red-600 backdrop-blur-sm backdrop-brightness-sm bg-opacity-50",
+      "  shadow  bg-lime-600 backdrop-blur-sm backdrop-brightness-sm bg-opacity-50",
+      "  shadow  bg-amber-600 backdrop-blur-sm backdrop-brightness-sm bg-opacity-50",
     ];
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
@@ -154,7 +154,7 @@ const Shop = () => {
     };
   }, [filter]);
   return (
-    <div className="container bg w-full min-h-screen  pb-[100px] flex flex-col items-center ">
+    <div className="container  bg w-full min-h-screen  pb-[100px] flex flex-col items-center ">
       <div className="row   mb-5 w-full bg-purple-900 relative flex justify-between items-center">
         {/* <h1 className="text-white text-xl  inline-block uppercase font-bold p-2">
           |Shop
@@ -321,12 +321,12 @@ const Shop = () => {
         </motion.div>
       </div>
 
-      <div className="row w-full grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4">
+      <div className="row w-full grid grid-cols-1  sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4">
         {filteredProducts.map((product, index) => (
           <>
             <motion.div
               key={index}
-              className={`col w-full h-full transition-all  pb-1 delay-100 duration-500 group layout bg-gradient-to-r from-white via-purple-500 to-white relative group overflow-hidden `}
+              className={`col w-full h-full transition-all  pb-2 delay-100 duration-500 group layout bg-purple-500 relative group overflow-hidden `}
               onMouseEnter={() => setHoveredProduct(index)}
               onMouseLeave={() => setHoveredProduct(null)}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -334,7 +334,7 @@ const Shop = () => {
               exit={{ opacity: 0, scale: 0.95 }}
               whileHover={{ scale: 1 }}
             >
-              <div className="w-full h-64  p-10 bg-white flex justify-center items-center">
+              <div className="w-full relative h-64  p-10 bg-white flex justify-center items-center">
                 <motion.img
                   src={product.image}
                   alt=""
@@ -362,7 +362,7 @@ const Shop = () => {
                         <div
                           className={` border-b-4 border-b-purple-600 w-full flex flex-col lg:flex-row  ${getRandomBorderColor()} lg:h-[70%]  `}
                         >
-                          <div className="flex relative lg:border-r-4 lg:border-r-purple-500 bg-white w-full justify-center h-full items-center">
+                          <div className="flex relative lg:border-r-4 lg:border-r-purple-500  bg-white w-full justify-center h-full items-center">
                             <img
                               className="w-full p-10 h-full object-contain"
                               src={product.image}
@@ -431,7 +431,7 @@ const Shop = () => {
                             <p className="text-sm text-justify text-bold text-gray-500">
                               {product.description}
                             </p>
-                            <hr className="bg-white h-[2px]" />
+                            <hr className="bg-purple-500 h-[5px]" />
 
                             <div className="flex items-center">
                               <button className="bg-purple-600 px-4 py-2 hover:bg-purple-900 ">
