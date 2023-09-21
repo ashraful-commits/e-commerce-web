@@ -358,17 +358,17 @@ const Shop = () => {
                   </button>
                   {show && (
                     <Modal onClose={() => setShow(false)}>
-                      <div className="flex relative overflow-y-auto flex-col w-full  h-full">
+                      <div className="flex relative lg:p-14 overflow-y-auto flex-col w-full  h-full">
                         <div
-                          className={` border-b-4 border-b-purple-600 w-full flex flex-col lg:flex-row overflow-y-auto ${getRandomBorderColor()} lg:h-[70%]  `}
+                          className={` border-b-4 border-b-purple-600 w-full flex flex-col lg:flex-row  ${getRandomBorderColor()} lg:h-[70%]  `}
                         >
-                          <div className="flex relative bg-white w-full justify-center items-center">
+                          <div className="flex relative lg:border-r-4 lg:border-r-purple-500 bg-white w-full justify-center h-full items-center">
                             <img
                               className="w-full p-10 h-full object-contain"
                               src={product.image}
                               alt=""
                             />
-                            <div className="absolute overflow-x-auto whitespace-nowrap bg-white border p-3 w-full h-[100px] justify-between gap-2 bottom-0 flex left-0">
+                            <div className="absolute overflow-x-auto whitespace-nowrap bg-white border p-3 w-full h-[100px] justify-between gap-2  bottom-0 flex left-0">
                               <img
                                 className="w-[100px] cursor-pointer h-full object-contain border p-1 shrink-0"
                                 src={product.image}
@@ -406,7 +406,7 @@ const Shop = () => {
                               />
                             </div>
                           </div>
-                          <div className="flex w-full flex-col gap-4 py-10 px-5">
+                          <div className="flex w-full pb-10 overflow-y-auto flex-col gap-4 pt-2 px-10">
                             <h1 className="text-gray-700 mt-5  font-bold text-xl">
                               {product.title}
                             </h1>
@@ -428,7 +428,7 @@ const Shop = () => {
                               <span className="w-5 h-5 bg-green-500 rounded-full"></span>
                               <span className="w-5 h-5 bg-red-500 rounded-full"></span>
                             </div>
-                            <p className="text-sm text-bold text-gray-500">
+                            <p className="text-sm text-justify text-bold text-gray-500">
                               {product.description}
                             </p>
                             <hr className="bg-white h-[2px]" />
@@ -444,7 +444,7 @@ const Shop = () => {
                           </div>
                         </div>
                         <div
-                          className={`w-full  h-[500px]  bg-gray-100  py-5 gap-1 text-center  flex-col`}
+                          className={`w-full  h-[500px]  bg-purple-100  py-5 gap-1 text-center  flex-col`}
                         >
                           <h1 className="text-purple-600 text-xl border-b font-bold border-b-purple-500 my-4">
                             Related Product
