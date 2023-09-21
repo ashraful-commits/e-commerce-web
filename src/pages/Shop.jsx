@@ -398,7 +398,7 @@ const Shop = () => {
                         <div
                           className={`w-full  h-[500px]  bg-white py-5 gap-1 text-center  flex-col`}
                         >
-                          <h1 className="text-purple-600 text-xl border-b-2  border-b-purple-200 my-4">
+                          <h1 className="text-purple-600 text-xl border-b font-bold border-b-purple-200 my-4">
                             Related Product
                           </h1>
                           <div className=" overflow-x-auto whitespace-nowrap overflow-y-hidden  flex gap-3 justify-start py-10 px-5 items-center">
