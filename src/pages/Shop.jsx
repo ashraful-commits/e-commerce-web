@@ -114,15 +114,15 @@ const Shop = () => {
 
   const getRandomBorderColor = () => {
     const colors = [
-      "  shadow  bg-purple-500 bg-opacity-50  ",
-      "  shadow  bg-pink-500 bg-opacity-50  ",
-      "  shadow  bg-yellow-500 bg-opacity-50  ",
-      "  shadow  bg-sky-500 bg-opacity-50  ",
-      "  shadow  bg-slate-500 bg-opacity-50  ",
-      "  shadow  bg-orange-500 bg-opacity-50  ",
-      "  shadow  bg-red-500 bg-opacity-50  ",
-      "  shadow  bg-lime-500 bg-opacity-50  ",
-      "  shadow  bg-amber-500 bg-opacity-50  ",
+      "  shadow bg-purple-600   bg-opacity-50  ",
+      "  shadow bg-purple-600 bg-opacity-50  ",
+      "  shadow bg-purple-600   bg-opacity-50  ",
+      "  shadow bg-purple-600 bg-opacity-50  ",
+      "  shadow bg-purple-600  bg-opacity-50  ",
+      "  shadow bg-purple-600   bg-opacity-50  ",
+      "  shadow bg-purple-600 bg-opacity-50  ",
+      "  shadow bg-purple-600 bg-opacity-50  ",
+      "  shadow bg-purple-600  bg-opacity-50  ",
     ];
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
@@ -321,12 +321,12 @@ const Shop = () => {
         </motion.div>
       </div>
 
-      <div className="row w-full grid grid-cols-1  sm:grid-cols-2  md:grid-cols-3 gap-x-1 lg:grid-cols-4">
+      <div className="row w-full grid grid-cols-1  sm:grid-cols-2  md:grid-cols-3  lg:grid-cols-4">
         {filteredProducts.map((product, index) => (
           <>
             <motion.div
               key={index}
-              className={`col w-full h-full transition-all  pb-2 delay-100 duration-500 group layout bg-purple-900 relative group overflow-hidden `}
+              className={`col w-full h-full transition-all  pb-2 delay-100 duration-500 group layout bg-purple-500 relative group overflow-hidden `}
               onMouseEnter={() => setHoveredProduct(index)}
               onMouseLeave={() => setHoveredProduct(null)}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -475,7 +475,6 @@ const Shop = () => {
                   )}
                 </motion.div>
               )}
-              <div className="absolute w-full  h-10 bottom-2 left-0 bg-gradient-to-b  from-white to-purple-300 "></div>
             </motion.div>
           </>
         ))}
