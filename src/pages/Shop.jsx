@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { AiFillEye, AiFillFilter } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Modal from "../components/Modal/Modal";
+import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
 
 const Shop = () => {
   const [filter, setFilter] = useState(false);
@@ -360,37 +362,83 @@ const Shop = () => {
                         <div
                           className={` border-b-4 border-b-purple-600 w-full flex flex-col lg:flex-row overflow-y-auto ${getRandomBorderColor()} lg:h-[70%]  `}
                         >
-                          <div className="flex  bg-white w-full justify-center items-center">
+                          <div className="flex relative bg-white w-full justify-center items-center">
                             <img
                               className="w-full p-10 h-full object-contain"
                               src={product.image}
                               alt=""
                             />
+                            <div className="absolute overflow-x-auto whitespace-nowrap bg-white border p-3 w-full h-[100px] justify-between gap-2 bottom-0 flex left-0">
+                              <img
+                                className="w-[100px] cursor-pointer h-full object-contain border p-1 shrink-0"
+                                src={product.image}
+                                alt=""
+                              />
+                              <img
+                                className="w-[100px] cursor-pointer h-full object-contain border p-1 shrink-0"
+                                src={product.image}
+                                alt=""
+                              />
+                              <img
+                                className="w-[100px] cursor-pointer h-full object-contain border p-1 shrink-0"
+                                src={product.image}
+                                alt=""
+                              />
+                              <img
+                                className="w-[100px] cursor-pointer h-full object-contain border p-1 shrink-0"
+                                src={product.image}
+                                alt=""
+                              />
+                              <img
+                                className="w-[100px] cursor-pointer h-full object-contain border p-1 shrink-0"
+                                src={product.image}
+                                alt=""
+                              />
+                              <img
+                                className="w-[100px] cursor-pointer h-full object-contain border p-1 shrink-0"
+                                src={product.image}
+                                alt=""
+                              />
+                              <img
+                                className="w-[100px] cursor-pointer h-full object-contain border p-1"
+                                src={product.image}
+                                alt=""
+                              />
+                            </div>
                           </div>
                           <div className="flex w-full flex-col gap-4 py-10 px-5">
                             <h1 className="text-gray-700 mt-5  font-bold text-xl">
                               {product.title}
                             </h1>
-                            <p className="text-sm text-bold text-gray-500">
-                              {product.description}
-                            </p>
-                            <hr className="bg-white h-[2px]" />
                             <h4 className="text-purple-400 text-sm font-bold">
-                              Category: {product.category}
+                              {product.category}
                             </h4>
+
                             <h4 className="text-purple-400 text-sm font-bold">
                               Rating: {product.rating.rate}
                             </h4>
                             <h4 className="text-purple-400 text-sm font-bold">
                               Stock: {product.rating.count}
                             </h4>
-                            <h4 className="text-purple-600 font-bold">
+                            <Link href="" className="text-purple-600 font-bold">
                               Price: $ {product.price}
-                            </h4>
+                            </Link>
+                            <div className="flex gap-3">
+                              <span className="w-5 h-5 bg-orange-500 rounded-full"></span>
+                              <span className="w-5 h-5 bg-green-500 rounded-full"></span>
+                              <span className="w-5 h-5 bg-red-500 rounded-full"></span>
+                            </div>
+                            <p className="text-sm text-bold text-gray-500">
+                              {product.description}
+                            </p>
+                            <hr className="bg-white h-[2px]" />
 
                             <div className="flex items-center">
-                              <button className="bg-purple-600 px-4 py-2 hover:bg-purple-900 rounded-md">
+                              <button className="bg-purple-600 px-4 py-2 hover:bg-purple-900 ">
                                 Add to cart
+                              </button>
+                              <button className="bg-red-600 px-2 py-3 hover:bg-purple-900 ml-2">
+                                <FaHeart />
                               </button>
                             </div>
                           </div>
