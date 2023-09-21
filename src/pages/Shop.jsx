@@ -396,24 +396,31 @@ const Shop = () => {
                           </div>
                         </div>
                         <div
-                          className={`w-full overflow-x-auto whitespace-nowrap   flex h-[500px] justify-start items-center bg-white py-5 gap-1 px-5 text-center `}
+                          className={`w-full  h-[500px]  bg-white py-5 gap-1 text-center  flex-col`}
                         >
-                          {products
-                            .filter((cat) => cat.category === product.category)
-                            .map((item, index) => {
-                              return (
-                                <div
-                                  className=" shrink-0 w-[200px] bg-white rounded-xl border-2 h-[200px]"
-                                  key={index}
-                                >
-                                  <img
-                                    className="w-full h-full object-contain"
-                                    src={item.image}
-                                    alt=""
-                                  />
-                                </div>
-                              );
-                            })}
+                          <h1 className="text-purple-600 text-xl border-b-2  border-b-purple-200 my-4">
+                            Related Product
+                          </h1>
+                          <div className=" overflow-x-auto whitespace-nowrap overflow-y-hidden  flex gap-3 justify-start py-10 px-5 items-center">
+                            {products
+                              .filter(
+                                (cat) => cat.category === product.category
+                              )
+                              .map((item, index) => {
+                                return (
+                                  <div
+                                    className=" shrink-0 p-5 w-[150px] lg:w-[200px] bg-white rounded-xl shadow-lg h-[150px] lg:h-[200px]"
+                                    key={index}
+                                  >
+                                    <img
+                                      className="w-full h-full object-contain"
+                                      src={item.image}
+                                      alt=""
+                                    />
+                                  </div>
+                                );
+                              })}
+                          </div>
                         </div>
                       </div>
                     </Modal>
