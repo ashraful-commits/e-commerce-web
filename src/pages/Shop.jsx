@@ -169,7 +169,7 @@ const Shop = () => {
             onClick={() => setFilter(!filter)}
             className="w-12 h-12 border-2 border-white rounded-full flex justify-center items-center"
           >
-            <AiFillFilter />
+            <AiFillFilter className="" />
           </button>
           {filter && (
             <motion.div
@@ -177,7 +177,7 @@ const Shop = () => {
               initial={{ opacity: 0, y: -50 }}
               animate={filter ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
               exit={{ opacity: 0, y: -50 }}
-              className="absolute shadow-lg rounded-lg w-[250px] p-4 right-12 overflow-hidden bg-purple-600 bottom-0"
+              className="absolute shadow-lg  w-[200px] p-4 right-12 overflow-hidden bg-gradient-to-t from-purple-700 to-blue-400 bottom-0"
             >
               <div className="mb-4">
                 <label
@@ -189,7 +189,7 @@ const Shop = () => {
                 </label>
                 <input
                   type="search"
-                  className="w-full border px-2 text-gray-600  rounded-lg py-1 focus:outline-none"
+                  className="w-full border-b-2 px-2  bg-transparent py-1 focus:outline-none placeholder:text-white"
                   placeholder="Search product "
                   value={searchTerm}
                   onChange={handleSearchChange}
@@ -207,7 +207,7 @@ const Shop = () => {
                   id="category"
                   value={selectedCategory}
                   onChange={handleCategoryChange}
-                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
+                  className="w-full text-white border-b-2  py-2 px-3  bg-transparent focus:outline-none"
                 >
                   <option className="text-gray-500 font-semibold" value="all">
                     All
@@ -215,13 +215,16 @@ const Shop = () => {
                   {[...new Set(products.map((item) => item.category))].map(
                     (category, index) => {
                       return (
-                        <option value={category} key={index}>
+                        <option
+                          className="text-gray-500 font-semibold"
+                          value={category}
+                          key={index}
+                        >
                           {category}
                         </option>
                       );
                     }
                   )}
-                  ZZ
                 </select>
               </div>
               <div className="mb-4">
@@ -237,7 +240,7 @@ const Shop = () => {
                   id="minPrice"
                   value={minPrice}
                   onChange={handleMinPriceChange}
-                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
+                  className="w-full placeholder:text-white text-white border-b-2  py-2 px-3 focus:outline-none bg-transparent"
                   placeholder="Min Price"
                 />
               </div>
@@ -254,7 +257,7 @@ const Shop = () => {
                   onChange={handleMaxPriceChange}
                   type="number"
                   id="maxPrice"
-                  className="w-full text-gray-600 border rounded-md py-2 px-3 focus:outline-none"
+                  className="w-full  placeholder:text-white text-white border-b-2  bg-transparent py-2 px-3 focus:outline-none"
                   placeholder="Max Price"
                 />
               </div>
@@ -270,7 +273,7 @@ const Shop = () => {
                   id="brand"
                   value={selectedBrand}
                   onChange={handleBrandChange}
-                  className="w-full border text-gray-600 rounded-md py-2 px-3 focus:outline-none"
+                  className="w-full   placeholder:text-white text-white border-b-2  bg-transparent py-2 px-3 focus:outline-none"
                 >
                   <option className="text-gray-500 font-semibold" value="all">
                     All
@@ -289,7 +292,7 @@ const Shop = () => {
                   </option>
                 </select>
               </div>
-              <div className="mb-4">
+              <div className="mb-4 mt-4">
                 <label
                   htmlFor="tags"
                   className=" font-semibold text-white mb-2 flex items-center"
@@ -297,18 +300,16 @@ const Shop = () => {
                   <AiFillFilter className="mr-2" />
                   Tags:
                 </label>
-                <div>
+                <div className="flex gap-2 flex-wrap ">
                   {["food", "electronics", "clothing", "accessories"].map(
                     (tag, index) => (
-                      <label key={index} className="flex items-center">
-                        <input
-                          type="checkbox"
-                          className="mr-2"
-                          checked={selectedTags.includes(tag)}
-                          onChange={() => handleTagChange(tag)}
-                        />
+                      <button
+                        onClick={() => handleTagChange(tag)}
+                        key={index}
+                        className="flex border px-[4px] items-center"
+                      >
                         {tag}
-                      </label>
+                      </button>
                     )
                   )}
                 </div>
@@ -318,12 +319,12 @@ const Shop = () => {
         </motion.div>
       </div>
 
-      <div className="row w-full grid grid-cols-1 sm:grid-cols-2 gap-[1px] md:grid-cols-3 lg:grid-cols-4  ">
+      <div className="row w-full grid grid-cols-1 sm:grid-cols-2 gap-[1px] md:grid-cols-3 lg:grid-cols-4">
         {filteredProducts.map((product, index) => (
           <>
             <motion.div
               key={index}
-              className={`col w-full h-full transition-all   border p-1 delay-100 duration-500 group bg-white relative group overflow-hidden `}
+              className={`col w-full h-full transition-all   border p-1 delay-100 duration-500 group layout bg-white relative group overflow-hidden `}
               onMouseEnter={() => setHoveredProduct(index)}
               onMouseLeave={() => setHoveredProduct(null)}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -351,46 +352,68 @@ const Shop = () => {
                     onClick={() => setShow(!show)}
                     className="bg-white rounded-full w-10 h-10 flex justify-center items-center"
                   >
-                    <AiFillEye className="text-purple-600 text-2xl" />
+                    <AiFillEye className="text-purple-600 text-6xl" />
                   </button>
                   {show && (
                     <Modal onClose={() => setShow(false)}>
-                      <div
-                        className={` w-full  ${getRandomBorderColor()}  h-full overflow-y-auto `}
-                      >
-                        <div className="flex justify-center items-center">
-                          <img
-                            className="w-full h-full object-cover"
-                            src={product.image}
-                            alt=""
-                          />
-                        </div>
-                        <div className="flex flex-col gap-4 py-10 px-5">
-                          <h1 className="text-gray-700 mt-5  font-bold text-xl">
-                            {product.title}
-                          </h1>
-                          <p className="text-sm text-bold text-gray-500">
-                            {product.description}
-                          </p>
-                          <hr className="bg-white h-[2px]" />
-                          <h4 className="text-purple-400 text-sm font-bold">
-                            Category: {product.category}
-                          </h4>
-                          <h4 className="text-purple-400 text-sm font-bold">
-                            Rating: {product.rating.rate}
-                          </h4>
-                          <h4 className="text-purple-400 text-sm font-bold">
-                            Stock: {product.rating.count}
-                          </h4>
-                          <h4 className="text-purple-600 font-bold">
-                            Price: $ {product.price}
-                          </h4>
-
-                          <div className="flex items-center">
-                            <button className="bg-purple-600 px-4 py-2 hover:bg-purple-900 rounded-md">
-                              Add to cart
-                            </button>
+                      <div className="flex relative overflow-y-auto flex-col w-full  h-full">
+                        <div
+                          className={` w-full flex flex-col lg:flex-row overflow-y-auto ${getRandomBorderColor()} lg:h-[70%]  `}
+                        >
+                          <div className="flex  bg-white w-full justify-center items-center">
+                            <img
+                              className="w-full  h-full object-contain"
+                              src={product.image}
+                              alt=""
+                            />
                           </div>
+                          <div className="flex w-full flex-col gap-4 py-10 px-5">
+                            <h1 className="text-gray-700 mt-5  font-bold text-xl">
+                              {product.title}
+                            </h1>
+                            <p className="text-sm text-bold text-gray-500">
+                              {product.description}
+                            </p>
+                            <hr className="bg-white h-[2px]" />
+                            <h4 className="text-purple-400 text-sm font-bold">
+                              Category: {product.category}
+                            </h4>
+                            <h4 className="text-purple-400 text-sm font-bold">
+                              Rating: {product.rating.rate}
+                            </h4>
+                            <h4 className="text-purple-400 text-sm font-bold">
+                              Stock: {product.rating.count}
+                            </h4>
+                            <h4 className="text-purple-600 font-bold">
+                              Price: $ {product.price}
+                            </h4>
+
+                            <div className="flex items-center">
+                              <button className="bg-purple-600 px-4 py-2 hover:bg-purple-900 rounded-md">
+                                Add to cart
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className={`w-full overflow-x-auto whitespace-nowrap   flex h-[500px] justify-center items-center bg-purple-500 py-5 gap-1 px-5 ${getRandomBorderColor()} text-center `}
+                        >
+                          {products
+                            .filter((cat) => cat.category === product.category)
+                            .map((item, index) => {
+                              return (
+                                <div
+                                  className=" shrink-0 w-[250px] bg-white border-2 h-[250px]"
+                                  key={index}
+                                >
+                                  <img
+                                    className="w-full h-full object-contain"
+                                    src={item.image}
+                                    alt=""
+                                  />
+                                </div>
+                              );
+                            })}
                         </div>
                       </div>
                     </Modal>
