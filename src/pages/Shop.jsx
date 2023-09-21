@@ -321,12 +321,12 @@ const Shop = () => {
         </motion.div>
       </div>
 
-      <div className="row w-full grid grid-cols-1 sm:grid-cols-2 gap-[1px] md:grid-cols-3 lg:grid-cols-4">
+      <div className="row w-full grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4">
         {filteredProducts.map((product, index) => (
           <>
             <motion.div
               key={index}
-              className={`col w-full h-full transition-all   border p-1 delay-100 duration-500 group layout bg-white relative group overflow-hidden `}
+              className={`col w-full h-full transition-all  pb-1 delay-100 duration-500 group layout bg-gradient-to-r from-white via-purple-500 to-white relative group overflow-hidden `}
               onMouseEnter={() => setHoveredProduct(index)}
               onMouseLeave={() => setHoveredProduct(null)}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -406,7 +406,7 @@ const Shop = () => {
                               />
                             </div>
                           </div>
-                          <div className="flex w-full pb-10 overflow-y-auto flex-col gap-4 pt-2 px-10">
+                          <div className="flex w-full pb-10 overflow-y-auto flex-col gap-4 pt-2 px-5 lg:px-10">
                             <h1 className="text-gray-700 mt-5  font-bold text-xl">
                               {product.title}
                             </h1>
