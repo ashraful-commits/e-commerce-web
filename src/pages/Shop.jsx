@@ -177,7 +177,7 @@ const Shop = () => {
               initial={{ opacity: 0, y: -50 }}
               animate={filter ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
               exit={{ opacity: 0, y: -50 }}
-              className="absolute shadow-lg rounded-lg w-[250px] p-4 right-12 overflow-hidden bg-purple-600 -bottom-4"
+              className="absolute shadow-lg rounded-lg w-[250px] p-4 right-12 overflow-hidden bg-purple-600 bottom-0"
             >
               <div className="mb-4">
                 <label
