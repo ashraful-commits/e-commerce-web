@@ -2,7 +2,7 @@
   margin: 0 auto; /* Center the main_container horizontally */
   /* Add a background color for visibility */
   padding: 20px; /* Add some padding for content */
-  height: 100vh;
+  width: 100vw;
 }
 
 h1 {

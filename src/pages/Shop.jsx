@@ -152,13 +152,7 @@ const Shop = () => {
     };
   }, [filter]);
   return (
-    <div className="container bg w-full min-h-screen  pb-[200px] py-10 flex flex-col items-center ">
-      <div className="absolute -top-10 -left-20 w-60 h-60 rounded-full rotate-[20deg] bg-gradient-to-r from-purple-700 bg-white bg-opacity-10"></div>
-      <div className="absolute top-0 left-[45%] w-60 h-60 rounded-full rotate-[20deg] bg-gradient-to-t from-purple-700 bg-white bg-opacity-10"></div>
-      <div className="absolute -bottom-10 -left-20 w-60 h-60 rounded-full bg-gradient-to-l from-blue-700 bg-white bg-opacity-10"></div>
-      <div className="absolute top-[40%] -left-40 w-96 h-96  bg-gradient-to-r from-purple-700 bg-white bg-opacity-10"></div>
-      <div className="absolute -top-10 -right-20 w-60 h-60 rounded-full bg-gradient-to-r from-purple-700 bg-white bg-opacity-10"></div>
-      <div className="absolute -bottom-10 -right-20 w-60 h-60  bg-gradient-to-b from-blue-700 bg-white bg-opacity-10"></div>
+    <div className="container bg w-full min-h-screen  pb-[200px] flex flex-col items-center ">
       <div className="row mb-5 w-full bg-purple-900 relative flex justify-between items-center">
         {/* <h1 className="text-white text-xl  inline-block uppercase font-bold p-2">
           |Shop
@@ -323,7 +317,7 @@ const Shop = () => {
         </motion.div>
       </div>
 
-      <div className="row w-full grid grid-cols-1 sm:grid-cols-2 gap-[1px] md:grid-cols-3 lg:grid-cols-4 content-center ">
+      <div className="row w-full grid grid-cols-1 sm:grid-cols-2 gap-[1px] md:grid-cols-3 lg:grid-cols-4  ">
         {filteredProducts.map((product, index) => (
           <motion.div
             key={index}
