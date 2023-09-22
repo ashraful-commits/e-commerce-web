@@ -328,12 +328,12 @@ const Shop = () => {
         </motion.div>
       </div>
 
-      <div className="row w-full grid grid-cols-1  sm:grid-cols-2  md:grid-cols-3  lg:grid-cols-4">
+      <div className="row w-full grid grid-cols-1 layout  sm:grid-cols-2  md:grid-cols-3  lg:grid-cols-4">
         {filteredProducts.map((product, index) => (
           <>
             <motion.div
               key={index}
-              className={`col w-full h-full transition-all  p-[1px] delay-100 duration-500 group layout bg-purple-500 relative group overflow-hidden `}
+              className={`col w-full h-full transition-all layout p-[1px] delay-100 duration-500 group layout bg-purple-500 relative group overflow-hidden `}
               onClick={() => {
                 setHoveredProduct(index);
               }}
@@ -452,12 +452,12 @@ const Shop = () => {
                           </div>
                         </div>
                         <div
-                          className={`w-full  h-[500px]  bg-purple-500  py-5 gap-1 text-center  flex-col`}
+                          className={`w-full  h-[500px]  bg-purple-500  py-1 gap-1 text-center  flex-col`}
                         >
                           <h1 className="text-purple-100 text-xl border-b font-bold border-b-purple-100 my-4">
                             Related Product
                           </h1>
-                          <div className=" overflow-x-auto whitespace-nowrap overflow-y-hidden  flex gap-3 justify-start py-10 px-5 items-center">
+                          <div className=" overflow-x-auto whitespace-nowrap overflow-y-hidden  flex gap-3 justify-start py-5 px-5 items-center">
                             {products
                               .filter(
                                 (cat) => cat.category === product.category

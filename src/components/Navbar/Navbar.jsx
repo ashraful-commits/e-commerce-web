@@ -65,7 +65,7 @@ const Navbar = () => {
     <>
       {" "}
       <div
-        className={`fixed top-[53%] z-[9999999]  ${
+        className={`fixed top-[55%] z-[9999999]  ${
           isOpen ? "" : "animated_boxShadow rounded-full"
         } w-[2.9rem] h-[2.8rem] mx-[4px] shadow-2xl bg-white  s right-[0]`}
       >
@@ -112,7 +112,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="mt-1 z-[-1] space-y-1 h-[40vh] py-3 flex justify-between  flex-col bg-background-light top-[40px] right-0 absolute p-1  shadow-lg"
+              className="mt-1 z-[-1] space-y-1 h-[40vh] py-3 flex justify-between  flex-col bg-background-light bottom-[45px] right-0 absolute p-1  shadow-lg"
             >
               <ShopItem
                 label="Home"
@@ -178,7 +178,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
-              className="mt-1 z-[-1] space-y-1 h-[5vh] flex justify-between py-3  flex-col bg-background-light bottom-[45px] right-0 absolute p-1  shadow-sm"
+              className="mt-1 z-[-1] space-y-1 h-[5vh] flex justify-between py-3  flex-col bg-background-light top-[40px] right-0 absolute p-1  shadow-sm"
             >
               <UserItem
                 label="User Account"
