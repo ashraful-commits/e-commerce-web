@@ -65,7 +65,7 @@ const Navbar = () => {
     <>
       {" "}
       <div
-        className={`fixed top-[46%] z-[9999999]  ${
+        className={`fixed top-[44%] z-[9999999]  ${
           isOpen ? "" : "animated_boxShadow rounded-full"
         } w-[2.9rem] h-[2.8rem] mx-[4px] shadow-2xl bg-white  s right-[5px]`}
       >
