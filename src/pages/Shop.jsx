@@ -3,18 +3,12 @@ import { AiFillEye, AiFillFilter } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Modal from "../components/Modal/Modal";
 import { Link, useLocation } from "react-router-dom";
-import {
-  FaArrowAltCircleLeft,
-  FaGreaterThan,
-  FaHeart,
-  FaHome,
-  FaShoppingCart,
-} from "react-icons/fa";
+import { FaGreaterThan, FaHeart, FaHome } from "react-icons/fa";
 
 const Shop = () => {
   const [filter, setFilter] = useState(false);
   const [show, setShow] = useState(false);
-  const [secondShow, setSecondShow] = useState(false);
+
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -163,9 +157,9 @@ const Shop = () => {
   const location = useLocation();
   console.log(location);
   return (
-    <div className="container  bg w-full min-h-screen  pb-[100px] flex flex-col items-center ">
+    <div className="container  bg w-full min-h-screen  pb-[10px] flex flex-col items-center ">
       <div className="row w-full relative h-5">
-        <div className="text-white top-0 fixed z-[999999999] bg-purple-900 px-4 py-2 flex items-center">
+        <div className="text-white top-0  fixed z-[999999999] bg-gradient-to-r from-purple-400 to-purple-900  px-4 py-2 flex items-center">
           <Link
             to={"/"}
             className="text-white flex items-center gap-1 text-sm capitalize"
@@ -183,11 +177,7 @@ const Shop = () => {
           </Link>
         </div>
       </div>
-      <div className="row   mb-5 w-full bg-purple-900 relative flex justify-between items-center">
-        {/* <h1 className="text-white text-xl  inline-block uppercase font-bold p-2">
-          |Shop
-        </h1> */}
-
+      <div className="row mb-5 w-full bg-purple-900 relative flex justify-between items-center">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -355,12 +345,12 @@ const Shop = () => {
         </motion.div>
       </div>
 
-      <div className="row w-full grid grid-cols-1 layout  sm:grid-cols-2  md:grid-cols-3  lg:grid-cols-4">
+      <div className="row shadow-lg  w-full grid grid-cols-1 layout  sm:grid-cols-2  md:grid-cols-3  lg:grid-cols-4">
         {filteredProducts.map((product, index) => (
           <>
             <motion.div
               key={index}
-              className={`col w-full h-full transition-all layout p-[1px] delay-100 duration-500 group layout bg-purple-500 relative group overflow-hidden `}
+              className={`col w-full h-full transition-all layout border-b-2 border-b-purple-500 delay-100 duration-500 group layout bg-purple-500 relative group overflow-hidden `}
               onClick={() => {
                 setHoveredProduct(index);
               }}
