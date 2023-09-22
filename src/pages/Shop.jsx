@@ -165,7 +165,7 @@ const Shop = () => {
   return (
     <div className="container  bg w-full min-h-screen  pb-[100px] flex flex-col items-center ">
       <div className="row w-full relative h-5">
-        <div className="text-white top-0 fixed z-[999999999] bg-purple-900 p-1 flex items-center">
+        <div className="text-white top-0 fixed z-[999999999] bg-purple-900 px-4 py-2 flex items-center">
           <Link
             to={"/"}
             className="text-white flex items-center gap-1 text-sm capitalize"
