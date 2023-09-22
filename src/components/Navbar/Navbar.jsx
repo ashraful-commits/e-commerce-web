@@ -1,9 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "./Navbar.scss";
+import "./Navbar.scss"; // Import your CSS/SCSS styles here
+
+// Import necessary icons from react-icons/fa
 import {
   FaShoppingCart,
-  // FaUser,
   FaEnvelope,
   FaHome,
   FaHeart,
@@ -13,29 +14,28 @@ import {
   FaInfoCircle,
   FaNewspaper,
   FaQuestionCircle,
-  // FaSyncAlt,
-  // FaLock,
-  // FaTruck,
   FaThumbsUp,
-  // FaCog,
-  // FaChartBar,
   FaTags,
   FaShoppingBag,
-  // FaHeadset,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Import the Link component for routing
 
+// Define the Navbar component
 const Navbar = () => {
+  // State to control whether the menu is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
+  // Function to toggle the menu state
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Refs for DOM elements to handle clicks outside the menu
   const buttonRef = useRef(null);
   const menuContainerRef = useRef(null);
   const menuContainerRef2 = useRef(null);
 
+  // Effect to add and remove event listener for clicks outside the menu
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -63,7 +63,7 @@ const Navbar = () => {
 
   return (
     <>
-      {" "}
+      {/* Menu button */}
       <div
         className={`fixed top-[44%] z-[9999999]  ${
           isOpen ? "" : "animated_boxShadow rounded-full"
@@ -80,6 +80,7 @@ const Navbar = () => {
           }`}
           onClick={toggleMenu}
         >
+          {/* Menu icon */}
           {isOpen ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,6 +106,7 @@ const Navbar = () => {
           )}
         </motion.button>
 
+        {/* First menu container */}
         <AnimatePresence initial={false}>
           {isOpen && (
             <motion.div
@@ -114,6 +116,7 @@ const Navbar = () => {
               exit={{ opacity: 0, y: -10 }}
               className="mt-1 z-[-1] space-y-1 h-[35vh] py-0 flex justify-between flex-col-reverse  bg-background-light bottom-[44px] right-0 absolute p-1  shadow-lg"
             >
+              {/* Menu items */}
               <ShopItem
                 label="Home"
                 url="/"
@@ -166,6 +169,8 @@ const Navbar = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Second menu container */}
         <AnimatePresence initial={false}>
           {isOpen && (
             <motion.div
@@ -175,6 +180,7 @@ const Navbar = () => {
               exit={{ opacity: 0, y: 10 }}
               className="mt-1 z-[-1] space-y-1 h-[5vh] flex justify-between py-3  flex-col bg-background-light top-[40px] right-0 absolute p-1  shadow-sm"
             >
+              {/* User menu item */}
               <UserItem
                 label="User Account"
                 icon={FaUserCircle}
@@ -185,7 +191,10 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Bottom navigation icons */}
       <div>
+        {/* Shop icon */}
         <div className="fixed bottom-[40%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-green-600 justify-center items-center"
@@ -200,6 +209,8 @@ const Navbar = () => {
             Shop
           </label>
         </div>
+
+        {/* Wishlist icon */}
         <div className="fixed bottom-[16%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-orange-600 justify-center items-center"
@@ -214,9 +225,11 @@ const Navbar = () => {
             WishList
           </label>
         </div>
+
+        {/* Cart icon */}
         <div className="fixed bottom-[22%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
           <Link
-            className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-green-600 justify-center items-center"
+            className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-yellow-600 justify-center items-center"
             to="/cart"
           >
             <FaShoppingCart className="text-white transition-all delay-100  duration-500 " />
@@ -228,6 +241,8 @@ const Navbar = () => {
             Cart [10]
           </label>
         </div>
+
+        {/* Checkout icon */}
         <div className="fixed bottom-[28%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-pink-600  justify-center items-center"
@@ -242,9 +257,11 @@ const Navbar = () => {
             Checkout
           </label>
         </div>
+
+        {/* Order icon */}
         <div className="fixed bottom-[34%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
           <Link
-            className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-purple-600 justify-center items-center"
+            className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-blue-600 justify-center items-center"
             to="/order"
           >
             <FaThumbsUp className="text-white transition-all delay-100  duration-500 " />
@@ -261,6 +278,7 @@ const Navbar = () => {
   );
 };
 
+// ShopItem component to represent menu items
 const ShopItem = ({ label, icon, iconColor, url }) => {
   const Icon = icon;
 
@@ -284,6 +302,8 @@ const ShopItem = ({ label, icon, iconColor, url }) => {
     </div>
   );
 };
+
+// UserItem component to represent user-related menu items
 const UserItem = ({ label, icon, iconColor, url }) => {
   const Icon = icon;
 
@@ -308,4 +328,4 @@ const UserItem = ({ label, icon, iconColor, url }) => {
   );
 };
 
-export default Navbar;
+export default Navbar; // Export the Navbar component as the default export

@@ -213,7 +213,7 @@ const Shop = () => {
               initial={{ opacity: 0, y: -50 }}
               animate={filter ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
               exit={{ opacity: 0, y: -50 }}
-              className="absolute shadow-lg  w-[200px] p-4 right-12 overflow-hidden bg-gradient-to-t from-purple-700 to-blue-400 -bottom-72"
+              className="absolute shadow-lg  w-[200px] p-4 right-12 overflow-hidden bg-gradient-to-t from-purple-700 to-blue-400 -bottom-96"
             >
               <div className="mb-4">
                 <label
