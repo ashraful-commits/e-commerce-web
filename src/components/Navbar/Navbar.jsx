@@ -186,7 +186,7 @@ const Navbar = () => {
         </AnimatePresence>
       </div>
       <div>
-        <div className="fixed bottom-[38%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
+        <div className="fixed bottom-[41%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-green-600 justify-center items-center"
             to="/cart"
@@ -200,7 +200,21 @@ const Navbar = () => {
             Shop
           </label>
         </div>
-        <div className="fixed bottom-[14%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
+        <div className="fixed bottom-[21%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
+          <Link
+            className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-orange-600 justify-center items-center"
+            to="/wishlist"
+          >
+            <FaHeart className="text-white transition-all delay-100  duration-500 " />
+          </Link>
+          <label
+            className={` px-2 py-1 text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-12 text-orange-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none `}
+            htmlFor=""
+          >
+            WishList
+          </label>
+        </div>
+        <div className="fixed bottom-[26%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-green-600 justify-center items-center"
             to="/cart"
@@ -214,7 +228,7 @@ const Navbar = () => {
             Cart [10]
           </label>
         </div>
-        <div className="fixed bottom-[20%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center rounded-full">
+        <div className="fixed bottom-[31%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-pink-600  justify-center items-center"
             to="/checkout"
@@ -228,7 +242,7 @@ const Navbar = () => {
             Checkout
           </label>
         </div>
-        <div className="fixed bottom-[26%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
+        <div className="fixed bottom-[36%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-purple-600 justify-center items-center"
             to="/order"
@@ -240,20 +254,6 @@ const Navbar = () => {
             htmlFor=""
           >
             order
-          </label>
-        </div>
-        <div className="fixed bottom-[32%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
-          <Link
-            className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-orange-600 justify-center items-center"
-            to="/wishlist"
-          >
-            <FaHeart className="text-white transition-all delay-100  duration-500 " />
-          </Link>
-          <label
-            className={` px-2 py-1 text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-12 text-orange-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none `}
-            htmlFor=""
-          >
-            WishList
           </label>
         </div>
       </div>

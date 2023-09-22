@@ -165,7 +165,7 @@ const Shop = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
-          className="filter_menu fixed z-[9999999] bg-purple-600 text-white hover:bg-yellow-500 rounded-full shadow-lg right-[8px] bottom-[7%]"
+          className="filter_menu fixed z-[999999] bg-purple-600 text-white hover:bg-yellow-500 rounded-full shadow-lg right-[8px] top-[40%]"
         >
           <button
             ref={buttonRef}
