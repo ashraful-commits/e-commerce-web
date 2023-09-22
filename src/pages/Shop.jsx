@@ -2,8 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import { AiFillEye, AiFillFilter } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Modal from "../components/Modal/Modal";
-import { Link } from "react-router-dom";
-import { FaHeart } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
+import {
+  FaArrowAltCircleLeft,
+  FaGreaterThan,
+  FaHeart,
+  FaHome,
+  FaShoppingCart,
+} from "react-icons/fa";
 
 const Shop = () => {
   const [filter, setFilter] = useState(false);
@@ -154,8 +160,29 @@ const Shop = () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [filter]);
+  const location = useLocation();
+  console.log(location);
   return (
     <div className="container  bg w-full min-h-screen  pb-[100px] flex flex-col items-center ">
+      <div className="row w-full">
+        <div className="text-white flex items-center">
+          <Link
+            to={"/"}
+            className="text-white flex items-center gap-1 text-sm capitalize"
+          >
+            <FaHome /> Home
+          </Link>
+
+          <FaGreaterThan className="text-sm mx-1" />
+
+          <Link
+            to={"/shop"}
+            className="flex items-center text-white text-sm capitalize"
+          >
+            shop
+          </Link>
+        </div>
+      </div>
       <div className="row   mb-5 w-full bg-purple-900 relative flex justify-between items-center">
         {/* <h1 className="text-white text-xl  inline-block uppercase font-bold p-2">
           |Shop
