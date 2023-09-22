@@ -62,156 +62,163 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <div
-      className={`fixed top-[40%] z-[9999999]  ${
-        isOpen ? "" : "animated_boxShadow rounded-full"
-      } w-[2.9rem] h-[2.8rem] mx-[4px] shadow-2xl bg-white  s right-2`}
-    >
-      <motion.button
-        ref={buttonRef}
-        initial={false}
-        animate={{
-          rotate: isOpen ? 45 : 0,
-        }}
-        className={`bg-yellow-500  hover:bg-purple-900 m-auto mt-[2px] p-2 text-white rounded-full font-semibold  hover:text-white transition-transform flex justify-center items-center ${
-          isOpen ? "rotate-45" : ""
-        }`}
-        onClick={toggleMenu}
+    <>
+      {" "}
+      <div
+        className={`fixed top-[40%] z-[9999999]  ${
+          isOpen ? "" : "animated_boxShadow rounded-full"
+        } w-[2.9rem] h-[2.8rem] mx-[4px] shadow-2xl bg-white  s right-2`}
       >
-        {isOpen ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            className="text-white -rotate-45 h-6 w-6"
-            fill="white"
-          >
-            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
-          </svg>
-        ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6  text-white"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="white"
-          >
-            <path d="M3 18h18v-2H3v2zM3 13h18v-2H3v2zM3 6v2h18V6H3z" />
-          </svg>
-        )}
-      </motion.button>
+        <motion.button
+          ref={buttonRef}
+          initial={false}
+          animate={{
+            rotate: isOpen ? 45 : 0,
+          }}
+          className={`bg-yellow-500  hover:bg-purple-900 m-auto mt-[2px] p-2 text-white rounded-full font-semibold  hover:text-white transition-transform flex justify-center items-center ${
+            isOpen ? "rotate-45" : ""
+          }`}
+          onClick={toggleMenu}
+        >
+          {isOpen ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="text-white -rotate-45 h-6 w-6"
+              fill="white"
+            >
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6  text-white"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="white"
+            >
+              <path d="M3 18h18v-2H3v2zM3 13h18v-2H3v2zM3 6v2h18V6H3z" />
+            </svg>
+          )}
+        </motion.button>
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            ref={menuContainerRef2}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="mt-1 z-[-1] space-y-1 h-[40vh] py-3 flex justify-between  flex-col bg-background-light top-[40px] right-0 absolute p-1  shadow-lg"
-          >
-            <ShopItem
-              label="Home"
-              url="/"
-              icon={FaHome}
-              iconColor="text-blue-600"
-            />
-            <ShopItem
-              label="Shop"
-              url="shop"
-              icon={FaShoppingCart}
-              iconColor="text-blue-600"
-            />
-            <ShopItem
-              label="Product Listings"
-              icon={FaTags}
-              url="product"
-              iconColor="text-blue-600"
-            />
-            <ShopItem
-              label="Product Detail"
-              icon={FaThumbsUp}
-              url="/:slug"
-              iconColor="text-blue-600"
-            />
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              ref={menuContainerRef2}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="mt-1 z-[-1] space-y-1 h-[40vh] py-3 flex justify-between  flex-col bg-background-light top-[40px] right-0 absolute p-1  shadow-lg"
+            >
+              <ShopItem
+                label="Home"
+                url="/"
+                icon={FaHome}
+                iconColor="text-blue-600"
+              />
+              <ShopItem
+                label="Shop"
+                url="shop"
+                icon={FaShoppingCart}
+                iconColor="text-blue-600"
+              />
+              <ShopItem
+                label="Product Listings"
+                icon={FaTags}
+                url="product"
+                iconColor="text-blue-600"
+              />
+              <ShopItem
+                label="Product Detail"
+                icon={FaThumbsUp}
+                url="/:slug"
+                iconColor="text-blue-600"
+              />
 
-            <ShopItem
-              label="Search Results"
-              icon={FaSearch}
-              url="search"
-              iconColor="text-blue-600"
-            />
-            <ShopItem
-              label="Contact Us"
-              icon={FaEnvelope}
-              iconColor="text-blue-600"
-            />
-            <ShopItem
-              label="About Us"
-              icon={FaInfoCircle}
-              url="about"
-              iconColor="text-blue-600"
-            />
-            <ShopItem
-              label="Blog"
-              icon={FaNewspaper}
-              url="blog"
-              iconColor="text-blue-600"
-            />
-            <ShopItem
-              label="FAQs"
-              url="faq"
-              icon={FaQuestionCircle}
-              iconColor="text-blue-600"
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            ref={menuContainerRef}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            className="mt-1 z-[-1] space-y-1 h-[22vh] flex justify-between py-3  flex-col bg-background-light bottom-[45px] right-0 absolute p-1  shadow-sm"
-          >
-            <UserItem
-              label="Shopping Cart"
-              icon={FaShoppingCart}
-              iconColor="text-blue-600"
-              url="cart"
-            />
-            <UserItem
-              label="Checkout"
-              icon={FaCreditCard}
-              url="checkout"
-              iconColor="text-blue-600"
-            />
-            <UserItem
-              label="Order Confirmation"
-              icon={FaThumbsUp}
-              url="order"
-              iconColor="text-blue-600"
-            />
-            <UserItem
-              label="User Account"
-              icon={FaUserCircle}
-              url="user"
-              iconColor="text-blue-600"
-            />
-            <UserItem
-              label="Wishlist"
-              icon={FaHeart}
-              url="wishlist"
-              iconColor="text-blue-600"
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+              <ShopItem
+                label="Search Results"
+                icon={FaSearch}
+                url="search"
+                iconColor="text-blue-600"
+              />
+              <ShopItem
+                label="Contact Us"
+                icon={FaEnvelope}
+                iconColor="text-blue-600"
+              />
+              <ShopItem
+                label="About Us"
+                icon={FaInfoCircle}
+                url="about"
+                iconColor="text-blue-600"
+              />
+              <ShopItem
+                label="Blog"
+                icon={FaNewspaper}
+                url="blog"
+                iconColor="text-blue-600"
+              />
+              <ShopItem
+                label="FAQs"
+                url="faq"
+                icon={FaQuestionCircle}
+                iconColor="text-blue-600"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              ref={menuContainerRef}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              className="mt-1 z-[-1] space-y-1 h-[22vh] flex justify-between py-3  flex-col bg-background-light bottom-[45px] right-0 absolute p-1  shadow-sm"
+            >
+              <UserItem
+                label="User Account"
+                icon={FaUserCircle}
+                url="user"
+                iconColor="text-blue-600"
+              />
+              <UserItem
+                label="Wishlist"
+                icon={FaHeart}
+                url="wishlist"
+                iconColor="text-blue-600"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+      <div>
+        <div className="fixed bottom-[14%] z-[999999] right-3 w-11 p-1 h-11 shadow-lg group hover:bg-white flex justify-center items-center bg-green-600 rounded-full">
+          <Link to="/cart">
+            <FaShoppingCart className="text-white transition-all delay-100 duration-500 group-hover:text-green-600" />
+          </Link>
+        </div>
+        <div className="fixed bottom-[20%] z-[999999] right-3 w-11 p-1 h-11 shadow-lg group hover:bg-white flex justify-center items-center bg-pink-600 rounded-full">
+          <Link to="/checkout">
+            <FaCreditCard className="text-white transition-all delay-100 duration-500 group-hover:text-pink-600" />
+          </Link>
+        </div>
+        <div className="fixed bottom-[26%] z-[999999] right-3 w-11 p-1 h-11 shadow-lg group hover:bg-white flex justify-center items-center bg-purple-600 rounded-full">
+          <Link to="/order">
+            <FaThumbsUp className="text-white transition-all delay-100 duration-500 group-hover:text-purple-600" />
+          </Link>
+        </div>
+        <div className="fixed bottom-[32%] z-[999999] right-3 w-11 p-1 h-11 shadow-lg group hover:bg-white flex justify-center items-center bg-orange-600 rounded-full">
+          <Link to="/whishlist">
+            <FaHeart className="text-white transition-all delay-100 duration-500 group-hover:text-orange-600" />
+          </Link>
+        </div>
+      </div>
+    </>
   );
 };
 

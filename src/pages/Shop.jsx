@@ -8,6 +8,7 @@ import { FaHeart } from "react-icons/fa";
 const Shop = () => {
   const [filter, setFilter] = useState(false);
   const [show, setShow] = useState(false);
+  const [secondShow, setSecondShow] = useState(false);
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -327,8 +328,9 @@ const Shop = () => {
             <motion.div
               key={index}
               className={`col w-full h-full transition-all  p-[1px] delay-100 duration-500 group layout bg-purple-500 relative group overflow-hidden `}
-              onMouseEnter={() => setHoveredProduct(index)}
-              onMouseLeave={() => setHoveredProduct(null)}
+              onClick={() => {
+                setHoveredProduct(index);
+              }}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -362,7 +364,7 @@ const Shop = () => {
                         <div
                           className={` w-full flex flex-col lg:flex-row lg:h-[70%]  `}
                         >
-                          <div className="flex relative   bg-white w-full justify-center h-full items-center">
+                          <div className="flex relative border-r bg-white w-full justify-center h-full items-center">
                             <img
                               className="w-full p-10 h-full object-contain"
                               src={product.image}
@@ -406,7 +408,7 @@ const Shop = () => {
                               />
                             </div>
                           </div>
-                          <div className="flex w-full pb-10 overflow-y-auto flex-col  gap-4 pt-2 px-5 lg:px-10">
+                          <div className="flex justify-start w-full pb-10 overflow-y-auto flex-col  gap-4 pt-2 px-5 lg:px-10">
                             <h1 className="text-gray-800 mt-5  font-bold text-xl">
                               {product.title}
                             </h1>
@@ -431,7 +433,7 @@ const Shop = () => {
                             <p className="text-sm text-justify text-bold text-gray-700">
                               {product.description}
                             </p>
-                            <hr className="bg-purple-500 h-[2px]" />
+                            <hr className="bg-white text-white h-[2px]" />
 
                             <div className="flex items-center">
                               <button className="bg-purple-600 px-4 py-2 hover:bg-purple-900 ">
@@ -446,7 +448,7 @@ const Shop = () => {
                         <div
                           className={`w-full  h-[500px]  bg-purple-500  py-5 gap-1 text-center  flex-col`}
                         >
-                          <h1 className="text-purple-100 text-xl border-b font-bold border-b-purple-500 my-4">
+                          <h1 className="text-purple-100 text-xl border-b font-bold border-b-purple-100 my-4">
                             Related Product
                           </h1>
                           <div className=" overflow-x-auto whitespace-nowrap overflow-y-hidden  flex gap-3 justify-start py-10 px-5 items-center">
@@ -457,11 +459,11 @@ const Shop = () => {
                               .map((item, index) => {
                                 return (
                                   <div
-                                    className=" shrink-0 p-5 w-[150px] lg:w-[200px] bg-white rounded-xl shadow-lg h-[150px] lg:h-[200px]"
+                                    className=" group shrink-0 p-5 w-[150px] lg:w-[200px] bg-white rounded-xl shadow-lg h-[150px] lg:h-[200px]"
                                     key={index}
                                   >
                                     <img
-                                      className="w-full h-full object-contain"
+                                      className="w-full h-full cursor-pointer object-contain"
                                       src={item.image}
                                       alt=""
                                     />
