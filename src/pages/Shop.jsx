@@ -170,9 +170,15 @@ const Shop = () => {
           <button
             ref={buttonRef}
             onClick={() => setFilter(!filter)}
-            className="w-12 h-12 border-2 border-white rounded-full flex justify-center items-center"
+            className="w-12 group h-12 border-2 border-white rounded-full flex justify-center items-center"
           >
             <AiFillFilter className="" />
+            <label
+              className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-10 text-orange-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
+              htmlFor=""
+            >
+              Filter
+            </label>
           </button>
           {filter && (
             <motion.div

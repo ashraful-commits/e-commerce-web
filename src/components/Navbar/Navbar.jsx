@@ -201,21 +201,45 @@ const Navbar = () => {
           <Link to="/cart">
             <FaShoppingCart className="text-white transition-all delay-100 duration-500 group-hover:text-green-600" />
           </Link>
+          <label
+            className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-10 text-green-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
+            htmlFor=""
+          >
+            Cart [10]
+          </label>
         </div>
         <div className="fixed bottom-[20%] z-[999999] right-3 w-11 p-1 h-11 shadow-lg group hover:bg-white flex justify-center items-center bg-pink-600 rounded-full">
           <Link to="/checkout">
             <FaCreditCard className="text-white transition-all delay-100 duration-500 group-hover:text-pink-600" />
           </Link>
+          <label
+            className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-10 text-pink-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
+            htmlFor=""
+          >
+            Checkout
+          </label>
         </div>
         <div className="fixed bottom-[26%] z-[999999] right-3 w-11 p-1 h-11 shadow-lg group hover:bg-white flex justify-center items-center bg-purple-600 rounded-full">
           <Link to="/order">
             <FaThumbsUp className="text-white transition-all delay-100 duration-500 group-hover:text-purple-600" />
           </Link>
+          <label
+            className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-10 text-purple-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
+            htmlFor=""
+          >
+            order
+          </label>
         </div>
         <div className="fixed bottom-[32%] z-[999999] right-3 w-11 p-1 h-11 shadow-lg group hover:bg-white flex justify-center items-center bg-orange-600 rounded-full">
           <Link to="/whishlist">
             <FaHeart className="text-white transition-all delay-100 duration-500 group-hover:text-orange-600" />
           </Link>
+          <label
+            className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-10 text-orange-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
+            htmlFor=""
+          >
+            WishList
+          </label>
         </div>
       </div>
     </>
