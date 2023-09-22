@@ -65,9 +65,9 @@ const Navbar = () => {
     <>
       {" "}
       <div
-        className={`fixed top-[40%] z-[9999999]  ${
+        className={`fixed top-[53%] z-[9999999]  ${
           isOpen ? "" : "animated_boxShadow rounded-full"
-        } w-[2.9rem] h-[2.8rem] mx-[4px] shadow-2xl bg-white  s right-2`}
+        } w-[2.9rem] h-[2.8rem] mx-[4px] shadow-2xl bg-white  s right-[0]`}
       >
         <motion.button
           ref={buttonRef}
@@ -191,7 +191,7 @@ const Navbar = () => {
         </AnimatePresence>
       </div>
       <div>
-        <div className="fixed bottom-[14%] z-[999999] right-3  shadow-lg group flex justify-center items-center  rounded-full">
+        <div className="fixed bottom-[14%] z-[999999] right-[9px] shadow-lg group flex justify-center items-center  rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-green-600 justify-center items-center"
             to="/cart"
@@ -205,7 +205,7 @@ const Navbar = () => {
             Cart [10]
           </label>
         </div>
-        <div className="fixed bottom-[20%] z-[999999] right-3  shadow-lg group flex justify-center items-center rounded-full">
+        <div className="fixed bottom-[20%] z-[999999] right-[9px] shadow-lg group flex justify-center items-center rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-pink-600  justify-center items-center"
             to="/checkout"
@@ -219,7 +219,7 @@ const Navbar = () => {
             Checkout
           </label>
         </div>
-        <div className="fixed bottom-[26%] z-[999999] right-3  shadow-lg group flex justify-center items-center 0 rounded-full">
+        <div className="fixed bottom-[26%] z-[999999] right-[9px] shadow-lg group flex justify-center items-center 0 rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-purple-600 justify-center items-center"
             to="/order"
@@ -233,7 +233,7 @@ const Navbar = () => {
             order
           </label>
         </div>
-        <div className="fixed bottom-[32%] z-[999999] right-3  shadow-lg group flex justify-center items-center 0 rounded-full">
+        <div className="fixed bottom-[32%] z-[999999] right-[9px] shadow-lg group flex justify-center items-center 0 rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-orange-600 justify-center items-center"
             to="/wishlist"
