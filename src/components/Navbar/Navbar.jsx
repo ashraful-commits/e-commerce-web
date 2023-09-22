@@ -199,7 +199,7 @@ const Navbar = () => {
             <FaShoppingCart className="text-white transition-all delay-100  duration-500 " />
           </Link>
           <label
-            className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-12 text-green-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
+            className={`px-2 py-1 text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-12 text-green-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none `}
             htmlFor=""
           >
             Cart [10]
@@ -213,7 +213,7 @@ const Navbar = () => {
             <FaCreditCard className="text-white transition-all delay-100  duration-500 " />
           </Link>
           <label
-            className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-12 text-pink-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
+            className={` px-2 py-1 text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-12 text-pink-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none `}
             htmlFor=""
           >
             Checkout
@@ -227,7 +227,7 @@ const Navbar = () => {
             <FaThumbsUp className="text-white transition-all delay-100  duration-500 " />
           </Link>
           <label
-            className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-12 text-purple-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
+            className={`px-2 py-1 text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-12 text-orange-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none `}
             htmlFor=""
           >
             order
@@ -236,12 +236,12 @@ const Navbar = () => {
         <div className="fixed bottom-[32%] z-[999999] right-3  shadow-lg group flex justify-center items-center 0 rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-orange-600 justify-center items-center"
-            to="/whishlist"
+            to="/wishlist"
           >
             <FaHeart className="text-white transition-all delay-100  duration-500 " />
           </Link>
           <label
-            className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-12 text-orange-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
+            className={` px-2 py-1 text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-12 text-orange-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none `}
             htmlFor=""
           >
             WishList
