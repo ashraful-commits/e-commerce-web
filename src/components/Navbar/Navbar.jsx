@@ -186,7 +186,7 @@ const Navbar = () => {
         </AnimatePresence>
       </div>
       <div>
-        <div className="fixed bottom-[41%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
+        <div className="fixed bottom-[40%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-green-600 justify-center items-center"
             to="/cart"
@@ -200,7 +200,7 @@ const Navbar = () => {
             Shop
           </label>
         </div>
-        <div className="fixed bottom-[21%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
+        <div className="fixed bottom-[16%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-orange-600 justify-center items-center"
             to="/wishlist"
@@ -214,7 +214,7 @@ const Navbar = () => {
             WishList
           </label>
         </div>
-        <div className="fixed bottom-[26%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
+        <div className="fixed bottom-[22%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-green-600 justify-center items-center"
             to="/cart"
@@ -228,7 +228,7 @@ const Navbar = () => {
             Cart [10]
           </label>
         </div>
-        <div className="fixed bottom-[31%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center rounded-full">
+        <div className="fixed bottom-[28%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-pink-600  justify-center items-center"
             to="/checkout"
@@ -242,7 +242,7 @@ const Navbar = () => {
             Checkout
           </label>
         </div>
-        <div className="fixed bottom-[36%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
+        <div className="fixed bottom-[34%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-purple-600 justify-center items-center"
             to="/order"
