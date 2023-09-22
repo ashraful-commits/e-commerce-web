@@ -189,7 +189,7 @@ const Navbar = () => {
         <div className="fixed bottom-[40%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
           <Link
             className="w-10 rounded-full h-10 p-1 flex hover:bg-purple-600 bg-green-600 justify-center items-center"
-            to="/cart"
+            to="/shop"
           >
             <FaShoppingBag className="text-white transition-all delay-100  duration-500 " />
           </Link>
