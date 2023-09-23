@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { AiFillEye, AiFillFilter } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Modal from "../components/Modal/Modal";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaGreaterThan, FaHeart, FaHome } from "react-icons/fa";
 
 const Shop = () => {
@@ -23,6 +23,7 @@ const Shop = () => {
       .then((res) => res.json())
       .then((json) => {
         setProducts(json);
+        console.log(json);
         setFilteredProducts(json);
       });
   }, []);
@@ -115,15 +116,15 @@ const Shop = () => {
 
   const getRandomBorderColor = () => {
     const colors = [
-      "  shadow bg-purple-600   bg-opacity-50  ",
-      "  shadow bg-purple-600 bg-opacity-50  ",
-      "  shadow bg-purple-600   bg-opacity-50  ",
-      "  shadow bg-purple-600 bg-opacity-50  ",
-      "  shadow bg-purple-600  bg-opacity-50  ",
-      "  shadow bg-purple-600   bg-opacity-50  ",
-      "  shadow bg-purple-600 bg-opacity-50  ",
-      "  shadow bg-purple-600 bg-opacity-50  ",
-      "  shadow bg-purple-600  bg-opacity-50  ",
+      "  shadow bg-[#3EDBF0]   bg-opacity-50  ",
+      "  shadow bg-[#3EDBF0] bg-opacity-50  ",
+      "  shadow bg-[#3EDBF0]   bg-opacity-50  ",
+      "  shadow bg-[#3EDBF0] bg-opacity-50  ",
+      "  shadow bg-[#3EDBF0]  bg-opacity-50  ",
+      "  shadow bg-[#3EDBF0]   bg-opacity-50  ",
+      "  shadow bg-[#3EDBF0] bg-opacity-50  ",
+      "  shadow bg-[#3EDBF0] bg-opacity-50  ",
+      "  shadow bg-[#3EDBF0]  bg-opacity-50  ",
     ];
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
@@ -131,7 +132,7 @@ const Shop = () => {
   //==================================
   const buttonRef = useRef(null);
   const menuContainerRef = useRef(null);
-  console.log(buttonRef, menuContainerRef);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -154,12 +155,11 @@ const Shop = () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [filter]);
-  const location = useLocation();
-  console.log(location);
+
   return (
     <div className="container  bg w-full min-h-screen  pb-[10px] flex flex-col items-center ">
       <div className="row w-full relative h-5">
-        <div className="text-white top-0  fixed z-[999999999] bg-gradient-to-r from-purple-400 to-purple-900  px-4 py-2 flex items-center">
+        <div className="text-white top-0  fixed z-[999999999] bg-gradient-to-r from-gray-400 to-gray-900  px-4 py-2 flex items-center">
           <Link
             to={"/"}
             className="text-white flex items-center gap-1 text-sm capitalize"
@@ -177,12 +177,12 @@ const Shop = () => {
           </Link>
         </div>
       </div>
-      <div className="row mb-5 w-full bg-purple-900 relative flex justify-between items-center">
+      <div className="row mb-5 w-full bg-[#3EDBF0] relative flex justify-between items-center">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
-          className="filter_menu fixed z-[999999] bg-purple-600 text-white hover:bg-yellow-500 rounded-full shadow-lg right-[8px] top-[36%]"
+          className="filter_menu fixed z-[999999] bg-[#3EDBF0] text-white hover:bg-[#41AEA9] rounded-full shadow-lg right-[8px] top-[36%]"
         >
           <button
             ref={buttonRef}
@@ -191,7 +191,7 @@ const Shop = () => {
           >
             <AiFillFilter className="" />
             <label
-              className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-10 text-orange-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
+              className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-10 text-gray-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
               htmlFor=""
             >
               Filter
@@ -203,7 +203,7 @@ const Shop = () => {
               initial={{ opacity: 0, y: -50 }}
               animate={filter ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
               exit={{ opacity: 0, y: -50 }}
-              className="absolute shadow-lg  w-[200px] p-4 right-12 overflow-hidden bg-gradient-to-t from-purple-700 to-blue-400 -bottom-96"
+              className="absolute shadow-lg  w-[200px] p-4 right-12 overflow-hidden bg-gradient-to-t from-gray-500 to-gray-900 -bottom-96"
             >
               <div className="mb-4">
                 <label
@@ -350,7 +350,7 @@ const Shop = () => {
           <>
             <motion.div
               key={index}
-              className={`col w-full h-full transition-all layout border-b-2 border-b-purple-500 delay-100 duration-500 group layout bg-purple-500 relative group overflow-hidden `}
+              className={`col w-full h-full transition-all layout border-b-2 border-b-gray-500 delay-100 duration-500 group layout bg-[#3EDBF0] relative group overflow-hidden `}
               onClick={() => {
                 setHoveredProduct(index);
               }}
@@ -359,7 +359,9 @@ const Shop = () => {
               exit={{ opacity: 0, scale: 0.95 }}
               whileHover={{ scale: 1 }}
             >
-              <div className="w-full relative h-64  p-10 bg-white flex justify-center items-center">
+              <div
+                className={`w-full relative h-64  p-10 bg-white flex justify-center items-center`}
+              >
                 <motion.img
                   src={product.image}
                   alt=""
@@ -379,7 +381,7 @@ const Shop = () => {
                     onClick={() => setShow(!show)}
                     className="bg-white rounded-full w-10 h-10 flex justify-center items-center"
                   >
-                    <AiFillEye className="text-purple-600 text-6xl" />
+                    <AiFillEye className="text-gray-600 text-6xl" />
                   </button>
                   {show && (
                     <Modal onClose={() => setShow(false)}>
@@ -435,23 +437,23 @@ const Shop = () => {
                             <h1 className="text-gray-800 mt-5  font-bold text-xl">
                               {product.title}
                             </h1>
-                            <h4 className="text-purple-600 text-sm font-bold">
+                            <h4 className="text-gray-600 text-sm font-bold">
                               {product.category}
                             </h4>
 
-                            <h4 className="text-purple-600 text-sm font-bold">
+                            <h4 className="text-gray-600 text-sm font-bold">
                               Rating: {product.rating.rate}
                             </h4>
-                            <h4 className="text-purple-600 text-sm font-bold">
+                            <h4 className="text-gray-600 text-sm font-bold">
                               Stock: {product.rating.count}
                             </h4>
-                            <Link href="" className="text-purple-600 font-bold">
+                            <Link href="" className="text-gray-600 font-bold">
                               Price: $ {product.price}
                             </Link>
                             <div className="flex gap-3">
-                              <span className="w-5 h-5 bg-orange-500 rounded-full"></span>
-                              <span className="w-5 h-5 bg-green-500 rounded-full"></span>
-                              <span className="w-5 h-5 bg-red-500 rounded-full"></span>
+                              <span className="w-5 h-5 bg-[#3EDBF0] rounded-full"></span>
+                              <span className="w-5 h-5 bg-[#3EDBF0] rounded-full"></span>
+                              <span className="w-5 h-5 bg-[#3EDBF0] rounded-full"></span>
                             </div>
                             <p className="text-sm text-justify text-bold text-gray-700">
                               {product.description}
@@ -459,19 +461,19 @@ const Shop = () => {
                             <hr className="bg-white text-white h-[2px]" />
 
                             <div className="flex items-center">
-                              <button className="bg-purple-600 px-4 py-2 hover:bg-purple-900 ">
+                              <button className="bg-[#3EDBF0] px-4 py-2 hover:bg-[#41AEA9]">
                                 Add to cart
                               </button>
-                              <button className="bg-red-600 px-2 py-3 hover:bg-purple-900 ml-2">
+                              <button className="bg-[#3EDBF0] px-2 py-3 hover:bg-[#41AEA9]ml-2">
                                 <FaHeart />
                               </button>
                             </div>
                           </div>
                         </div>
                         <div
-                          className={`w-full  h-[500px]  bg-purple-500  py-1 gap-1 text-center  flex-col`}
+                          className={`w-full  h-[500px]  bg-[#3EDBF0]  py-1 gap-1 text-center  flex-col`}
                         >
-                          <h1 className="text-purple-100 text-xl border-b font-bold border-b-purple-100 my-4">
+                          <h1 className="text-gray-100 text-xl border-b font-bold border-b-gray-100 my-4">
                             Related Product
                           </h1>
                           <div className=" overflow-x-auto whitespace-nowrap overflow-y-hidden  flex gap-3 justify-start py-5 px-5 items-center">

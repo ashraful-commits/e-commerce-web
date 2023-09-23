@@ -167,7 +167,6 @@ const Order = () => {
         </div>
       </div>
       <div className="row bg-white grid grid-cols-4  p-2">
-        <div className=" col-span-3"></div>
         <div>
           <h5 className="text-sm whitespace-nowrap flex justify-between lg:text-lg font-bold">
             Sub Total: <span className=" font-normal">$0000</span>
@@ -179,9 +178,12 @@ const Order = () => {
             Sales Tax: <span className=" font-normal">$0000</span>
           </h5>
           <div className=" border-t-2 border-t-purple-500">
-            <h1>Total:$50000</h1>
+            <h1 className="text-sm text-purple-500 whitespace-nowrap flex justify-between lg:text-lg font-bold">
+              Total: <span className=" font-normal">$0000</span>
+            </h1>
           </div>
         </div>
+        <div className=" col-span-3"></div>
       </div>
       <div className="row py-5 border-t-2 border-t-purple-500 bg-white flex px-4 justify-between">
         <div className="w-full">

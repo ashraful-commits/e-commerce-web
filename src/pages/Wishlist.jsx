@@ -72,6 +72,126 @@ const WishList = () => {
                 </div>
               </div>
             </li>
+            <li className="border-b border-b-purple-500 w-full">
+              <div className="grid grid-cols-4  py-2 px-2 w-full">
+                <div className="img col-span-2 flex flex-col md:flex-row lg:flex-row gap-x-3 gap-y-2">
+                  <div className="img flex justify-start  items-center">1</div>
+                  <img
+                    className="w-10 h-10"
+                    src="https://cdn.dribbble.com/userupload/2546703/file/original-093a21f42faf66c681c77a344953d797.png?resize=400x0"
+                    alt=""
+                  />
+                  <div className="datials">
+                    <h1 className="text-md text-purple-500 font-semibold">
+                      MacBookPro13
+                    </h1>
+                    <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
+                      Space oray | 32gb | 1TB
+                    </p>
+                  </div>
+                </div>
+                <div className="price flex flex-col justify-center items-center">
+                  <span className="text-xs md:text-md lg:text-lg text-gray-500">
+                    $222
+                  </span>
+                </div>
+                <div className="price flex justify-end items-center">
+                  <button className="p-2  bg-purple-500 text-white hover:bg-purple-800">
+                    <FaTrash />
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li className="border-b border-b-purple-500 w-full">
+              <div className="grid grid-cols-4  py-2 px-2 w-full">
+                <div className="img col-span-2 flex flex-col md:flex-row lg:flex-row gap-x-3 gap-y-2">
+                  <div className="img flex justify-start  items-center">1</div>
+                  <img
+                    className="w-10 h-10"
+                    src="https://cdn.dribbble.com/userupload/2546703/file/original-093a21f42faf66c681c77a344953d797.png?resize=400x0"
+                    alt=""
+                  />
+                  <div className="datials">
+                    <h1 className="text-md text-purple-500 font-semibold">
+                      MacBookPro13
+                    </h1>
+                    <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
+                      Space oray | 32gb | 1TB
+                    </p>
+                  </div>
+                </div>
+                <div className="price flex flex-col justify-center items-center">
+                  <span className="text-xs md:text-md lg:text-lg text-gray-500">
+                    $222
+                  </span>
+                </div>
+                <div className="price flex justify-end items-center">
+                  <button className="p-2  bg-purple-500 text-white hover:bg-purple-800">
+                    <FaTrash />
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li className="border-b border-b-purple-500 w-full">
+              <div className="grid grid-cols-4  py-2 px-2 w-full">
+                <div className="img col-span-2 flex flex-col md:flex-row lg:flex-row gap-x-3 gap-y-2">
+                  <div className="img flex justify-start  items-center">1</div>
+                  <img
+                    className="w-10 h-10"
+                    src="https://cdn.dribbble.com/userupload/2546703/file/original-093a21f42faf66c681c77a344953d797.png?resize=400x0"
+                    alt=""
+                  />
+                  <div className="datials">
+                    <h1 className="text-md text-purple-500 font-semibold">
+                      MacBookPro13
+                    </h1>
+                    <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
+                      Space oray | 32gb | 1TB
+                    </p>
+                  </div>
+                </div>
+                <div className="price flex flex-col justify-center items-center">
+                  <span className="text-xs md:text-md lg:text-lg text-gray-500">
+                    $222
+                  </span>
+                </div>
+                <div className="price flex justify-end items-center">
+                  <button className="p-2  bg-purple-500 text-white hover:bg-purple-800">
+                    <FaTrash />
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li className="border-b border-b-purple-500 w-full">
+              <div className="grid grid-cols-4  py-2 px-2 w-full">
+                <div className="img col-span-2 flex flex-col md:flex-row lg:flex-row gap-x-3 gap-y-2">
+                  <div className="img flex justify-start  items-center">1</div>
+                  <img
+                    className="w-10 h-10"
+                    src="https://cdn.dribbble.com/userupload/2546703/file/original-093a21f42faf66c681c77a344953d797.png?resize=400x0"
+                    alt=""
+                  />
+                  <div className="datials">
+                    <h1 className="text-md text-purple-500 font-semibold">
+                      MacBookPro13
+                    </h1>
+                    <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
+                      Space oray | 32gb | 1TB
+                    </p>
+                  </div>
+                </div>
+                <div className="price flex flex-col justify-center items-center">
+                  <span className="text-xs md:text-md lg:text-lg text-gray-500">
+                    $222
+                  </span>
+                </div>
+                <div className="price flex justify-end items-center">
+                  <button className="p-2  bg-purple-500 text-white hover:bg-purple-800">
+                    <FaTrash />
+                  </button>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
       </div>

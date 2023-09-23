@@ -212,9 +212,8 @@ const Cart = () => {
           </ul>
         </div>
       </div>
-      <div className="row bg-white grid grid-cols-4  p-2">
-        <div className=" col-span-3"></div>
-        <div>
+      <div className="row bg-white grid grid-cols-4 w-full p-2">
+        <div className="w-full h-full">
           <h5 className="text-sm whitespace-nowrap flex justify-between lg:text-lg font-bold">
             Sub Total: <span className=" font-normal">$0000</span>
           </h5>
@@ -224,8 +223,10 @@ const Cart = () => {
           <h5 className="text-sm whitespace-nowrap flex justify-between lg:text-lg font-bold">
             Sales Tax: <span className=" font-normal">$0000</span>
           </h5>
-          <div className=" bCart-t-2 bCart-t-purple-500">
-            <h1>Total:$50000</h1>
+          <div className=" border-t-2 border-t-purple-500 w-full">
+            <h1 className="text-purple-500 font-bold">
+              Total:<span className=" font-normal text-gray-500">$0000</span>
+            </h1>
           </div>
         </div>
       </div>
@@ -233,9 +234,9 @@ const Cart = () => {
         <div className="w-full"></div>
         <div className="w-full flex flex-col  justify-center items-end">
           <h5 className="font-bold  text-md my-2">Shipping</h5>
-          <button className="bg-purple-500 px-4 py-1 text-white">
+          <Link to={"/checkout"} className="bg-purple-500 px-4 py-1 text-white">
             Check Out
-          </button>
+          </Link>
         </div>
       </div>
     </div>
