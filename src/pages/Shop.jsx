@@ -158,8 +158,8 @@ const Shop = () => {
 
   return (
     <div className="container  bg w-full min-h-screen  pb-[10px] flex flex-col items-center ">
-      <div className="row w-full relative h-5">
-        <div className="text-white top-0  fixed z-[999999999] bg-gradient-to-r from-gray-400 to-gray-900  px-4 py-2 flex items-center">
+      <div className="row bg-gradient-to-r  from-[#5CD2E6] to-[#5CD2E6]  w-full relative h-10">
+        <div className="text-white  fixed z-[999999999]  px-4 py-2 flex items-center">
           <Link
             to={"/"}
             className="text-white flex items-center gap-1 text-sm capitalize"
@@ -182,7 +182,7 @@ const Shop = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
-          className="filter_menu fixed z-[999999] bg-[#3EDBF0] text-white hover:bg-[#41AEA9] rounded-full shadow-lg right-[8px] top-[36%]"
+          className="filter_menu fixed z-[999999] bg-[#3EDBF0] text-white hover:bg-[#12486B] rounded-full shadow-lg right-[8px] top-[36%]"
         >
           <button
             ref={buttonRef}
@@ -203,7 +203,7 @@ const Shop = () => {
               initial={{ opacity: 0, y: -50 }}
               animate={filter ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
               exit={{ opacity: 0, y: -50 }}
-              className="absolute shadow-lg  w-[200px] p-4 right-12 overflow-hidden bg-gradient-to-t from-gray-500 to-gray-900 -bottom-96"
+              className="absolute shadow-lg  w-[200px] p-4 right-12 overflow-hidden bg-gradient-to-t from-[#5CD2E6] to-[#78D6C6] -bottom-96"
             >
               <div className="mb-4">
                 <label
@@ -350,7 +350,7 @@ const Shop = () => {
           <>
             <motion.div
               key={index}
-              className={`col w-full h-full transition-all layout border-b-2 border-b-gray-500 delay-100 duration-500 group layout bg-[#3EDBF0] relative group overflow-hidden `}
+              className={`col w-full h-full transition-all layout border-b-2 border-[#78D6C6] delay-100 duration-500 group layout bg-[#3EDBF0] relative group overflow-hidden `}
               onClick={() => {
                 setHoveredProduct(index);
               }}
@@ -385,7 +385,7 @@ const Shop = () => {
                   </button>
                   {show && (
                     <Modal onClose={() => setShow(false)}>
-                      <div className="flex relative lg:p-14 overflow-y-auto flex-col w-full  h-full">
+                      <div className="flex relative overflow-y-auto flex-col w-full  h-full">
                         <div
                           className={` w-full flex flex-col lg:flex-row lg:h-[70%]  `}
                         >
@@ -433,7 +433,7 @@ const Shop = () => {
                               />
                             </div>
                           </div>
-                          <div className="flex justify-start w-full pb-10 overflow-y-auto flex-col  gap-4 pt-2 px-5 lg:px-10">
+                          <div className="flex justify-start w-full pb-10 overflow-y-auto flex-col  gap-4 pt-2 px-0 lg:px-10">
                             <h1 className="text-gray-800 mt-5  font-bold text-xl">
                               {product.title}
                             </h1>
@@ -451,9 +451,9 @@ const Shop = () => {
                               Price: $ {product.price}
                             </Link>
                             <div className="flex gap-3">
-                              <span className="w-5 h-5 bg-[#3EDBF0] rounded-full"></span>
-                              <span className="w-5 h-5 bg-[#3EDBF0] rounded-full"></span>
-                              <span className="w-5 h-5 bg-[#3EDBF0] rounded-full"></span>
+                              <span className="w-5 h-5 bg-[blue] rounded-full"></span>
+                              <span className="w-5 h-5 bg-[red] rounded-full"></span>
+                              <span className="w-5 h-5 bg-[black] rounded-full"></span>
                             </div>
                             <p className="text-sm text-justify text-bold text-gray-700">
                               {product.description}
@@ -461,10 +461,10 @@ const Shop = () => {
                             <hr className="bg-white text-white h-[2px]" />
 
                             <div className="flex items-center">
-                              <button className="bg-[#3EDBF0] px-4 py-2 hover:bg-[#41AEA9]">
+                              <button className="bg-[#3EDBF0] px-4 py-2 hover:bg-[[#3EDBF0] ]">
                                 Add to cart
                               </button>
-                              <button className="bg-[#3EDBF0] px-2 py-3 hover:bg-[#41AEA9]ml-2">
+                              <button className="bg-[red] px-2 py-3 hover:bg-[[#3EDBF0] ]ml-2">
                                 <FaHeart />
                               </button>
                             </div>
