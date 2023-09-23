@@ -116,15 +116,15 @@ const Shop = () => {
 
   const getRandomBorderColor = () => {
     const colors = [
-      "  shadow bg-[#3EDBF0]   bg-opacity-50  ",
-      "  shadow bg-[#3EDBF0] bg-opacity-50  ",
-      "  shadow bg-[#3EDBF0]   bg-opacity-50  ",
-      "  shadow bg-[#3EDBF0] bg-opacity-50  ",
-      "  shadow bg-[#3EDBF0]  bg-opacity-50  ",
-      "  shadow bg-[#3EDBF0]   bg-opacity-50  ",
-      "  shadow bg-[#3EDBF0] bg-opacity-50  ",
-      "  shadow bg-[#3EDBF0] bg-opacity-50  ",
-      "  shadow bg-[#3EDBF0]  bg-opacity-50  ",
+      "  shadow bg-primary   bg-opacity-50  ",
+      "  shadow bg-primary bg-opacity-50  ",
+      "  shadow bg-primary   bg-opacity-50  ",
+      "  shadow bg-primary bg-opacity-50  ",
+      "  shadow bg-primary  bg-opacity-50  ",
+      "  shadow bg-primary   bg-opacity-50  ",
+      "  shadow bg-primary bg-opacity-50  ",
+      "  shadow bg-primary bg-opacity-50  ",
+      "  shadow bg-primary  bg-opacity-50  ",
     ];
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
@@ -177,12 +177,12 @@ const Shop = () => {
           </Link>
         </div>
       </div>
-      <div className="row mb-5 w-full bg-[#3EDBF0] relative flex justify-between items-center">
+      <div className="row mb-5 w-full bg-primary relative flex justify-between items-center">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
-          className="filter_menu fixed z-[999999] bg-[#3EDBF0] text-white hover:bg-[#12486B] rounded-full shadow-lg right-[8px] top-[36%]"
+          className="filter_menu fixed z-[999999] bg-primary text-white hover:bg-secondary rounded-full shadow-lg right-[8px] top-[36%]"
         >
           <button
             ref={buttonRef}
@@ -350,7 +350,7 @@ const Shop = () => {
           <>
             <motion.div
               key={index}
-              className={`col w-full h-full transition-all layout border-b-2 border-[#78D6C6] delay-100 duration-500 group layout bg-[#3EDBF0] relative group overflow-hidden `}
+              className={`col w-full h-full transition-all layout border-b-2 border-[#78D6C6] delay-100 duration-500 group layout bg-primary relative group overflow-hidden `}
               onClick={() => {
                 setHoveredProduct(index);
               }}
@@ -461,17 +461,17 @@ const Shop = () => {
                             <hr className="bg-white text-white h-[2px]" />
 
                             <div className="flex items-center">
-                              <button className="bg-[#3EDBF0] px-4 py-2 hover:bg-[[#3EDBF0] ]">
+                              <button className="bg-primary px-4 py-2 hover:bg-secondary">
                                 Add to cart
                               </button>
-                              <button className="bg-[red] px-2 py-3 hover:bg-[[#3EDBF0] ]ml-2">
+                              <button className="bg-[red] px-2 py-3 hover:bg-secondary ml-2">
                                 <FaHeart />
                               </button>
                             </div>
                           </div>
                         </div>
                         <div
-                          className={`w-full  h-[500px]  bg-[#3EDBF0]  py-1 gap-1 text-center  flex-col`}
+                          className={`w-full  h-[500px]  bg-primary  py-1 gap-1 text-center  flex-col`}
                         >
                           <h1 className="text-gray-100 text-xl border-b font-bold border-b-gray-100 my-4">
                             Related Product
@@ -484,7 +484,7 @@ const Shop = () => {
                               .map((item, index) => {
                                 return (
                                   <div
-                                    className=" group shrink-0 p-5 w-[150px] lg:w-[200px] bg-white rounded-xl shadow-lg h-[150px] lg:h-[200px]"
+                                    className=" group shrink-0 p-5 w-[150px] lg:w-[200px] bg-white rounded-sm shadow-lg h-[150px] lg:h-[200px]"
                                     key={index}
                                   >
                                     <img

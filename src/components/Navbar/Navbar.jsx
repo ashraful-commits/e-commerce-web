@@ -75,7 +75,7 @@ const Navbar = () => {
           animate={{
             rotate: isOpen ? 45 : 0,
           }}
-          className={`bg-[#3EDBF0]  hover:bg-[#41AEA9] m-auto mt-[2px] p-2 text-white rounded-full font-semibold  hover:text-white transition-transform flex justify-center items-center ${
+          className={`bg-[#3EDBF0]  hover:bg-secondary m-auto mt-[2px] p-2 text-white rounded-full font-semibold  hover:text-white transition-transform flex justify-center items-center ${
             isOpen ? "rotate-45" : ""
           }`}
           onClick={toggleMenu}
@@ -197,7 +197,7 @@ const Navbar = () => {
         {/* Shop icon */}
         <div className="fixed bottom-[40%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
           <Link
-            className="w-10 rounded-full h-10 p-1 flex hover:bg-[#41AEA9] bg-[#3EDBF0] justify-center items-center"
+            className="w-10 rounded-full h-10 p-1 flex hover:bg-secondary bg-[#3EDBF0] justify-center items-center"
             to="/shop"
           >
             <FaShoppingBag className="text-white transition-all delay-100  duration-500 " />
@@ -213,7 +213,7 @@ const Navbar = () => {
         {/* Wishlist icon */}
         <div className="fixed bottom-[16%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
           <Link
-            className="w-10 rounded-full h-10 p-1 flex hover:bg-[#41AEA9] bg-[#3EDBF0] justify-center items-center"
+            className="w-10 rounded-full h-10 p-1 flex hover:bg-secondary bg-[#3EDBF0] justify-center items-center"
             to="/wishlist"
           >
             <FaHeart className="text-white transition-all delay-100  duration-500 " />
@@ -229,7 +229,7 @@ const Navbar = () => {
         {/* Cart icon */}
         <div className="fixed bottom-[22%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
           <Link
-            className="w-10 rounded-full h-10 p-1 flex hover:bg-[#41AEA9] bg-[#3EDBF0] justify-center items-center"
+            className="w-10 rounded-full h-10 p-1 flex hover:bg-secondary bg-[#3EDBF0] justify-center items-center"
             to="/cart"
           >
             <FaShoppingCart className="text-white transition-all delay-100  duration-500 " />
@@ -245,7 +245,7 @@ const Navbar = () => {
         {/* Checkout icon */}
         <div className="fixed bottom-[28%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center rounded-full">
           <Link
-            className="w-10 rounded-full h-10 p-1 flex hover:bg-[#41AEA9] bg-[#3EDBF0]  justify-center items-center"
+            className="w-10 rounded-full h-10 p-1 flex hover:bg-secondary bg-[#3EDBF0]  justify-center items-center"
             to="/checkout"
           >
             <FaCreditCard className="text-white transition-all delay-100  duration-500 " />
@@ -261,7 +261,7 @@ const Navbar = () => {
         {/* Order icon */}
         <div className="fixed bottom-[34%] z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center 0 rounded-full">
           <Link
-            className="w-10 rounded-full h-10 p-1 flex hover:bg-[#41AEA9] bg-[#3EDBF0] justify-center items-center"
+            className="w-10 rounded-full h-10 p-1 flex hover:bg-secondary bg-[#3EDBF0] justify-center items-center"
             to="/order"
           >
             <FaThumbsUp className="text-white transition-all delay-100  duration-500 " />
@@ -286,7 +286,7 @@ const ShopItem = ({ label, icon, iconColor, url }) => {
     <div className="relative group transition-transform transform translate-y-0 my-4">
       <Link
         to={url}
-        className={`group relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none   border-l-2 border-white group-hover:bg-[#41AEA9] group-hover:border-l-[#3EDBF0] transition-transform flex items-center space-x-1 ${iconColor}`}
+        className={`group relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none   border-l-2 border-white group-hover:bg-secondary group-hover:border-l-[#3EDBF0] transition-transform flex items-center space-x-1 ${iconColor}`}
       >
         <motion.i
           className={`text-xl text-[#3EDBF0] group-hover:text-white transition-transform transform scale-100`}
@@ -311,7 +311,7 @@ const UserItem = ({ label, icon, iconColor, url }) => {
     <div className="relative group transition-transform transform translate-y-0">
       <Link
         to={url}
-        className={`group  relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none  hover:${iconColor} border-l-2   delay-100 duration-200 hover:bg-[#41AEA9] w-full h-full border-white group-hover:border-l-[#3EDBF0]  transition-transform flex items-center space-x-1 ${iconColor}`}
+        className={`group  relative shadow-sm px-2 py-1 rounded-rounded-bl-none rounded-tl-none  hover:${iconColor} border-l-2   delay-100 duration-200 hover:bg-secondary w-full h-full border-white group-hover:border-l-[#3EDBF0]  transition-transform flex items-center space-x-1 ${iconColor}`}
       >
         <motion.i
           className={`text-xl text-[#3EDBF0] group-hover:text-white  transition-transform transform scale-100`}

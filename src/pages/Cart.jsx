@@ -11,7 +11,7 @@ const Cart = () => {
   return (
     <div className="container min-h-screen w-full">
       <div className="row w-full relative h-5">
-        <div className="text-white top-0  fixed z-[999999999] bg-gradient-to-r from-purple-400 to-purple-900  px-4 py-2 flex items-center">
+        <div className="text-white top-0  fixed z-[999999999] bg-gradient-to-r from-[#5CD2E6] to-[#5CD2E6]  px-4 py-2 flex items-center">
           <Link
             to={"/"}
             className="text-white flex items-center gap-1 text-sm capitalize"
@@ -29,7 +29,7 @@ const Cart = () => {
           </Link>
         </div>
       </div>
-      <div className="row mb-[1px] bg-purple-500 ">
+      <div className="row mb-[1px] bg-primary ">
         <div className="grid grid-cols-1 mt-5  py-2 pr-5 pl-2">
           <div className=" col-span-2  flex justify-center items-center">
             <h1 className="text-white text-xl lg:text-2xl md:text-lg font-bold">
@@ -38,10 +38,10 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <div className="row bCart bCart-b-purple-500 bg-white">
+      <div className="row bCart bCart-b-primary bg-white">
         <div className="Cartlist">
           <ul>
-            <li className="border-b border-b-purple-500">
+            <li className="border-b border-b-primary">
               <div className="grid grid-cols-4 py-2 px-2">
                 <div className="img flex flex-col md:flex-row lg:flex-row gap-x-3 gap-y-2">
                   <img
@@ -50,7 +50,7 @@ const Cart = () => {
                     alt=""
                   />
                   <div className="datials">
-                    <h1 className="text-md text-purple-500 font-semibold">
+                    <h1 className="text-md text-primary font-semibold">
                       MacBookPro13
                     </h1>
                     <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
@@ -65,25 +65,25 @@ const Cart = () => {
                   </span>
                 </div>
                 <div className="price flex gap-1  justify-center items-center ">
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     +
                   </span>
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     1
                   </span>
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     -
                   </span>
                 </div>
                 <div className="price flex flex-col items-end">
-                  <p className="text-sm text-purple-500 font-semibold">
+                  <p className="text-sm text-primary font-semibold">
                     $2222.222
                   </p>
                   <span className="text-xs text-gray-500">Qty:1</span>
                 </div>
               </div>
             </li>
-            <li className="border-b border-b-purple-500">
+            <li className="border-b border-b-primary">
               <div className="grid grid-cols-4 py-2 px-2">
                 <div className="img flex flex-col md:flex-row lg:flex-row gap-x-3 gap-y-2">
                   <img
@@ -92,7 +92,7 @@ const Cart = () => {
                     alt=""
                   />
                   <div className="datials">
-                    <h1 className="text-md text-purple-500 font-semibold">
+                    <h1 className="text-md text-primary font-semibold">
                       MacBookPro13
                     </h1>
                     <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
@@ -107,25 +107,25 @@ const Cart = () => {
                   </span>
                 </div>
                 <div className="price flex gap-1  justify-center items-center ">
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     +
                   </span>
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     1
                   </span>
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     -
                   </span>
                 </div>
                 <div className="price flex flex-col items-end">
-                  <p className="text-sm text-purple-500 font-semibold">
+                  <p className="text-sm text-primary font-semibold">
                     $2222.222
                   </p>
                   <span className="text-xs text-gray-500">Qty:1</span>
                 </div>
               </div>
             </li>
-            <li className="border-b border-b-purple-500">
+            <li className="border-b border-b-primary">
               <div className="grid grid-cols-4 py-2 px-2">
                 <div className="img flex flex-col md:flex-row lg:flex-row gap-x-3 gap-y-2">
                   <img
@@ -134,7 +134,7 @@ const Cart = () => {
                     alt=""
                   />
                   <div className="datials">
-                    <h1 className="text-md text-purple-500 font-semibold">
+                    <h1 className="text-md text-primary font-semibold">
                       MacBookPro13
                     </h1>
                     <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
@@ -149,25 +149,25 @@ const Cart = () => {
                   </span>
                 </div>
                 <div className="price flex gap-1  justify-center items-center ">
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     +
                   </span>
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     1
                   </span>
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     -
                   </span>
                 </div>
                 <div className="price flex flex-col items-end">
-                  <p className="text-sm text-purple-500 font-semibold">
+                  <p className="text-sm text-primary font-semibold">
                     $2222.222
                   </p>
                   <span className="text-xs text-gray-500">Qty:1</span>
                 </div>
               </div>
             </li>
-            <li className="border-b border-b-purple-500">
+            <li className="border-b border-b-primary">
               <div className="grid grid-cols-4 py-2 px-2">
                 <div className="img flex flex-col md:flex-row lg:flex-row gap-x-3 gap-y-2">
                   <img
@@ -176,7 +176,7 @@ const Cart = () => {
                     alt=""
                   />
                   <div className="datials">
-                    <h1 className="text-md text-purple-500 font-semibold">
+                    <h1 className="text-md text-primary font-semibold">
                       MacBookPro13
                     </h1>
                     <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
@@ -191,18 +191,18 @@ const Cart = () => {
                   </span>
                 </div>
                 <div className="price flex gap-1  justify-center items-center ">
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     +
                   </span>
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     1
                   </span>
-                  <span className="border w-10 flex justify-center border-purple-500 items-center">
+                  <span className="border w-10 flex justify-center border-primary items-center">
                     -
                   </span>
                 </div>
                 <div className="price flex flex-col items-end">
-                  <p className="text-sm text-purple-500 font-semibold">
+                  <p className="text-sm text-primary font-semibold">
                     $2222.222
                   </p>
                   <span className="text-xs text-gray-500">Qty:1</span>
@@ -223,18 +223,18 @@ const Cart = () => {
           <h5 className="text-sm whitespace-nowrap flex justify-between lg:text-lg font-bold">
             Sales Tax: <span className=" font-normal">$0000</span>
           </h5>
-          <div className=" border-t-2 border-t-purple-500 w-full">
-            <h1 className="text-purple-500 font-bold">
+          <div className=" border-t-2 border-t-primary w-full">
+            <h1 className="text-primary font-bold">
               Total:<span className=" font-normal text-gray-500">$0000</span>
             </h1>
           </div>
         </div>
       </div>
-      <div className="row py-5 border-t-2 border-t-purple-500 bg-white flex px-4 justify-between">
+      <div className="row py-5 border-t-2 border-t-primary bg-white flex px-4 justify-between">
         <div className="w-full"></div>
         <div className="w-full flex flex-col  justify-center items-end">
           <h5 className="font-bold  text-md my-2">Shipping</h5>
-          <Link to={"/checkout"} className="bg-purple-500 px-4 py-1 text-white">
+          <Link to={"/checkout"} className="bg-primary px-4 py-1 text-white">
             Check Out
           </Link>
         </div>

@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 const Order = () => {
   return (
     <div className="container min-h-screen w-full">
-      <div className="row w-full relative h-5">
-        <div className="text-white top-0  fixed z-[999999999] bg-gradient-to-r from-purple-400 to-purple-900  px-4 py-2 flex items-center">
+      <div className="row bg-gradient-to-r from-[#3EDBF0] to-[#3EDBF0] w-full relative h-10">
+        <div className="text-white   fixed z-[999999999] px-4 py-2 flex items-center">
           <Link
             to={"/"}
             className="text-white flex items-center gap-1 text-sm capitalize"
@@ -32,7 +32,7 @@ const Order = () => {
       <div className="row mb-[1px] bg-white">
         <div className="grid grid-cols-3 mt-5  py-2 pr-5 pl-2">
           <div className=" col-span-2">
-            <h1 className="text-purple-700 lg:text-xl md:text-lg font-bold">
+            <h1 className="text-primary lg:text-xl md:text-lg font-bold">
               Order ID:223423423
             </h1>
           </div>
@@ -42,24 +42,24 @@ const Order = () => {
             <p className="text-xs lg:text-md md:text-sm whitespace-nowrap">
               Order date:Feb 16,2023
             </p>
-            <p className="text-xs text-purple-700 font-semibold lg:text-md md:text-sm whitespace-nowrap">
+            <p className="text-xs text-primary font-semibold lg:text-md md:text-sm whitespace-nowrap">
               Estimated delivery: May, 2022
             </p>
           </div>
           <div className="flex gap-1 p-2 justify-center items-center">
-            <button className="bg-purple-900 text-white hover:bg-purple-500 px-2 text-xs md:text-md lg:text-lg py-1">
+            <button className="bg-secondary text-white hover:bg-primary px-2 text-xs md:text-md lg:text-lg py-1">
               Invoice
             </button>
-            <button className="flex text-xs text-white hover:bg-purple-900 bg-purple-500 px-2  md:text-md lg:text-lg py-1 whitespace-nowrap justify-center items-center gap-2">
+            <button className="flex text-xs text-white hover:bg-secondary bg-primary px-2  md:text-md lg:text-lg py-1 whitespace-nowrap justify-center items-center gap-2">
               Track Order <FaLocationArrow />
             </button>
           </div>
         </div>
       </div>
-      <div className="row border border-b-purple-500 bg-white">
+      <div className="row border border-b-primary bg-white">
         <div className="orderlist">
           <ul>
-            <li className="border-b border-b-purple-500">
+            <li className="border-b border-b-primary">
               <div className="grid grid-cols-2 py-2 px-5">
                 <div className="img flex gap-5">
                   <img
@@ -68,7 +68,7 @@ const Order = () => {
                     alt=""
                   />
                   <div className="datials">
-                    <h1 className="text-md text-purple-500 font-semibold">
+                    <h1 className="text-md text-primary font-semibold">
                       MacBookPro13
                     </h1>
                     <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
@@ -78,14 +78,14 @@ const Order = () => {
                 </div>
 
                 <div className="price flex flex-col items-end">
-                  <p className="text-sm text-purple-500 font-semibold">
+                  <p className="text-sm text-primary font-semibold">
                     $2222.222
                   </p>
                   <span className="text-xs text-gray-500">Qty:1</span>
                 </div>
               </div>
             </li>
-            <li className="border-b border-b-purple-500">
+            <li className="border-b border-b-primary">
               <div className="grid grid-cols-2 py-2 px-5">
                 <div className="img flex gap-5">
                   <img
@@ -94,7 +94,7 @@ const Order = () => {
                     alt=""
                   />
                   <div className="datials">
-                    <h1 className="text-md text-purple-500 font-semibold">
+                    <h1 className="text-md text-primary font-semibold">
                       MacBookPro13
                     </h1>
                     <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
@@ -104,14 +104,14 @@ const Order = () => {
                 </div>
 
                 <div className="price flex flex-col items-end">
-                  <p className="text-sm text-purple-500 font-semibold">
+                  <p className="text-sm text-primary font-semibold">
                     $2222.222
                   </p>
                   <span className="text-xs text-gray-500">Qty:1</span>
                 </div>
               </div>
             </li>
-            <li className="border-b border-b-purple-500">
+            <li className="border-b border-b-primary">
               <div className="grid grid-cols-2 py-2 px-5">
                 <div className="img flex gap-5">
                   <img
@@ -120,7 +120,7 @@ const Order = () => {
                     alt=""
                   />
                   <div className="datials">
-                    <h1 className="text-md text-purple-500 font-semibold">
+                    <h1 className="text-md text-primary font-semibold">
                       MacBookPro13
                     </h1>
                     <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
@@ -130,14 +130,14 @@ const Order = () => {
                 </div>
 
                 <div className="price flex flex-col items-end">
-                  <p className="text-sm text-purple-500 font-semibold">
+                  <p className="text-sm text-primary font-semibold">
                     $2222.222
                   </p>
                   <span className="text-xs text-gray-500">Qty:1</span>
                 </div>
               </div>
             </li>
-            <li className="border-b border-b-purple-500">
+            <li className="border-b border-b-primary">
               <div className="grid grid-cols-2 py-2 px-5">
                 <div className="img flex gap-5">
                   <img
@@ -146,7 +146,7 @@ const Order = () => {
                     alt=""
                   />
                   <div className="datials">
-                    <h1 className="text-md text-purple-500 font-semibold">
+                    <h1 className="text-md text-primary font-semibold">
                       MacBookPro13
                     </h1>
                     <p className="text-xs text-gray-500 md:text-sm lg:text-sm">
@@ -156,7 +156,7 @@ const Order = () => {
                 </div>
 
                 <div className="price flex flex-col items-end">
-                  <p className="text-sm text-purple-500 font-semibold">
+                  <p className="text-sm text-primary font-semibold">
                     $2222.222
                   </p>
                   <span className="text-xs text-gray-500">Qty:1</span>
@@ -177,15 +177,15 @@ const Order = () => {
           <h5 className="text-sm whitespace-nowrap flex justify-between lg:text-lg font-bold">
             Sales Tax: <span className=" font-normal">$0000</span>
           </h5>
-          <div className=" border-t-2 border-t-purple-500">
-            <h1 className="text-sm text-purple-500 whitespace-nowrap flex justify-between lg:text-lg font-bold">
+          <div className=" border-t-2 border-t-primary">
+            <h1 className="text-sm text-primary whitespace-nowrap flex justify-between lg:text-lg font-bold">
               Total: <span className=" font-normal">$0000</span>
             </h1>
           </div>
         </div>
         <div className=" col-span-3"></div>
       </div>
-      <div className="row py-5 border-t-2 border-t-purple-500 bg-white flex px-4 justify-between">
+      <div className="row py-5 border-t-2 border-t-primary bg-white flex px-4 justify-between">
         <div className="w-full">
           <p className="text-lg font-bold">Payment</p>
           <p className="flex text-sm items-center gap-1">
