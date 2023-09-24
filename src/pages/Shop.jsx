@@ -479,41 +479,14 @@ const Shop = () => {
                           </div>
                         </div>
                         <div
-                          className={`w-full  h-[500px]  bg-primary  py-1 gap-1 text-center  flex-col`}
+                          className={`w-full  h-[500px]   bg-primary my-4 text-center  `}
                         >
-                          <h1 className="text-gray-100 text-xl border-b font-bold border-b-gray-100 my-4">
-                            Related Product
-                          </h1>
-                          <div className=" overflow-x-auto whitespace-nowrap overflow-y-hidden  flex gap-3 justify-start py-5 px-5 items-center">
-                            {products
-                              .filter(
-                                (cat) => cat.category === product.category
-                              )
-                              .map((item, index) => {
-                                return (
-                                  <div
-                                    className=" group shrink-0 p-5 w-[150px] lg:w-[200px] bg-white rounded-sm shadow-lg h-[150px] lg:h-[200px]"
-                                    key={index}
-                                  >
-                                    <img
-                                      className="w-full h-full cursor-pointer object-contain"
-                                      src={item.image}
-                                      alt=""
-                                    />
-                                  </div>
-                                );
-                              })}
-                          </div>
-                        </div>
-                        <div
-                          className={`w-full  h-[500px]  border-t-4 border-t-secondary bg-primary my-4 text-center  `}
-                        >
-                          <div className="button_group my-3 space-x-3 ">
+                          <div className="button_group  my-3 space-x-3 ">
                             <button
                               onClick={() => {
                                 setDesCription(true), setReviews(false);
                               }}
-                              className="border hover:bg-secondary border-white px-4 py-2"
+                              className="border hover:bg-secondary border-white px-2 py-1"
                             >
                               Description
                             </button>
@@ -521,14 +494,14 @@ const Shop = () => {
                               onClick={() => {
                                 setDesCription(false), setReviews(true);
                               }}
-                              className="border  hover:bg-secondary border-white px-4 py-2"
+                              className="border  hover:bg-secondary border-white px-2 py-1"
                             >
                               Reviews
                             </button>
                           </div>
-                          <div className="bg-white p-3">
+                          <div className="bg-white h-[300px] border-t-2 border-t-secondary p-3 overflow-y-auto">
                             {desCription && (
-                              <div className="description">
+                              <div className="description overflow-y-auto">
                                 <h1 className="text-secondary text-xl font-bold text-left">
                                   Description
                                 </h1>
@@ -539,7 +512,7 @@ const Shop = () => {
                               </div>
                             )}
                             {reviews && (
-                              <div className="Reviews w-full px-4">
+                              <div className="Reviews  relative  w-full px-4">
                                 <div className="header border-b-2 py-2 border-b-gray-500">
                                   <p className="text-gray-600 text-lg font-bold">
                                     Customer Reviews
@@ -555,7 +528,7 @@ const Shop = () => {
                                     Polar Pl 323 Polarized 80c
                                   </p>
                                 </div>
-                                <div className="reviews w-full flex flex-col justify-between items-center">
+                                <div className="reviews relative w-full flex flex-col justify-between items-center">
                                   <div className="w-full my-4 flex justify-between items-center">
                                     <div className="Reviews_datials gap-3 flex items-center">
                                       <img
@@ -599,8 +572,42 @@ const Shop = () => {
                                     </p>
                                   </div>
                                 </div>
+                                <div className="input mt-10 absolute  shadow-lg  left-0 w-full bottom-0">
+                                  <input
+                                    type="text"
+                                    className="w-full focus:outline-none text-gray-500 p-1 shadow-md "
+                                    placeholder="Reviews please"
+                                  />
+                                </div>
                               </div>
                             )}
+                          </div>
+                        </div>
+                        <div
+                          className={`w-full  h-[500px]  bg-primary  gap-1 text-center  flex-col`}
+                        >
+                          <h1 className="text-gray-100 text-xl border-b font-bold border-b-gray-100 my-4">
+                            Related Product
+                          </h1>
+                          <div className=" overflow-x-auto whitespace-nowrap overflow-y-hidden  flex gap-3 justify-start py-5 px-5 items-center">
+                            {products
+                              .filter(
+                                (cat) => cat.category === product.category
+                              )
+                              .map((item, index) => {
+                                return (
+                                  <div
+                                    className=" group shrink-0 p-5 w-[150px] lg:w-[200px] bg-white rounded-sm shadow-lg h-[150px] lg:h-[200px]"
+                                    key={index}
+                                  >
+                                    <img
+                                      className="w-full h-full cursor-pointer object-contain"
+                                      src={item.image}
+                                      alt=""
+                                    />
+                                  </div>
+                                );
+                              })}
                           </div>
                         </div>
                       </div>
