@@ -53,7 +53,7 @@ const Navbar = () => {
         ref={buttonRef}
         className={`fixed ${
           isOpen ? "right-12 bg-secondary" : "right-0"
-        } top-[46%] ref={buttonRef} border-2 border-white shadow-xl z-[9999999999] bg-primary cursor-pointer flex justify-center items-center w-8 h-14 right-0`}
+        } top-[46%] ref={buttonRef} border-2 border-white shadow-xl z-[9999999999] bg-primary cursor-pointer flex justify-center items-center w-6 h-14 right-0`}
       >
         {isOpen ? (
           <button
