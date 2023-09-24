@@ -83,7 +83,7 @@ const Navbar = () => {
             }}
             className={`fixed z-[99999999999] ${
               isOpen ? " right-0" : " -right-24"
-            } top-[15%] flex flex-col gap-3`}
+            } top-[15%] flex bg-white border-l-2 border-l-purple-500 px-1 py-2 rounded-full flex-col gap-3`}
             ref={menuContainerRef}
           >
             <div className=" z-[999999] right-[9px] p-[2px] bg-white shadow-lg group flex justify-center items-center  rounded-full">
