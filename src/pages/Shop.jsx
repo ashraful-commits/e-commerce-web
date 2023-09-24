@@ -187,7 +187,7 @@ const Shop = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
-          className="filter_menu fixed z-[999999] bg-primary text-white hover:bg-secondary rounded-full shadow-lg right-[8px] top-[8%]"
+          className="filter_menu fixed z-[999999] bg-primary text-white hover:bg-secondary rounded-full shadow-lg right-[0px] top-[8%]"
         >
           <button
             ref={buttonRef}
@@ -196,7 +196,7 @@ const Shop = () => {
           >
             <AiFillFilter className="" />
             <label
-              className="`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg opacity-0 group-hover:opacity-100 right-10 text-gray-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`"
+              className={`text-sm group-hover:animate-bounce  absolute whitespace-nowrap shadow-lg  opacity-0 group-hover:opacity-100 right-10 text-gray-500 text-center transition-opacity bg-white  rounded-lg rounded-br-none rounded-tr-none py-[.2rem] px-4`}
               htmlFor=""
             >
               Filter
@@ -208,7 +208,7 @@ const Shop = () => {
               initial={{ opacity: 0, y: -50 }}
               animate={filter ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
               exit={{ opacity: 0, y: -50 }}
-              className="absolute shadow-lg  w-[200px] p-4 right-12 overflow-hidden bg-gradient-to-t from-[#5CD2E6] to-[#78D6C6] -bottom-96"
+              className="absolute shadow-lg  w-[200px] p-4 right-12 overflow-hidden bg-gradient-to-t from-[#5CD2E6] to-[#78D6C6] top-0"
             >
               <div className="mb-4">
                 <label
