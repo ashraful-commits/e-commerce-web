@@ -7,7 +7,7 @@ const Modal = ({ isOpen, onClose, children }) => {
       <div className="w-full fixed z-0 bg-blend-overlay bg-[#5CD2E6] bg-opacity-90 h-full"></div>
       <div className="modal bg-white bg-opacity-50 z-10  w-full h-full  rounded-lg shadow-lg">
         <button
-          className="animated_boxShadow z-[9999999999] modal-close absolute shadow-lg bottom-[43%] bg-white rounded-full p-2 right-8 hover:bg-[#5CD2E6] hover:text-white text-[#5CD2E6] "
+          className="animated_boxShadow z-[9999999999] modal-close absolute shadow-lg bottom-[40%] bg-white rounded-full p-2 right-8 hover:bg-[#5CD2E6] hover:text-white text-[#5CD2E6] "
           onClick={onClose}
         >
           <AiOutlineClose className="text-xl" />
