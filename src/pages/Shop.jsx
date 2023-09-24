@@ -486,7 +486,9 @@ const Shop = () => {
                               onClick={() => {
                                 setDesCription(true), setReviews(false);
                               }}
-                              className="border hover:bg-secondary border-white px-2 py-1"
+                              className={`border hover:bg-secondary ${
+                                desCription ? "bg-secondary border-none" : ""
+                              } border-white px-2 py-1`}
                             >
                               Description
                             </button>
@@ -494,14 +496,16 @@ const Shop = () => {
                               onClick={() => {
                                 setDesCription(false), setReviews(true);
                               }}
-                              className="border  hover:bg-secondary border-white px-2 py-1"
+                              className={`border hover:bg-secondary ${
+                                reviews ? "bg-secondary  border-none" : ""
+                              } border-white px-2 py-1`}
                             >
                               Reviews
                             </button>
                           </div>
                           <div className="bg-white h-[300px] border-t-2 border-t-secondary p-3 overflow-y-auto">
                             {desCription && (
-                              <div className="description overflow-y-auto">
+                              <div className="description$ overflow-y-auto">
                                 <h1 className="text-secondary text-xl font-bold text-left">
                                   Description
                                 </h1>
