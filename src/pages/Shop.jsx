@@ -389,9 +389,9 @@ const Shop = () => {
                     <Modal onClose={() => setShow(false)}>
                       <div className="flex relative overflow-y-auto flex-col w-full  h-full">
                         <div
-                          className={` w-full flex flex-col lg:flex-row lg:h-[70%]  `}
+                          className={` w-full  flex flex-col lg:flex-row lg:h-[70%]  `}
                         >
-                          <div className="flex relative border-r bg-white w-full justify-center h-full items-center">
+                          <div className="flex relative border-r  bg-white w-full justify-center h-full items-center">
                             <img
                               className="w-full p-10 h-full object-contain"
                               src={product.image}
@@ -479,16 +479,18 @@ const Shop = () => {
                           </div>
                         </div>
                         <div
-                          className={`w-full  h-[500px]   bg-primary my-4 text-center  `}
+                          className={`w-full  h-[500px]   bg-white  text-center  `}
                         >
-                          <div className="button_group  my-3 space-x-3 ">
+                          <div className="button_group bg-primary py-2 space-x-3 ">
                             <button
                               onClick={() => {
                                 setDesCription(true), setReviews(false);
                               }}
                               className={`border hover:bg-secondary ${
-                                desCription ? "bg-secondary border-none" : ""
-                              } border-white px-2 py-1`}
+                                desCription
+                                  ? "bg-secondary text-white border-none"
+                                  : ""
+                              } border-secondary text-secondary hover:text-white font-bold px-2 py-1`}
                             >
                               Description
                             </button>
@@ -497,15 +499,17 @@ const Shop = () => {
                                 setDesCription(false), setReviews(true);
                               }}
                               className={`border hover:bg-secondary ${
-                                reviews ? "bg-secondary  border-none" : ""
-                              } border-white px-2 py-1`}
+                                reviews
+                                  ? "bg-secondary font-bold border-none text-white"
+                                  : ""
+                              } border-secondary text-secondary hover:text-white px-2 py-1`}
                             >
                               Reviews
                             </button>
                           </div>
-                          <div className="bg-white h-[300px] border-t-2 border-t-secondary p-3 overflow-y-auto">
+                          <div className="bg-white h-[300px]p-3 overflow-y-auto">
                             {desCription && (
-                              <div className="description$ overflow-y-auto">
+                              <div className="description h-[500px] w-full  py-3 overflow-y-auto">
                                 <h1 className="text-secondary text-xl font-bold text-left">
                                   Description
                                 </h1>
@@ -516,7 +520,7 @@ const Shop = () => {
                               </div>
                             )}
                             {reviews && (
-                              <div className="Reviews  relative  w-full px-4">
+                              <div className="Reviews relative h-full  w-full px-4">
                                 <div className="header border-b-2 py-2 border-b-gray-500">
                                   <p className="text-gray-600 text-lg font-bold">
                                     Customer Reviews
@@ -532,56 +536,139 @@ const Shop = () => {
                                     Polar Pl 323 Polarized 80c
                                   </p>
                                 </div>
-                                <div className="reviews relative w-full flex flex-col justify-between items-center">
-                                  <div className="w-full my-4 flex justify-between items-center">
-                                    <div className="Reviews_datials gap-3 flex items-center">
+                                <div className="reviews relative overflow-y-auto h-[300px] w-full py-5 ">
+                                  <div className="reviews_container">
+                                    <div className="w-full my-4 flex justify-between items-center">
+                                      <div className="Reviews_datials gap-3 flex items-center">
+                                        <img
+                                          className="w-10 rounded-full h-10 object-cover"
+                                          src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                                          alt=""
+                                        />
+                                        <div className="datials flex flex-col items-start">
+                                          <p className="text-md text-secondary font-bold">
+                                            Md ashraful alam
+                                          </p>
+                                          <div className="email_tim flex justify-between items-center gap-1">
+                                            <p className="text-xs text-gray-500">
+                                              ashrafulalam@gmail.com
+                                            </p>
+                                            <span className="text-gray-500">
+                                              |
+                                            </span>
+                                            <p className="text-xs text-gray-500">
+                                              10 min ago
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
                                       <img
                                         className="w-10 rounded-full h-10 object-cover"
                                         src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
                                         alt=""
                                       />
-                                      <div className="datials flex flex-col items-start">
-                                        <p className="text-md text-secondary font-bold">
-                                          Md ashraful alam
-                                        </p>
-                                        <div className="email_tim flex justify-between items-center gap-1">
-                                          <p className="text-xs text-gray-500">
-                                            ashrafulalam@gmail.com
+                                    </div>
+                                    <div className="comments w-full mt-4 border-t flex flex-col items-start ">
+                                      <p className="text-gray-500 text-xl">
+                                        ****
+                                      </p>
+                                      <p className="text-sm text-gray-400 text-justify">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Repellendus, quibusdam
+                                        voluptatibus facilis illo tempore
+                                        dolorem consectetur aperiam voluptates
+                                        pariatur itaque?
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="reviews_container">
+                                    <div className="w-full my-4 flex justify-between items-center">
+                                      <div className="Reviews_datials gap-3 flex items-center">
+                                        <img
+                                          className="w-10 rounded-full h-10 object-cover"
+                                          src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                                          alt=""
+                                        />
+                                        <div className="datials flex flex-col items-start">
+                                          <p className="text-md text-secondary font-bold">
+                                            Md ashraful alam
                                           </p>
-                                          <span className="text-gray-500">
-                                            |
-                                          </span>
-                                          <p className="text-xs text-gray-500">
-                                            10 min ago
-                                          </p>
+                                          <div className="email_tim flex justify-between items-center gap-1">
+                                            <p className="text-xs text-gray-500">
+                                              ashrafulalam@gmail.com
+                                            </p>
+                                            <span className="text-gray-500">
+                                              |
+                                            </span>
+                                            <p className="text-xs text-gray-500">
+                                              10 min ago
+                                            </p>
+                                          </div>
                                         </div>
                                       </div>
+                                      <img
+                                        className="w-10 rounded-full h-10 object-cover"
+                                        src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                                        alt=""
+                                      />
                                     </div>
-                                    <img
-                                      className="w-10 rounded-full h-10 object-cover"
-                                      src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                                      alt=""
-                                    />
+                                    <div className="comments w-full mt-4 border-t flex flex-col items-start ">
+                                      <p className="text-gray-500 text-xl">
+                                        ****
+                                      </p>
+                                      <p className="text-sm text-gray-400 text-justify">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Repellendus, quibusdam
+                                        voluptatibus facilis illo tempore
+                                        dolorem consectetur aperiam voluptates
+                                        pariatur itaque?
+                                      </p>
+                                    </div>
                                   </div>
-                                  <div className="comments w-full mt-4 border-t flex flex-col items-start border-t-secondary">
-                                    <p className="text-gray-500 text-xl">
-                                      ****
-                                    </p>
-                                    <p className="text-sm text-gray-400 text-justify">
-                                      Lorem ipsum, dolor sit amet consectetur
-                                      adipisicing elit. Repellendus, quibusdam
-                                      voluptatibus facilis illo tempore dolorem
-                                      consectetur aperiam voluptates pariatur
-                                      itaque?
-                                    </p>
+                                  <div className="reviews_container">
+                                    <div className="w-full my-4 flex justify-between items-center">
+                                      <div className="Reviews_datials gap-3 flex items-center">
+                                        <img
+                                          className="w-10 rounded-full h-10 object-cover"
+                                          src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                                          alt=""
+                                        />
+                                        <div className="datials flex flex-col items-start">
+                                          <p className="text-md text-secondary font-bold">
+                                            Md ashraful alam
+                                          </p>
+                                          <div className="email_tim flex justify-between items-center gap-1">
+                                            <p className="text-xs text-gray-500">
+                                              ashrafulalam@gmail.com
+                                            </p>
+                                            <span className="text-gray-500">
+                                              |
+                                            </span>
+                                            <p className="text-xs text-gray-500">
+                                              10 min ago
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <img
+                                        className="w-10 rounded-full h-10 object-cover"
+                                        src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div className="comments w-full mt-4 border-t flex flex-col items-start ">
+                                      <p className="text-gray-500 text-xl">
+                                        ****
+                                      </p>
+                                      <p className="text-sm text-gray-400 text-justify">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Repellendus, quibusdam
+                                        voluptatibus facilis illo tempore
+                                        dolorem consectetur aperiam voluptates
+                                        pariatur itaque?
+                                      </p>
+                                    </div>
                                   </div>
-                                </div>
-                                <div className="input mt-10 absolute  shadow-lg  left-0 w-full bottom-0">
-                                  <input
-                                    type="text"
-                                    className="w-full focus:outline-none text-gray-500 p-1 shadow-md "
-                                    placeholder="Reviews please"
-                                  />
                                 </div>
                               </div>
                             )}
