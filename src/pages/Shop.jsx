@@ -17,6 +17,8 @@ const Shop = () => {
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [selectedTags, setSelectedTags] = useState([]);
+  const [desCription, setDesCription] = useState(true);
+  const [reviews, setReviews] = useState(false);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -379,9 +381,9 @@ const Shop = () => {
                 >
                   <button
                     onClick={() => setShow(!show)}
-                    className="bg-white rounded-full w-10 h-10 flex justify-center items-center"
+                    className="bg-secondary rounded-full w-10 h-10 flex justify-center items-center"
                   >
-                    <AiFillEye className="text-gray-600 text-6xl" />
+                    <AiFillEye className="text-white text-6xl" />
                   </button>
                   {show && (
                     <Modal onClose={() => setShow(false)}>
@@ -434,12 +436,12 @@ const Shop = () => {
                             </div>
                           </div>
                           <div className="flex justify-start w-full pb-10 overflow-y-auto flex-col  gap-4 pt-2 px-0 lg:px-10">
-                            <h1 className="text-gray-800 mt-5  font-bold text-xl">
+                            <h1 className="text-secondary mt-5  font-bold text-xl">
                               {product.title}
                             </h1>
-                            <h4 className="text-gray-600 text-sm font-bold">
+                            <Link className="text-blue-600 text-sm font-bold">
                               {product.category}
-                            </h4>
+                            </Link>
 
                             <h4 className="text-gray-600 text-sm font-bold">
                               Rating: {product.rating.rate}
@@ -447,9 +449,15 @@ const Shop = () => {
                             <h4 className="text-gray-600 text-sm font-bold">
                               Stock: {product.rating.count}
                             </h4>
-                            <Link href="" className="text-gray-600 font-bold">
-                              Price: $ {product.price}
-                            </Link>
+                            <h1
+                              href=""
+                              className="text-primary text-xl  font-bold"
+                            >
+                              Price:{" "}
+                              <span className="text-secondary">
+                                $ {product.price}
+                              </span>
+                            </h1>
                             <div className="flex gap-3">
                               <span className="w-5 h-5 bg-[blue] rounded-full"></span>
                               <span className="w-5 h-5 bg-[red] rounded-full"></span>
@@ -495,6 +503,104 @@ const Shop = () => {
                                   </div>
                                 );
                               })}
+                          </div>
+                        </div>
+                        <div
+                          className={`w-full  h-[500px]  border-t-4 border-t-secondary bg-primary my-4 text-center  `}
+                        >
+                          <div className="button_group my-3 space-x-3 ">
+                            <button
+                              onClick={() => {
+                                setDesCription(true), setReviews(false);
+                              }}
+                              className="border hover:bg-secondary border-white px-4 py-2"
+                            >
+                              Description
+                            </button>
+                            <button
+                              onClick={() => {
+                                setDesCription(false), setReviews(true);
+                              }}
+                              className="border  hover:bg-secondary border-white px-4 py-2"
+                            >
+                              Reviews
+                            </button>
+                          </div>
+                          <div className="bg-white p-3">
+                            {desCription && (
+                              <div className="description">
+                                <h1 className="text-secondary text-xl font-bold text-left">
+                                  Description
+                                </h1>
+                                <hr className="my-2" />
+                                <p className="text-gray-500 text-justify">
+                                  {product.description}
+                                </p>
+                              </div>
+                            )}
+                            {reviews && (
+                              <div className="Reviews w-full px-4">
+                                <div className="header border-b-2 py-2 border-b-gray-500">
+                                  <p className="text-gray-600 text-lg font-bold">
+                                    Customer Reviews
+                                  </p>
+                                  <p className="text-gray-600 text-md font-bold">
+                                    *****
+                                  </p>
+
+                                  <p className="text-gray-600">
+                                    45%|163 reviews
+                                  </p>
+                                  <p className="text-gray-600 text-lg font-bold">
+                                    Polar Pl 323 Polarized 80c
+                                  </p>
+                                </div>
+                                <div className="reviews w-full flex flex-col justify-between items-center">
+                                  <div className="w-full my-4 flex justify-between items-center">
+                                    <div className="Reviews_datials gap-3 flex items-center">
+                                      <img
+                                        className="w-10 rounded-full h-10 object-cover"
+                                        src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                                        alt=""
+                                      />
+                                      <div className="datials flex flex-col items-start">
+                                        <p className="text-md text-secondary font-bold">
+                                          Md ashraful alam
+                                        </p>
+                                        <div className="email_tim flex justify-between items-center gap-1">
+                                          <p className="text-xs text-gray-500">
+                                            ashrafulalam@gmail.com
+                                          </p>
+                                          <span className="text-gray-500">
+                                            |
+                                          </span>
+                                          <p className="text-xs text-gray-500">
+                                            10 min ago
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <img
+                                      className="w-10 rounded-full h-10 object-cover"
+                                      src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div className="comments w-full mt-4 border-t flex flex-col items-start border-t-secondary">
+                                    <p className="text-gray-500 text-xl">
+                                      ****
+                                    </p>
+                                    <p className="text-sm text-gray-400 text-justify">
+                                      Lorem ipsum, dolor sit amet consectetur
+                                      adipisicing elit. Repellendus, quibusdam
+                                      voluptatibus facilis illo tempore dolorem
+                                      consectetur aperiam voluptates pariatur
+                                      itaque?
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
