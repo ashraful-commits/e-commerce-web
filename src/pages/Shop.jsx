@@ -536,7 +536,15 @@ const Shop = () => {
                                     Polar Pl 323 Polarized 80c
                                   </p>
                                 </div>
-                                <div className="reviews relative overflow-y-auto h-[300px] w-full py-5 ">
+                                <div className="reviews relative overflow-y-auto h-[250px] z-0 w-full py-5 ">
+                                  <div className="absolute w-full bottom-0 left-0">
+                                    <input
+                                      type="text"
+                                      placeholder="reviews"
+                                      className=" bg-secondary w-full px-2 py-2"
+                                    />
+                                  </div>
+
                                   <div className="reviews_container">
                                     <div className="w-full my-4 flex justify-between items-center">
                                       <div className="Reviews_datials gap-3 flex items-center">
