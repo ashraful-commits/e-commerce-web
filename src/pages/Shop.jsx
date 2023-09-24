@@ -159,7 +159,10 @@ const Shop = () => {
   }, [filter]);
 
   return (
-    <div className="container  bg w-full min-h-screen  pb-[10px] flex flex-col items-center ">
+    <div
+      ref={menuContainerRef}
+      className="container  bg w-full min-h-screen  pb-[10px] flex flex-col items-center "
+    >
       <div className="row bg-gradient-to-r  from-[#5CD2E6] to-[#5CD2E6]  w-full relative h-10">
         <div className="text-white  fixed z-[999999999]  px-4 py-2 flex items-center">
           <Link
@@ -184,7 +187,7 @@ const Shop = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
-          className="filter_menu fixed z-[999999] bg-primary text-white hover:bg-secondary rounded-full shadow-lg right-[8px] top-[36%]"
+          className="filter_menu fixed z-[999999] bg-primary text-white hover:bg-secondary rounded-full shadow-lg right-[8px] top-[8%]"
         >
           <button
             ref={buttonRef}
@@ -536,12 +539,12 @@ const Shop = () => {
                                     Polar Pl 323 Polarized 80c
                                   </p>
                                 </div>
-                                <div className="reviews relative overflow-y-auto h-[250px] z-0 w-full py-5 ">
-                                  <div className="absolute w-full bottom-0 left-0">
+                                <div className="reviews relative overflow-y-auto h-[250px] z-0 w-full py-10 ">
+                                  <div className="absolute w-full h-full top-0 left-0">
                                     <input
                                       type="text"
-                                      placeholder="reviews"
-                                      className=" bg-secondary w-full px-2 py-2"
+                                      placeholder="Make reviews  ....."
+                                      className=" bg-white text-gray-500 border-b-2 focus:outline-none w-full px-2 py-2"
                                     />
                                   </div>
 
